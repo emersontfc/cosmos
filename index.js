@@ -364,23 +364,6 @@ break
                 })
             break
 			
-			case 'ytmp4': 
-			if (args.length === 0) return reply(`Kirim perintah *${prefix}ytmp3* _Url YouTube_`)
-			if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Link tidak valid!')
-			var mulaikah = args.join(' ')
-			xa.Youtube(mulaikah).then(async (data) => {
-                    let txt = `*----「 YOUTUBE VIDEO 」----*\n\n`
-                    txt += `*• Quality :* ${data.medias[1].quality}\n`
-                    txt += `*• Type :* ${data.medias[1].extension}\n`
-                    txt += `*• Size :* ${data.medias[1].formattedSize}\n`
-                    txt += `*• Url Source :* ${data.url}\n\n`
-                    txt += `*Mohon tunggu sebentar kak, sedang proses pengiriman...*`
-                    sendFileFromUrl(from, data.thumbnail, txt, mek)
-                    sendFileFromUrl(from, data.medias[1].url, lang.ok(), mek)
-                    }).catch((err) => {
-                    reply(lang.err())
-                })
-                break
             case 'webtonsearch': case 'webtoon':
                 if (!q) return reply(lang.wrongFormat(prefix))
                 await reply(lang.wait())
