@@ -235,6 +235,22 @@ reply('formato inválido, entre em contato com o proprietário do bot')
                 alpha.sendMessage(m.chat, { image: { url: result.image }, caption: `⭔ Title : ${result.title}\n⭔ Category : ${result.type}\n⭔ Media Url : ${result.image}` }, { quoted: m })
             }
             break
+
+            case 'marcar':
+            if (!isGroup) return reply(ind.groupOnly())
+            if (!isGroupAdmins && !isOwner) return reply(ind.adminOnly())
+            let teks = `══✪〘 *👥 Mencione tudo* 〙✪══\n\n➲ *Mensgem : ${q ? q : 'Nothing'}*\n\n`
+              for (let mem of groupMembers) {
+                teks += `࿃➡️ @${mem.id.split('@')[0]}\n`
+            }
+            teks += `\n⋙ *${botName}* ⋘`
+            alpha.sendMessage(from, { text: teks, mentions: groupMembers.map(a => a.id) }, { quoted: msg })
+        break
+        case 'desmarcar':
+                if (!isGroup) return reply(ind.groupOnly())
+                if (!isGroupAdmins && !isOwner) return reply(ind.adminOnly())
+                alpha.sendMessage(from, { text : q ? q : '' , mentions: groupMembers.map(a => a.id)})
+            break
             case 'wikimedia': {
             	if (!q) return reply(lang.wrongFormat(prefix))
                 reply(mess.wait)
@@ -363,7 +379,29 @@ break
                     reply(lang.err())
                 })
             break
-			
+            case 'mp4': case 'ytmp4':
+                if (!q) return textImg(ind.wrongFormat(prefix))
+                if (!isUrl(q)) return textImg(ind.wrongFormat(prefix))
+                if (!q.includes('youtu.be') && !q.includes('youtube.com')) return textImg(ind.wrongFormat(prefix))
+                await textImg(ind.wait())
+                xfar.Youtube(args[1]).then(async (data) => {
+                    let txt = `*----「 YOUTUBE VIDEO 」----*\n\n`
+                    txt += `*📟 Qualidade :* ${data.medias[1].quality}\n`
+                    txt += `*🎞️ Formato :* ${data.medias[1].extension}\n`
+                    txt += `*💾 Tamanho :* ${data.medias[1].formattedSize}\n`
+                    txt += `*📚 Url :* ${data.url}\n\n`
+                    txt += `*Aguarde um momento, em processo de entrega...*`
+                    sendFileFromUrl(from, data.thumbnail, txt, msg)
+                    sendFileFromUrl(from, data.medias[1].url, '', msg)
+                    
+                })
+                .catch((err) => {
+                    for (let x of ownerNumber) {
+                        sendMess(x, `${command.split(prefix)[1]} Error: \n\n` + err)
+                    }
+                    textImg(ind.err())
+                })
+            break
             case 'webtonsearch': case 'webtoon':
                 if (!q) return reply(lang.wrongFormat(prefix))
                 await reply(lang.wait())
