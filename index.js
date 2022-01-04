@@ -526,27 +526,6 @@ break
                 })
             break
             
-            case 'mp4': case 'ytmp4':
-                if (!q) return reply(lang.wrongFormat(prefix))
-                if (!isUrl(q)) return reply(lang.wrongFormat(prefix))
-                if (!q.includes('youtu.be') && !q.includes('youtube.com')) return reply(lang.wrongFormat(prefix))
-                await reply(ind.wait())
-                zee.Youtube(`${q}`).then(async (data) => {
-                    let txt = `*----「 YOUTUBE VIDEO 」----*\n\n`
-                    txt += `*📟 Quality :* ${data.medias[1].quality}\n`
-                    txt += `*🎞️ Type :* ${data.medias[1].extension}\n`
-                    txt += `*💾 Size :* ${data.medias[1].formattedSize}\n`
-                    txt += `*📚 Url Source :* ${data.url}\n\n`
-                    txt += `*Aguarde um momento, em processo de entrega...*`
-                    sendFileFromUrl(from, data.thumbnail, txt, m)
-                    sendFileFromUrl(from, data.medias[1].url, '', m)
-                    
-                })
-                .catch((err) => {
-                    reply(lang.err())
-                })
-            break
-            
             case 'soundcloud':
     	        if (!q) return reply(lang.wrongFormat(prefix))
                 if (!isUrl(q)) return reply(lang.wrongFormat(prefix))
