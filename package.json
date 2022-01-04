@@ -1,14 +1,14 @@
 {
   "name": "AlphabotMD",
-  "version": "0.0.3",
-  "description": "Alpha Bot Multi Device",
+  "version": "0.0.4",
+  "description": "Alpha Bot Multi Device, Only update in YouTube ZEEONE OFC",
   "main": "zeeone.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
     "start": "node zeeone.js"
-  },
+   },
   "keywords": [
     "termux",
     "whatsapp",
@@ -24,6 +24,7 @@
     "@adiwajshing/baileys-md": "github:adiwajshing/baileys#multi-device",
     "awesome-phonenumber": "^2.64.0",
     "amethyste-api":"^1.1.5",
+    "api-alphabot":"^1.0.1",
     "axios": "^0.24.0",
     "cfonts": "^2.10.0",
     "chalk": "^4.1.2",
