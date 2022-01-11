@@ -210,18 +210,111 @@ reply('invalid type, please contact the owner bot')
                 }
             }
             break
-
-            if (budy == 'Jarvis') {
-
-              reply(`Oi Amigo, em que eu posso te ajudar? Para acessar ao menu do bot digite ${prefix}menu Ok?`)
-
-          }
-
-          if (budy == 'P') {
-
-              reply(`Sim, eu posso te ajudar? Se o tipo estiver confuso digite ${prefix}menu Ok?`)
-
-          }
+            
+            const sendButMessage = (id, text1, desc1, but = [], options = {}) => {
+              const buttonMessage = {
+                contentText: text1,
+                footerText: desc1,
+                buttons: but,
+                headerType: 1,
+              };
+              client.sendMessage(
+                id,
+                buttonMessage,
+                MessageType.buttonsMessage,
+                options
+              );
+            };
+              if (budy == 'Jarvis') {
+        
+                        reply(`Oi Amigo, em que eu posso te ajudar? Para acessar ao menu do bot digite ${prefix}menu Ok?`)
+        
+                    }
+        
+                    if (budy == 'P') {
+        
+                        reply(`Sim, eu posso te ajudar? Se o tipo estiver confuso digite ${prefix}menu Ok?`)
+        
+                    }
+        
+                    if (budy == 'Ola') {
+        
+                        reply(`Oi, tudo bem com vc??`)
+        
+                    }
+        
+                    if (budy == 'bot') {
+                        reply(`Sim, o que há de errado com o bot? quer convidar para um grupo😒`)
+        
+                    }
+        
+        
+                    if (budy == 'assalamualaikum') {
+        
+                reply(` وَعَلَيْكُمُ السَّلاَمُ \nAda Yang Bisa Saya Bantu? kalo Bingung Ketik ${prefix}menu Ya Kak`)
+        
+              }
+              
+              if (budy == 'mastah') {
+        
+                reply(`Waw Ada Mastah Ampun Mastah`)
+        
+              }
+              
+              if (budy == 'Mastah') {
+        
+                reply(`Waw Ada Mastah Ampun Mastah`)
+        
+              }
+        
+              if (budy == 'Assalamualaikum') {
+        
+                reply(`Waalaikumsalam, Ada Yang Bisa Saya Bantu? kalo Bingung Ketik ${prefix}menu Ya Kak`)
+        
+              }
+        
+              if (budy == 'Bom Dia') {
+        
+                reply(`Bom dia Querido Amigo/a :)`)
+        
+              }
+        
+              if (budy == 'terimakasih') {
+        
+                reply(`Sama sama, Semoga Harimu Menyenangkan :)`)
+        
+              }
+        
+              if (budy == 'makasih') {
+        
+                reply(`Sama sama, Semoga Harimu Menyenangkan :)`)
+        
+              }
+        
+              if (budy == 'Thanks') {
+        
+                reply(`Sama sama, Semoga Harimu Menyenangkan :)`)
+        
+              }
+        
+              if (budy == 'thanks') {
+        
+                reply(`Sama sama, Semoga Harimu Menyenangkan :)`)
+        
+              }
+        
+              if (budy == 'Tq') {
+        
+                reply(`Sama sama, Semoga Harimu Menyenangkan :)`)
+        
+              }
+        
+              if (budy == 'tq') {
+        
+                reply(`Sama sama, Semoga Harimu Menyenangkan :)`)
+        
+              }
+              /******************************* AUTO *******************************/
             
             case 'linkgroup': case 'linkgrup': case 'linkgp': case 'linkgc': {
                 if (!m.isGroup) throw mess.group
