@@ -325,8 +325,15 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             case 'sc': case 'source':
             reply(lang.source())
             break
-            case 'dia':
-              reply('*Hayolo belom tobat🤣* *tobat bodoh dosa elu udah banyak itu*')
+            //Inteligencia Conversacional
+            case 'dia':  case 'bom dia': 
+              reply('*Oi🤣 bom dia!*')
+              break
+              case 'tarde':  case 'boa tarde': 
+              reply('*Oi🤣 boa tarde prezado/a!*')
+              break
+              case 'noite':  case 'boa noite': 
+              reply('*Oi🤣 boa noite prezado/a!*')
               break
             case 'donasi': case 'donate': case 'doar': 
             //reply(lang.tos(ownernomer))
