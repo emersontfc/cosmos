@@ -78,8 +78,8 @@ module.exports = alpha = async (alpha, m, chatUpdate) => {
         const type = Object.keys(mek.message)[0]
 		 const from = mek.key.remoteJid
 		 const content = JSON.stringify(mek.message)
-        const time = moment(Date.now()).tz('Asia/Jakarta').locale('id').format('HH:mm:ss z')
-        const salam = moment(Date.now()).tz('Asia/Jakarta').locale('id').format('a')
+        const time = moment(Date.now()).tz('Africa/Maputo').locale('id').format('HH:mm:ss z')
+        const salam = moment(Date.now()).tz('Africa/Maputo').locale('id').format('a')
         const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
         const args = body.trim().split(/ +/).slice(1)
         const pushname = m.pushName || "No Name"
@@ -210,6 +210,18 @@ reply('invalid type, please contact the owner bot')
                 }
             }
             break
+
+            if (budy == 'Jarvis') {
+
+              reply(`Oi Amigo, em que eu posso te ajudar? Para acessar ao menu do bot digite ${prefix}menu Ok?`)
+
+          }
+
+          if (budy == 'P') {
+
+              reply(`Sim, eu posso te ajudar? Se o tipo estiver confuso digite ${prefix}menu Ok?`)
+
+          }
             
             case 'linkgroup': case 'linkgrup': case 'linkgp': case 'linkgc': {
                 if (!m.isGroup) throw mess.group
