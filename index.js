@@ -218,12 +218,7 @@ reply('invalid type, please contact the owner bot')
                 alpha.sendText(m.chat, `Link do Grupo : *${groupMetadata.subject}*\nhttps://chat.whatsapp.com/${response}`, m, { detectLink: true })
             }
             break
-            // IA CONVERSACIONAL
-            case 'Ola': {
-           reply('Oi Prezado') 
-          }
-           break
-
+            
             case 'delete': case 'del': {
             	if (!m.key.fromMe && !isCreator) throw mess.owner
                 if (!m.quoted) throw false
@@ -329,6 +324,9 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             break
             case 'sc': case 'source':
             reply(lang.source())
+            break
+            case 'bom dia': case 'boa tarde':  case 'boa noite':
+            reply(lang.saudacoes())
             break
             case 'donasi': case 'donate': case 'doar': 
             //reply(lang.tos(ownernomer))

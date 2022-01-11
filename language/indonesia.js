@@ -116,7 +116,7 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 ╭─❒ 「 Grupo 」 
 ├ ${prefix}revogar
 ├ ${prefix}sair
-├ ${prefix}add [62***]
+├ ${prefix}add [258***]
 ├ ${prefix}remover @tag
 ├ ${prefix}revogar
 ├ ${prefix}leave
@@ -455,7 +455,7 @@ Muito obrigado! Para vocês, usuários amigáveis ​​e algumas pessoas que ta
 exports.welcome = () =>{
 	return`Por favor, leia a descrição primeiro 🤗
 	
-📛 Nome :
+📛 Nome : ${pushname}
 🔞 Idade :
 🧑 Genero :
 🏙️ Cidade :
@@ -471,6 +471,12 @@ return`*── 「 Codigo Fonte 」 ──*
 DE MOMENTO O CODIGO FONTE PODE SER ADQUIRIDO APENAS COMPRANDO COM O ADMINISTRADOR
 `
 }
+exports.Saudacoes = () =>{
+    return`*── 「OIEEEEEEEE」 ──*
+    
+    TUDO BEM?
+    `
+    }
 exports.tos = (ownernomer) => {
     return `
 *── 「 DOAR 」 ──*
