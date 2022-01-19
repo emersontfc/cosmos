@@ -1,22 +1,25 @@
+exports.private = () =>{
+	return`O recurso só pode ser usado em bate-papo privado`
+	}
 exports.wait = () => {
     return `⏳ Por favor espere um momento~`
 }
 
 exports.ok = () => {
-    return `✅ Prontos!!!~`
+    return `✅ Concluido, Pronto!!!~`
 }
 
 exports.err = () => {
-    return `⚠️ Recursos moderados de erro`
+    return `⚠️ Erro, nao foi possivel concluir`
 }
 exports.erorLink = () => {
-    return `⚠️ Link com algum erro`
+    return `⚠️ Link incorreto`
 }
 exports.media = () => {
     return `Selecione a mídia que deseja baixar`
 }
 exports.replyImg = (prefix, command) => {
-    return `Enviar / responder foto com legenda ${prefix + command}`
+    return `Enviar/responder foto com legenda ${prefix + command}`
 }
 
 exports.wrongFormat = (prefix) => {
@@ -24,19 +27,19 @@ exports.wrongFormat = (prefix) => {
 }
 
 exports.emptyMess = () => {
-    return `❎ Por favor, insira a mensagem que deseja transmitir!`
+    return `❎ Digite a mensagem que deseja transmitir!`
 }
 
 exports.cmdNotFound = (cmd, prefix) => {
-    return `❎ Command *${cmd}* não registrado em*${prefix}allmenu*`
+    return `❎ Comando *${cmd}* não está registrado em *${prefix}allmenu*`
 }
 
 exports.ownerOnly = () => {
-    return `❎ Este comando é para o dono!`
+    return `❎ Este comando é para o Boss!`
 }
 
 exports.doneOwner = () => {
-    return `✅  ️Está feito, proprietário ~`
+    return `✅  ️Está feito, Chefe ~`
 }
 
 exports.groupOnly = () => {
@@ -44,7 +47,7 @@ exports.groupOnly = () => {
 }
 
 exports.adminOnly = () => {
-    return `🙅 Este comando só pode ser usado por administradores de grupo!`
+    return `🙅  Este comando só pode ser usado por administradores de grupo!`
 }
 
 exports.nhFalse = () => {
@@ -52,9 +55,9 @@ exports.nhFalse = () => {
 }
 
 exports.listBlock = (blockNumber) => {
-    return `*── 「 SALÃO DE VERGONHA 」 ──*
+    return `*── 「SALÃO DA VERGONHA 」 ──*
     
-    Total bloqueado: *${blockNumber.length}* user\n`
+Total Bloqueados: *${blockNumber.length}* user\n`
 }
 
 exports.notAdmin = () => {
@@ -62,17 +65,17 @@ exports.notAdmin = () => {
 }
 
 exports.adminAlready = () => {
-    return `❎ Não é possível promover o usuário que é administrador!`
+    return `❎ Não foi possível promover o usuário que é administrador!`
 }
 
 exports.botNotAdmin = () => {
-    return `Faça do bot um administrador primeiro! 🙏`
+    return `Torne o Cosmos-Bot um administrador primeiro! 🙏`
 }
 
 exports.received = (pushname) => {
     return `
-Oi ${pushname}!
-Obrigado por relatar, nós receberemos seu relatório em breve.`
+Ola ${pushname}!
+Obrigado por relatar, receberemos seu relatório em breve.`
 }
 
 exports.videoLimit = () => {
@@ -80,19 +83,19 @@ exports.videoLimit = () => {
 }
 
 exports.notNum = (q) => {
-    return `"${q}", não um número!`
+    return `"${q}", não é um número!`
 }
 exports.menunya = (salam, pushname) =>{
-	return`Oi ${pushname} 👋 Bem Vindo ${salam} , 
-    Eu sou Cosmos-Md, este bot é um Whatsapp Multi-Device Beta.
-    Se você encontrar algum tipo de bug ou erro, por favor entenda.
-    fale com o proprietário para que seja consertado imediatamente🙏      
+	return`Oi ${pushname} 👋 Bem Vindo/a ${salam} , 
+Diga Cosmos-Md, este bot é o Whatsapp Multi-Device Beta.
+Se você encontrar algum tipo de bug ou erro, por favor, entenda.
+notifique o dono para que seja corrigido imediatamente🙏      
 `
 }
 exports.listMenu = (time, salam, pushname, prefix) => {
-    return `*Welcome ${salam} ${pushname} 😖*
-*⌚Time Server : ${time}*
-*📚 Menu Cosmos-Md :*
+    return `*Bem Vindo ${salam} ${pushname} 😖*
+*⌚Horas: ${time}*
+*📚 Menu do Cosmos:*
 
 ╭─❒ 「 Bot Info 」 
 ├ ${prefix}dono
@@ -101,45 +104,41 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 ╰❒ ${prefix}doar
 
 
-╭─❒ 「 Owner 」 
+╭─❒ 「 Dono 」 
 ├ < evaluate
 ├ > evaluate
-├ $ exec    
+├ $ exec
 ├ => exec
+├ ${prefix}setmenu [query]
+├ ${prefix}setmenu templateLocation
+├ ${prefix}setmenu templateTenor
 ├ ${prefix}sendsesi
 ├ ${prefix}join [link]
 ├ ${prefix}self
-├ ${prefix}public [only bot]
-├ ${prefix}del [pesan bot]
-╰❒ ${prefix}setppbot [reply image]
+├ ${prefix}public [so bot]
+├ ${prefix}del [apaga msg do bot]
+╰❒ ${prefix}setppbot [responda img ]
 
-╭─❒ 「 Grupo 」 
+╭─❒ 「 Grupos 」 
+├ ${prefix}antilink [on/off]
 ├ ${prefix}revogar
 ├ ${prefix}sair
 ├ ${prefix}add [258***]
 ├ ${prefix}remover @tag
-├ ${prefix}revogar
-├ ${prefix}leave
-├ ${prefix}linkgc
-├ ${prefix}grupo [abrir/fechar]
+├ ${prefix}sair
+├ ${prefix}linkgp
+├ ${prefix}grupo [open/close]
 ├ ${prefix}tagall [text]
 ╰❒ ${prefix}hidetag [text]
 
-╭─❒ 「 Anime 」 
-├ ${prefix}quotesanime
-├ ${prefix}anime [query]
-├ ${prefix}manga [query]
-╰❒ ${prefix}character [query]
-
-
-╭─❒ 「 Search 」 
+╭─❒ 「 Pesquisa 」 
 ├ ${prefix}ytsearch [query]
 ├ ${prefix}film [query]
 ├ ${prefix}wallpaper [query]
 ╰❒ ${prefix}pinterest [query]
 
 
-╭─❒ 「 Converter 」 
+╭─❒ 「 Conversor 」 
 ├ ${prefix}stiker [reply image]
 ├ ${prefix}tourl [image/video]
 ├ ${prefix}togif [sticker]
@@ -200,7 +199,7 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 ╰❒ ${prefix}invertgreyscale [reply image]
 
 
-╭─❒ 「 Download 」 
+╭─❒ 「 Downloader 」 
 ├ ${prefix}tiktok [link]
 ├ ${prefix}tiktoknowm [link]
 ├ ${prefix}tiktokwm [link]
@@ -208,7 +207,9 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 ├ ${prefix}ytdl [link]
 ├ ${prefix}play [query]
 ├ ${prefix}ytmp3 [link]
+├ ${prefix}ytshortmp3 [link]
 ├ ${prefix}ytmp4 [link]
+├ ${prefix}ytshorts [link]
 ├ ${prefix}facebook [link]
 ├ ${prefix}facebooksd [link]
 ├ ${prefix}facebookhd [link]
@@ -221,7 +222,7 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 ├ ${prefix}igtv [link]
 ╰❒ ${prefix}twitter link
 
- ╭─❒ 「 Textpro Menu 」
+╭─❒ 「 Textpro Menu 」
 ├ ${prefix}halloween2 text|text2
 ├ ${prefix}horror text|text2
 ├ ${prefix}game8bit text|text2
@@ -405,10 +406,11 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 
 ╭─❒ 「 Others 」
 ├ ${prefix}kalkulator
-├ ${prefix}ttp [text]
-╰❒ ${prefix}attp [text]
-
+├ ${prefix}smeme [text]
+├ ${prefix}memegen [text|text]
+╰❒
 ╭─❒ 「 TqTo 」 
+├ Workx.tech
 ╰❒ And All Support
 
     `
@@ -416,74 +418,74 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 
 exports.rules = (prefix) => {
     return `
-*── 「 REGRAS E FAQ 」 ──*
+    *── 「 REGRAS E FAQ 」 ──*
 
-1. Não envie spam para mim. ️
-(Spam significa enviar muitas mensagens sem sentido para mim)
-
-Sanções: *❎ AVISO / SOFT BLOCK*
-
-2. Não ligue para mim. ️
-Sanções: *❎ BLOQUEIO SUAVE*
-
-3. Não me explore.😖
-Para ter acesso a mim nos seus Grupos Pague ou doe para apoiar a causa
-Sanções: *BLOQUEIO PERMANENTE*
-
-🗯️ O bot não está ou está lento para responder?
-➡️ Pode ser afetado por rede, sinal, banido pelo Whatsapp e algum motivo. Continue obedecendo as regras‼️
-
-🗯️ Como Posso comprar um bot?
-➡️ Para adquirir um Bot fale com administrador e tenha acesso a eles.
-
-🗯️ Posso adicionar ao grupo?
-➡️ Por um tempo, o bot fica livre para adicionar status.
-
-🗯️ Qual é o prefixo??
-➡️ Este bot usa vários prefixos. Isso significa que você pode usar o prefixo #,. e outros prefixos razoáveis.
-
-
-
-Se você entende as regras, digite *${prefix}allmenu* para aceder ao menu!
-
-⚠️ Todas as políticas e disposições do Cosmos são mantidas pelo proprietário e todas as mudanças de política, a qualquer momento o proprietário tem o direito de revogar, bloquear usuários (* ﹏ *)
-
-Muito obrigado! Para vocês, usuários amigáveis ​​e algumas pessoas que também ajudaram no projeto de confecção do Cosmos
-😖🙏
+    1. Não envie spam para mim. ️
+    (Spam significa enviar muitas mensagens sem sentido para mim)
+    
+    Sanções: *❎ AVISO / SOFT BLOCK*
+    
+    2. Não ligue para mim. ️
+    Sanções: *❎ BLOQUEIO SUAVE*
+    
+    3. Não me explore.😖
+    Para ter acesso a mim nos seus Grupos Pague ou doe para apoiar a causa
+    Sanções: *BLOQUEIO PERMANENTE*
+    
+    🗯️ O bot não está ou está lento para responder?
+    ➡️ Pode ser afetado por rede, sinal, banido pelo Whatsapp e algum motivo. Continue obedecendo as regras‼️
+    
+    🗯️ Como Posso comprar um bot?
+    ➡️ Para adquirir um Bot fale com administrador e tenha acesso a eles.
+    
+    🗯️ Posso adicionar ao grupo?
+    ➡️ Por um tempo, o bot fica livre para adicionar status.
+    
+    🗯️ Qual é o prefixo??
+    ➡️ Este bot usa vários prefixos. Isso significa que você pode usar o prefixo #,. e outros prefixos razoáveis.
+    
+    
+    
+    Se você entende as regras, digite *${prefix}allmenu* para aceder ao menu!
+    
+    ⚠️ Todas as políticas e disposições do Cosmos são mantidas pelo proprietário e todas as mudanças de política, a qualquer momento o proprietário tem o direito de revogar, bloquear usuários (* ﹏ *)
+    
+    Muito obrigado! Para vocês, usuários amigáveis ​​e algumas pessoas que também ajudaram no projeto de confecção do Cosmos
+    😖🙏
 `
 }
 exports.welcome = () =>{
-	return`Por favor, leia a descrição primeiro 🤗
+	return`Bem Vindo/a ao Grupo🤗
 	
 📛 Nome :
 🔞 Idade :
 🧑 Genero :
-🏙️ Cidade :
-╰ Siga as Regras do Grupo ~`
+🏙️ Morada :
+╰ Siga as Regras so Grupo e Disponha do Companheirismo ~`
 }
 exports.leave = () =>{
-	return`Parece que vc n gosta de ser Social 😣 Adeus >.<
-Mtish`
+	return`Foi muito bom estar consigo aqui no Grupo   >.<
+Goodbye`
 }
 exports.source = () =>{
-return`*── 「 Codigo Fonte 」 ──*
+return`*── 「 FONTE 」 ──*
 
-DE MOMENTO O CODIGO FONTE PODE SER ADQUIRIDO APENAS COMPRANDO COM O ADMINISTRADOR
+Code : https://github.com/emersontfc/cosmos
 `
 }
 exports.tos = (ownernomer) => {
     return `
 *── 「 DOAR 」 ──*
 
-OI ☺️ 
+Oieeeeee ☺️ 
 Você pode me ajudar a manter este bot atualizado doando
 
-Qualquer quantia da sua doação significará muito 👍
+Qualquer valor da sua doação vai significar muito 👍
 
-Thanks!
+Obrigado!
 
-Para Doar Contacte o Admin:
-wa.me/${ownernomer} (Proprietario)
+Pessoa de contato Proprietário:
+wa.me/${ownernomer} (Owner)
 
     `
 }
@@ -494,6 +496,9 @@ return`*Owner*
 • > evaluate
 • $ exec
 • => exec
+• ${prefix}setmenu [query]
+• ${prefix}setmenu templateLocation
+• ${prefix}setmenu templateTenor
 • ${prefix}sendsesi
 • ${prefix}join [link]
 • ${prefix}self
@@ -504,14 +509,14 @@ return`*Owner*
 
 exports.group = (prefix) =>{
 	return`*Group* 
-• ${prefix}revogar
-• ${prefix}sair
+• ${prefix}antilink [on/off]
+• ${prefix}revoke
+• ${prefix}leave
 • ${prefix}add [62***]
-• ${prefix}remover @tag
-• ${prefix}revogar
-• ${prefix}sair
+• ${prefix}kick @tag
+• ${prefix}leave
 • ${prefix}linkgc
-• ${prefix}grupo [abrir/fechar]
+• ${prefix}group [open/close]
 • ${prefix}tagall [text]
 • ${prefix}hidetag [text]
 `}
@@ -519,8 +524,6 @@ exports.group = (prefix) =>{
 exports.anime = (prefix) =>{
 	return`*Anime*
 • ${prefix}quotesanime
-• ${prefix}anime [query]
-• ${prefix}manga [query]
 • ${prefix}character [query]
 `}
 
@@ -605,7 +608,9 @@ return`*Download*
 • ${prefix}ytdl [link]
 • ${prefix}play [query]
 • ${prefix}ytmp3 [link]
+• ${prefix}ytshortmp3 [link]
 • ${prefix}ytmp4 [link]
+• ${prefix}ytshorts [link]
 • ${prefix}facebook [link]
 • ${prefix}facebooksd [link]
 • ${prefix}facebookhd [link]
@@ -621,11 +626,8 @@ return`*Download*
 }
 
 exports.ranime = (prefix) =>{
-	return`*Random Anime*
-• ${prefix}indisponivel
-• ${prefix}indisponivel
-• ${prefix}indisponivel
-• ${prefix}indisponivel
+	return`*0000*
+• ${prefix}lmkmj 
 `
 }
 
@@ -813,17 +815,24 @@ exports.textpro = (prefix) =>{
 `
 }
 
+exports.nsfw = (prefix) =>{
+	return`*....*
+
+• ${prefix}000
+`
+}
+
 exports.other = (prefix) =>{
-return`*Outros*
+return`*Others*
 • ${prefix}kalkulator
-• ${prefix}ttp [text]
-• ${prefix}attp [text]
+• ${prefix}smeme [text]
+• ${prefix}memegen [text|text]
+
 `
 }
 
 exports.tqto = () =>{
 	return`*Thanks To*
-• WORKX
 • And All Support
 `
 }
