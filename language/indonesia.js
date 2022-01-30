@@ -6,11 +6,11 @@ exports.wait = () => {
 }
 
 exports.ok = () => {
-    return `✅ Concluido, Pronto!!!~`
+    return `✅ Prontos~`
 }
 
 exports.err = () => {
-    return `⚠️ Erro, nao foi possivel concluir`
+    return `⚠️ Erro ao carregar recursos`
 }
 exports.erorLink = () => {
     return `⚠️ Link incorreto`
@@ -18,12 +18,12 @@ exports.erorLink = () => {
 exports.media = () => {
     return `Selecione a mídia que deseja baixar`
 }
-exports.replyImg = (prefix, command) => {
+exports.marqueImg = (prefix, command) => {
     return `Enviar/responder foto com legenda ${prefix + command}`
 }
 
 exports.wrongFormat = (prefix) => {
-    return `Formato errado Por favor, verifique como usar em *${prefix}allmenu*.`
+    return `Formato errado Por favor, verifique como usar em*${prefix}allmenu*.`
 }
 
 exports.emptyMess = () => {
@@ -31,15 +31,15 @@ exports.emptyMess = () => {
 }
 
 exports.cmdNotFound = (cmd, prefix) => {
-    return `❎ Comando *${cmd}* não está registrado em *${prefix}allmenu*`
+    return `❎ Command *${cmd}* não registrado em *${prefix}allmenu*`
 }
 
 exports.ownerOnly = () => {
-    return `❎ Este comando é para o Boss!`
+    return `❎Este comando é para o dono!`
 }
 
 exports.doneOwner = () => {
-    return `✅  ️Está feito, Chefe ~`
+    return `✅  ️Está feito, Proprietário ~`
 }
 
 exports.groupOnly = () => {
@@ -51,11 +51,11 @@ exports.adminOnly = () => {
 }
 
 exports.nhFalse = () => {
-    return `Código inválido!`
+    return `Código inválido`
 }
 
 exports.listBlock = (blockNumber) => {
-    return `*── 「SALÃO DA VERGONHA 」 ──*
+    return `*── 「 BLOQUEIOS」 ──*
     
 Total Bloqueados: *${blockNumber.length}* user\n`
 }
@@ -69,12 +69,12 @@ exports.adminAlready = () => {
 }
 
 exports.botNotAdmin = () => {
-    return `Torne o Cosmos-Bot um administrador primeiro! 🙏`
+    return `Torne o bot um administrador primeiro! 🙏`
 }
 
 exports.received = (pushname) => {
     return `
-Ola ${pushname}!
+Oi ${pushname}!
 Obrigado por relatar, receberemos seu relatório em breve.`
 }
 
@@ -86,22 +86,22 @@ exports.notNum = (q) => {
     return `"${q}", não é um número!`
 }
 exports.menunya = (salam, pushname) =>{
-	return`Oi ${pushname} 👋 Bem Vindo/a ${salam} , 
-Diga Cosmos-Md, este bot é o Whatsapp Multi-Device Beta.
-Se você encontrar algum tipo de bug ou erro, por favor, entenda.
-notifique o dono para que seja corrigido imediatamente🙏      
+	return`Oi ${pushname} 👋 sou ${salam} , 
+    Eu sou Cosmos-Md, este bot é um Whatsapp Multi-Device Beta.
+    Se você encontrar algum tipo de bug ou erro, por favor, entenda.
+    denuncie o dono para que seja corrigido imediatamente 🙏      
 `
 }
 exports.listMenu = (time, salam, pushname, prefix) => {
-    return `*Bem Vindo ${salam} ${pushname} 😖*
-*⌚Horas: ${time}*
-*📚 Menu do Cosmos:*
+    return `*Ola ${salam} ${pushname} 😖*
+*⌚Horas : ${time}*
+*📚 Menu :*
 
 ╭─❒ 「 Bot Info 」 
 ├ ${prefix}dono
 ├ ${prefix}regras
 ├ ${prefix}botstatus
-╰❒ ${prefix}doar
+╰❒ ${prefix}apoiar
 
 
 ╭─❒ 「 Dono 」 
@@ -113,11 +113,11 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 ├ ${prefix}setmenu templateLocation
 ├ ${prefix}setmenu templateTenor
 ├ ${prefix}sendsesi
-├ ${prefix}join [link]
+├ ${prefix}entrar [link]
 ├ ${prefix}self
 ├ ${prefix}public [so bot]
-├ ${prefix}del [apaga msg do bot]
-╰❒ ${prefix}setppbot [responda img ]
+├ ${prefix}del [apagar msg bot]
+╰❒ ${prefix}setppbot [marque imagem]
 
 ╭─❒ 「 Grupos 」 
 ├ ${prefix}antilink [on/off]
@@ -131,75 +131,75 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 ├ ${prefix}tagall [text]
 ╰❒ ${prefix}hidetag [text]
 
-╭─❒ 「 Pesquisa 」 
+
+╭─❒ 「 Pesquisas 」 
 ├ ${prefix}ytsearch [query]
-├ ${prefix}film [query]
 ├ ${prefix}wallpaper [query]
 ╰❒ ${prefix}pinterest [query]
 
 
-╭─❒ 「 Conversor 」 
-├ ${prefix}stiker [reply image]
-├ ${prefix}tourl [image/video]
+╭─❒ 「 Conversores 」 
+├ ${prefix}stiker [marque imagem]
+├ ${prefix}tourl [imagem/video]
 ├ ${prefix}togif [sticker]
 ├ ${prefix}tomp4 [sticker]
-╰❒${prefix}toimg [reply sticker]
+╰❒${prefix}toimg [marque sticker]
 
 
-╭─❒ 「 Image Effect 」 
-├ ${prefix}wanted [reply image]
-├ ${prefix}utatoo [reply image]
-├ ${prefix}unsharpen [reply image]
-├ ${prefix}thanos [reply image]
-├ ${prefix}sniper [reply image]
-├ ${prefix}sharpen [reply image]
-├ ${prefix}sepia [reply image]
-├ ${prefix}scary [reply image]
-├ ${prefix}rip [reply image]
-├ ${prefix}redple [reply image]
-├ ${prefix}rejected [reply image]
-├ ${prefix}posterize [reply image]
-├ ${prefix}ps4 [reply image]
-├ ${prefix}pixelize [reply image]
-├ ${prefix}missionpassed [reply image]
-├ ${prefix}moustache [reply image]
-├ ${prefix}lookwhatkarenhave [reply image]
-├ ${prefix}jail [reply image]
-├ ${prefix}invert [reply image]
-├ ${prefix}instagram [reply image]
-├ ${prefix}greyscale [reply image]
-├ ${prefix}glitch [reply image]
-├ ${prefix}frame [reply image]
-├ ${prefix}fire [reply image]
-├ ${prefix}distort [reply image]
-├ ${prefix}dictator [reply image]
-├ ${prefix}deepfry [reply image]
-├ ${prefix}ddungeon [reply image]
-├ ${prefix}circle [reply image]
-├ ${prefix}challenger [reply image]
-├ ${prefix}burn [reply image]
-├ ${prefix}beautiful [reply image]
-├ ${prefix}jail [reply image]
-├ ${prefix}red [reply image]
-├ ${prefix}bloo [reply image]
-├ ${prefix}blue [reply image]
-├ ${prefix}sepia [reply image]
-├ ${prefix}green [reply image]
-├ ${prefix}glass [reply image]
-├ ${prefix}invert [reply image]
-├ ${prefix}blurple [reply image]
-├ ${prefix}blurple2 [reply image]
-├ ${prefix}wasted [reply image]
-├ ${prefix}passed [reply image]
-├ ${prefix}triggered [reply image]
-├ ${prefix}comrade [reply image]
-├ ${prefix}greyscale [reply image]
-├ ${prefix}threshold [reply image]
-├ ${prefix}brightness [reply image]
-╰❒ ${prefix}invertgreyscale [reply image]
+╭─❒ 「 imagem Effect 」 
+├ ${prefix}wanted [marque imagem]
+├ ${prefix}utatoo [marque imagem]
+├ ${prefix}unsharpen [marque imagem]
+├ ${prefix}thanos [marque imagem]
+├ ${prefix}sniper [marque imagem]
+├ ${prefix}sharpen [marque imagem]
+├ ${prefix}sepia [marque imagem]
+├ ${prefix}scary [marque imagem]
+├ ${prefix}rip [marque imagem]
+├ ${prefix}redple [marque imagem]
+├ ${prefix}rejected [marque imagem]
+├ ${prefix}posterize [marque imagem]
+├ ${prefix}ps4 [marque imagem]
+├ ${prefix}pixelize [marque imagem]
+├ ${prefix}missionpassed [marque imagem]
+├ ${prefix}moustache [marque imagem]
+├ ${prefix}lookwhatkarenhave [marque imagem]
+├ ${prefix}jail [marque imagem]
+├ ${prefix}invert [marque imagem]
+├ ${prefix}instagram [marque imagem]
+├ ${prefix}greyscale [marque imagem]
+├ ${prefix}glitch [marque imagem]
+├ ${prefix}frame [marque imagem]
+├ ${prefix}fire [marque imagem]
+├ ${prefix}distort [marque imagem]
+├ ${prefix}dictator [marque imagem]
+├ ${prefix}deepfry [marque imagem]
+├ ${prefix}ddungeon [marque imagem]
+├ ${prefix}circle [marque imagem]
+├ ${prefix}challenger [marque imagem]
+├ ${prefix}burn [marque imagem]
+├ ${prefix}beautiful [marque imagem]
+├ ${prefix}jail [marque imagem]
+├ ${prefix}red [marque imagem]
+├ ${prefix}bloo [marque imagem]
+├ ${prefix}blue [marque imagem]
+├ ${prefix}sepia [marque imagem]
+├ ${prefix}green [marque imagem]
+├ ${prefix}glass [marque imagem]
+├ ${prefix}invert [marque imagem]
+├ ${prefix}blurple [marque imagem]
+├ ${prefix}blurple2 [marque imagem]
+├ ${prefix}wasted [marque imagem]
+├ ${prefix}passed [marque imagem]
+├ ${prefix}triggered [marque imagem]
+├ ${prefix}comrade [marque imagem]
+├ ${prefix}greyscale [marque imagem]
+├ ${prefix}threshold [marque imagem]
+├ ${prefix}brightness [marque imagem]
+╰❒ ${prefix}invertgreyscale [marque imagem]
 
 
-╭─❒ 「 Downloader 」 
+╭─❒ 「 Download 」 
 ├ ${prefix}tiktok [link]
 ├ ${prefix}tiktoknowm [link]
 ├ ${prefix}tiktokwm [link]
@@ -406,11 +406,12 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 
 ╭─❒ 「 Others 」
 ├ ${prefix}kalkulator
-├ ${prefix}smeme [text]
-├ ${prefix}memegen [text|text]
+├ ${prefix}meme [text]
+├ ${prefix}smeme [text|text]
 ╰❒
 ╭─❒ 「 TqTo 」 
-├ Workx.tech
+├ WORKX
+├ My Parents
 ╰❒ And All Support
 
     `
@@ -455,43 +456,42 @@ exports.rules = (prefix) => {
 `
 }
 exports.welcome = () =>{
-	return`Bem Vindo/a ao Grupo🤗
+	return`Por favor, leia a descrição primeiro 🤗
 	
 📛 Nome :
 🔞 Idade :
 🧑 Genero :
-🏙️ Morada :
-╰ Siga as Regras so Grupo e Disponha do Companheirismo ~`
+🏙️ Residencia :
+╰ Seja Cordial e Respeitoso ~`
 }
 exports.leave = () =>{
-	return`Foi muito bom estar consigo aqui no Grupo   >.<
-Goodbye`
+	return`Parece que vc n gosta de ser Social 😣 Adeus >.<
+    Mtish`
 }
 exports.source = () =>{
-return`*── 「 FONTE 」 ──*
+return`*── 「 Codigo Fonte 」 ──*
 
-Code : https://github.com/emersontfc/cosmos
+DE MOMENTO O CODIGO FONTE PODE SER ADQUIRIDO APENAS COMPRANDO COM O ADMINISTRADOR
 `
 }
 exports.tos = (ownernomer) => {
     return `
-*── 「 DOAR 」 ──*
+    *── 「 DOAR 」 ──*
 
-Oieeeeee ☺️ 
-Você pode me ajudar a manter este bot atualizado doando
-
-Qualquer valor da sua doação vai significar muito 👍
-
-Obrigado!
-
-Pessoa de contato Proprietário:
-wa.me/${ownernomer} (Owner)
-
+    OI ☺️ 
+    Você pode me ajudar a manter este bot atualizado doando
+    
+    Qualquer quantia da sua doação significará muito 👍
+    
+    Thanks!
+    
+    Para Doar Contacte o Admin:
+    wa.me/${ownernomer} (Proprietario)
     `
 }
 
 exports.ownermenu = (prefix) =>{
-return`*Owner*
+return`*Dono*
 • < evaluate
 • > evaluate
 • $ exec
@@ -504,19 +504,19 @@ return`*Owner*
 • ${prefix}self
 • ${prefix}public [only bot]
 • ${prefix}del [pesan bot]
-• ${prefix}setppbot [reply image]
+• ${prefix}setppbot [marque imagem]
 `}
 
 exports.group = (prefix) =>{
-	return`*Group* 
+	return`*Grupos* 
 • ${prefix}antilink [on/off]
-• ${prefix}revoke
-• ${prefix}leave
-• ${prefix}add [62***]
-• ${prefix}kick @tag
-• ${prefix}leave
-• ${prefix}linkgc
-• ${prefix}group [open/close]
+• ${prefix}revogar
+• ${prefix}sair
+• ${prefix}add [258***]
+• ${prefix}remover @tag
+• ${prefix}sair
+• ${prefix}linkgp
+• ${prefix}grupo [open/close]
 • ${prefix}tagall [text]
 • ${prefix}hidetag [text]
 `}
@@ -524,6 +524,8 @@ exports.group = (prefix) =>{
 exports.anime = (prefix) =>{
 	return`*Anime*
 • ${prefix}quotesanime
+• ${prefix}anime [query]
+• ${prefix}manga [query]
 • ${prefix}character [query]
 `}
 
@@ -532,70 +534,78 @@ exports.search = (prefix) =>{
 • ${prefix}ytsearch [query]
 • ${prefix}film [query]
 • ${prefix}wallpaper [query]
+• ${prefix}wikimedia [query]
+• ${prefix}hentai
+• ${prefix}wattpad [query]
+• ${prefix}webtoons [query]
+• ${prefix}drakor [query]
 • ${prefix}pinterest [query]
 `}
 
 exports.converter = (prefix) =>{
 	return`*Converter*
-• ${prefix}stiker [reply image]
-• ${prefix}tourl [image/video]
+• ${prefix}stiker [marque imagem]
+• ${prefix}tourl [imagem/video]
 • ${prefix}togif [sticker]
 • ${prefix}tomp4 [sticker]
-• ${prefix}toimg [reply sticker]
+• ${prefix}toimg [marque sticker]
 `}
 
 exports.effect = (prefix) =>{
-	return`*Image Effect*
-• ${prefix}wanted [reply image]
-• ${prefix}utatoo [reply image]
-• ${prefix}unsharpen [reply image]
-• ${prefix}thanos [reply image]
-• ${prefix}sniper [reply image]
-• ${prefix}sharpen [reply image]
-• ${prefix}sepia [reply image]
-• ${prefix}scary [reply image]
-• ${prefix}rip [reply image]
-• ${prefix}redple [reply image]
-• ${prefix}rejected [reply image]
-• ${prefix}posterize [reply image]
-• ${prefix}ps4 [reply image]
-• ${prefix}pixelize [reply image]
-• ${prefix}missionpassed [reply image]
-• ${prefix}moustache [reply image]
-• ${prefix}lookwhatkarenhave [reply image]
-• ${prefix}jail [reply image]
-• ${prefix}invert [reply image]
-• ${prefix}instagram [reply image]
-• ${prefix}greyscale [reply image]
-• ${prefix}glitch [reply image]
-• ${prefix}frame [reply image]
-• ${prefix}fire [reply image]
-• ${prefix}distort [reply image]
-• ${prefix}dictator [reply image]
-• ${prefix}deepfry [reply image]
-• ${prefix}ddungeon [reply image]
-• ${prefix}circle [reply image]
-• ${prefix}challenger [reply image]
-• ${prefix}burn [reply image]
-• ${prefix}beautiful [reply image]
-• ${prefix}jail [reply image]
-• ${prefix}red [reply image]
-• ${prefix}bloo [reply image]
-• ${prefix}blue [reply image]
-• ${prefix}sepia [reply image]
-• ${prefix}green [reply image]
-• ${prefix}glass [reply image]
-• ${prefix}invert [reply image]
-• ${prefix}blurple [reply image]
-• ${prefix}blurple2 [reply image]
-• ${prefix}wasted [reply image]
-• ${prefix}passed [reply image]
-• ${prefix}triggered [reply image]
-• ${prefix}comrade [reply image]
-• ${prefix}greyscale [reply image]
-• ${prefix}threshold [reply image]
-• ${prefix}brightness [reply image]
-• ${prefix}invertgreyscale [reply image]
+	return`*imagem Effect*
+• ${prefix}wanted [marque imagem]
+• ${prefix}utatoo [marque imagem]
+• ${prefix}unsharpen [marque imagem]
+• ${prefix}thanos [marque imagem]
+• ${prefix}sniper [marque imagem]
+• ${prefix}sharpen [marque imagem]
+• ${prefix}sepia [marque imagem]
+• ${prefix}scary [marque imagem]
+• ${prefix}rip [marque imagem]
+• ${prefix}redple [marque imagem]
+• ${prefix}rejected [marque imagem]
+• ${prefix}posterize [marque imagem]
+• ${prefix}ps4 [marque imagem]
+• ${prefix}pixelize [marque imagem]
+• ${prefix}missionpassed [marque imagem]
+• ${prefix}moustache [marque imagem]
+• ${prefix}lookwhatkarenhave [marque imagem]
+• ${prefix}jail [marque imagem]
+• ${prefix}invert [marque imagem]
+• ${prefix}instagram [marque imagem]
+• ${prefix}greyscale [marque imagem]
+• ${prefix}glitch [marque imagem]
+• ${prefix}gay [marque imagem]
+• ${prefix}frame [marque imagem]
+• ${prefix}fire [marque imagem]
+• ${prefix}distort [marque imagem]
+• ${prefix}dictator [marque imagem]
+• ${prefix}deepfry [marque imagem]
+• ${prefix}ddungeon [marque imagem]
+• ${prefix}circle [marque imagem]
+• ${prefix}challenger [marque imagem]
+• ${prefix}burn [marque imagem]
+• ${prefix}brazzers [marque imagem]
+• ${prefix}beautiful [marque imagem]
+• ${prefix}jail [marque imagem]
+• ${prefix}red [marque imagem]
+• ${prefix}gay [marque imagem]
+• ${prefix}bloo [marque imagem]
+• ${prefix}blue [marque imagem]
+• ${prefix}sepia [marque imagem]
+• ${prefix}green [marque imagem]
+• ${prefix}glass [marque imagem]
+• ${prefix}invert [marque imagem]
+• ${prefix}blurple [marque imagem]
+• ${prefix}blurple2 [marque imagem]
+• ${prefix}wasted [marque imagem]
+• ${prefix}passed [marque imagem]
+• ${prefix}triggered [marque imagem]
+• ${prefix}comrade [marque imagem]
+• ${prefix}greyscale [marque imagem]
+• ${prefix}threshold [marque imagem]
+• ${prefix}brightness [marque imagem]
+• ${prefix}invertgreyscale [marque imagem]
 `
 }
 
@@ -626,8 +636,38 @@ return`*Download*
 }
 
 exports.ranime = (prefix) =>{
-	return`*0000*
-• ${prefix}lmkmj 
+	return`*Random Anime*
+• ${prefix}loli
+• ${prefix}neko
+• ${prefix}waifu
+• ${prefix}shinobu
+• ${prefix}megumin
+• ${prefix}bully
+• ${prefix}cuddle
+• ${prefix}cry
+• ${prefix}hug
+• ${prefix}awoo
+• ${prefix}kiss
+• ${prefix}lick
+• ${prefix}pat
+• ${prefix}smug
+• ${prefix}bonk
+• ${prefix}yeet
+• ${prefix}blush
+• ${prefix}smile
+• ${prefix}wave
+• ${prefix}highfive
+• ${prefix}handhold
+• ${prefix}nom
+• ${prefix}bite
+• ${prefix}glomp
+• ${prefix}slap
+• ${prefix}kill
+• ${prefix}happy
+• ${prefix}wink
+• ${prefix}poke
+• ${prefix}dance
+• ${prefix}cringe
 `
 }
 
@@ -646,6 +686,7 @@ exports.textpro = (prefix) =>{
 • ${prefix}stone text|text2
 • ${prefix}marvel text|text2
 • ${prefix}marvel2 text|text2
+• ${prefix}pornhub text|text2
 • ${prefix}avengers text|text2
 • ${prefix}metalr text|text2
 • ${prefix}metalg text|text2
@@ -816,9 +857,85 @@ exports.textpro = (prefix) =>{
 }
 
 exports.nsfw = (prefix) =>{
-	return`*....*
-
-• ${prefix}000
+	return`*Nsfw & Sfw*
+• ${prefix}ahegao
+• ${prefix}ass
+• ${prefix}bdsm
+• ${prefix}blowjob
+• ${prefix}cuckold
+• ${prefix}cum
+• ${prefix}ero
+• ${prefix}femdom
+• ${prefix}foot
+• ${prefix}gangbang
+• ${prefix}glasses
+• ${prefix}jahy
+• ${prefix}manga
+• ${prefix}masturbation
+• ${prefix}neko
+• ${prefix}orgy
+• ${prefix}panties
+• ${prefix}pussy
+• ${prefix}tentacles
+• ${prefix}thighs
+• ${prefix}yuri
+• ${prefix}feet
+• ${prefix}lewdkemo
+• ${prefix}woof
+• ${prefix}gasm
+• ${prefix}solo
+• ${prefix}8ball
+• ${prefix}goose
+• ${prefix}avatar
+• ${prefix}hololewd
+• ${prefix}gecg
+• ${prefix}holo
+• ${prefix}fox_girl
+• ${prefix}tits
+• ${prefix}eroyuri
+• ${prefix}holoyero
+• ${prefix}lizard
+• ${prefix}keta
+• ${prefix}eron
+• ${prefix}erok
+• ${prefix}kemonomimi
+• ${prefix}cum_jpg
+• ${prefix}nsfw_avatar
+• ${prefix}erofeet
+• ${prefix}meow
+• ${prefix}wallpaper
+• ${prefix}waifu
+• ${prefix}trap
+• ${prefix}lewd
+• ${prefix}pussy_jpg
+• ${prefix}futanari
+• ${prefix}lewdk
+• ${prefix}solog
+• ${prefix}smug
+• ${prefix}cum
+• ${prefix}slap
+• ${prefix}les
+• ${prefix}erokemo
+• ${prefix}bj
+• ${prefix}pwankg
+• ${prefix}pat
+• ${prefix}poke
+• ${prefix}feed
+• ${prefix}nsfw_neko_gif
+• ${prefix}pussy
+• ${prefix}feetg
+• ${prefix}baka
+• ${prefix}hug
+• ${prefix}kiss
+• ${prefix}tickle
+• ${prefix}spank
+• ${prefix}kuni
+• ${prefix}classic
+• ${prefix}boobs
+• ${prefix}anal
+• ${prefix}ngif
+• ${prefix}cuddle
+• ${prefix}zettai
 `
 }
 
@@ -833,6 +950,7 @@ return`*Others*
 
 exports.tqto = () =>{
 	return`*Thanks To*
+
 • And All Support
 `
 }
