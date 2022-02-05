@@ -1,103 +1,103 @@
 exports.private = () =>{
-	return`Fitur hanya bisa di gunakan di private chat`
+	return`O recurso só pode ser usado em bate-papo privado`
 	}
 exports.wait = () => {
-    return `⏳ Mohon tunggu sebentar~`
+    return `⏳ Aguarde um pouco por favor ~`
 }
 
 exports.ok = () => {
-    return `✅ Done. Ok desu~`
+    return `✅ Pronto, Ok?~`
 }
 
 exports.err = () => {
-    return `⚠️ Fitur Sedang Error`
+    return `⚠️ Falha  ao Carregar recursos`
 }
 exports.erorLink = () => {
-    return `⚠️ Link nya error`
+    return `⚠️ Link Incorreto ou Parece haver um Erro`
 }
 exports.media = () => {
-    return `Silahkan pilih media yang ingin kamu download`
+    return `Selecione a mídia que deseja baixar`
 }
 exports.replyImg = (prefix, command) => {
-    return `Kirim/Reply Foto Dengan Caption ${prefix + command}`
+    return `Enviar/responder foto com legenda${prefix + command}`
 }
 
 exports.wrongFormat = (prefix) => {
-    return `Format salah ❎ Silakan cek cara penggunaan di *${prefix}allmenu*.`
+    return `Formato incorreto ❎ Por favor, verifique como usar em *${prefix}allmenu*.`
 }
 
 exports.emptyMess = () => {
-    return `❎ Harap masukkan pesan yang ingin disampaikan!`
+    return `❎ Digite a mensagem que deseja transmitir!`
 }
 
 exports.cmdNotFound = (cmd, prefix) => {
-    return `❎ Command *${cmd}* tidak terdaftar di *${prefix}allmenu*`
+    return `❎ Comando *${cmd}* não registrado em*${prefix}allmenu*`
 }
 
 exports.ownerOnly = () => {
-    return `❎ Command ini khusus Owner`
+    return `❎ Este comando é para o Chefe`
 }
 
 exports.doneOwner = () => {
-    return `✅  ️Sudah selesai, Owner ~`
+    return `✅  ️Está feito, Chefe~`
 }
 
 exports.groupOnly = () => {
-    return `👥  Command ini hanya bisa digunakan di dalam grup!`
+    return `👥 Este comando só pode ser usado em grupos!`
 }
 
 exports.adminOnly = () => {
-    return `🙅  Command ini hanya bisa digunakan oleh admin grup!`
+    return `🙅  Este comando só pode ser usado por administradores de grupo!`
 }
 
 exports.nhFalse = () => {
-    return `Kode tidak valid!`
+    return `Código inválido!`
 }
 
 exports.listBlock = (blockNumber) => {
-    return `*── 「 HALL OF SHAME 」 ──*
+    return `*── 「 SALÃO DA VERGONHA 」 ──*
     
-Total diblokir: *${blockNumber.length}* user\n`
+    Totalmente bloqueado: *${blockNumber.length}* user\n`
 }
 
 exports.notAdmin = () => {
-    return `❎ User bukan seorang admin! ❎`
+    return `❎ O usuário não é um administrador! ❎`
 }
 
 exports.adminAlready = () => {
-    return `❎ Tidak  dapat mem-promote user yang merupakan admin!`
+    return `❎Não foi possível promover um usuário que é administrador!`
 }
 
 exports.botNotAdmin = () => {
-    return `Jadikan bot sebagai admin terlebih dahulu! 🙏`
+    return `Torne-me um administrador primeiro! 🙏`
 }
 
 exports.received = (pushname) => {
     return `
-Halo ${pushname}!
-Terima kasih telah melapor, laporanmu akan kami segera terima.`
+Oi ${pushname}!
+Obrigado por relatar, receberemos seu relatório em breve.`
 }
 
 exports.videoLimit = () => {
-    return `Ukuran file terlalu besar!`
+    return `O tamanho do arquivo é muito grande!`
 }
 
 exports.notNum = (q) => {
-    return `"${q}", bukan angka!`
+    return `"${q}", não números!`
 }
 exports.menunya = (salam, pushname) =>{
-	return`Hai kak ${pushname} 👋 selamat ${salam} , 
-saya Alphabot-Md, bot ini adalah Beta Multi-Device Whatsapp. 
-Jika kamu menemukan semacam bug atau kesalahan mohon dimaklumi dulu ya, 
-lapor owner agar segera di perbaiki 🙏      
+	return`Oi ${pushname} 👋 prazer em ve-lo ${salam} , 
+    Eu sou Cosmos-Md, este bot é um Beta Multi-Device Whatsapp.
+    Se você encontrar algum tipo de bug ou erro, por favor, entenda.
+    denuncie o dono para que seja corrigido imediatamente 🙏      
 `
 }
 exports.listMenu = (time, salam, pushname, prefix) => {
-    return `*Selamat ${salam} ${pushname}*
+    return `*Oi ${salam} ${pushname}*
 *⌚Time Server : ${time}*
-*📚 List-Menu Alphabot-Md :*
+*📚Este é o meu menu:*
 
-╭─❒ 「 Bot Info 」 
+╭─❒ 「 Info do Cosmos 」 
 ├ ${prefix}owner
 ├ ${prefix}rules
 ├ ${prefix}sc
@@ -107,7 +107,7 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 ╰❒ ${prefix}donate
 
 
-╭─❒ 「 Owner 」 
+╭─❒ 「 Dono 」 
 ├ < evaluate
 ├ > evaluate
 ├ $ exec
@@ -130,7 +130,7 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 ╰❒ ${prefix}setppbot [reply image]
 
 
-╭─❒ 「 Database 」 
+╭─❒ 「 Banco de Dados 」 
 ├ ${prefix}setcmd [reply stiker]
 ├ ${prefix}delcmd [reply stiker]
 ├ ${prefix}listcmd
@@ -144,49 +144,40 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 ╰❒ ${prefix}delmsg [nama file]
 
 
-╭─❒ 「 Group 」 
+╭─❒ 「 Grupos 」 
 ├ ${prefix}listonline
 ├ ${prefix}sider
 ├ ${prefix}infochat
 ├ ${prefix}setdesk [text]
 ├ ${prefix}setppgrup [reply image]
 ├ ${prefix}antilink [on/off]
-├ ${prefix}revoke
-├ ${prefix}leave
-├ ${prefix}add [62***]
-├ ${prefix}kick @tag
-├ ${prefix}leave
+├ ${prefix}revogar
+├ ${prefix}sair
+├ ${prefix}add [258***]
+├ ${prefix}remover @tag
+├ ${prefix}sair
 ├ ${prefix}linkgc
 ├ ${prefix}group [open/close]
 ├ ${prefix}tagall [text]
 ╰❒ ${prefix}hidetag [text]
 
-╭─❒ 「 Anime 」 
-├ ${prefix}quotesanime
-├ ${prefix}anime [query]
-├ ${prefix}manga [query]
-╰❒ ${prefix}character [query]
 
-╭─❒ 「 Tag 」 
+╭─❒ 「 Marcar 」 
 ├ ${prefix}stickertag
 ├ ${prefix}videotag [query]
 ├ ${prefix}vntag [query]
 ╰❒ ${prefix}imagetag [query]
 
-╭─❒ 「 Stalking 」 
+╭─❒ 「 Stalkear 」 
 ├ ${prefix}igstalk [username]
 ├ ${prefix}ghstalk [username]
 ╰❒ ${prefix}ytstalk [channel]
 
 
-╭─❒ 「 Search 」 
+╭─❒ 「 Pesquisa 」 
 ├ ${prefix}ytsearch [query]
 ├ ${prefix}wallpaper [query]
 ├ ${prefix}wikimedia [query]
-├ ${prefix}hentai
-├ ${prefix}wattpad [query]
-├ ${prefix}webtoons [query]
-├ ${prefix}drakor [query]
 ╰❒ ${prefix}pinterest [query]
 
 
@@ -198,66 +189,64 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 ╰❒${prefix}toimg [reply sticker]
 
 
-╭─❒ 「 Image Effect 」 
-├ ${prefix}wanted [reply image/stiker]
-├ ${prefix}utatoo [reply image/stiker]
-├ ${prefix}unsharpen [reply image/stiker]
-├ ${prefix}thanos [reply image/stiker]
-├ ${prefix}sniper [reply image/stiker]
-├ ${prefix}sharpen [reply image/stiker]
-├ ${prefix}sepia [reply image/stiker]
-├ ${prefix}scary [reply image/stiker]
-├ ${prefix}rip [reply image/stiker]
-├ ${prefix}redple [reply image/stiker]
-├ ${prefix}rejected [reply image/stiker]
-├ ${prefix}posterize [reply image/stiker]
-├ ${prefix}ps4 [reply image/stiker]
-├ ${prefix}pixelize [reply image/stiker]
-├ ${prefix}missionpassed [reply image/stiker]
-├ ${prefix}moustache [reply image/stiker]
-├ ${prefix}lookwhatkarenhave [reply image/stiker]
-├ ${prefix}jail [reply image/stiker]
-├ ${prefix}invert [reply image/stiker]
-├ ${prefix}instagram [reply image/stiker]
-├ ${prefix}greyscale [reply image/stiker]
-├ ${prefix}glitch [reply image/stiker]
-├ ${prefix}gay [reply image/stiker]
-├ ${prefix}frame [reply image/stiker]
-├ ${prefix}fire [reply image/stiker]
-├ ${prefix}distort [reply image/stiker]
-├ ${prefix}dictator [reply image/stiker]
-├ ${prefix}deepfry [reply image/stiker]
-├ ${prefix}ddungeon [reply image/stiker]
-├ ${prefix}circle [reply image/stiker]
-├ ${prefix}challenger [reply image/stiker]
-├ ${prefix}burn [reply image/stiker]
-├ ${prefix}brazzers [reply image/stiker]
-╰❒ ${prefix}beautiful [reply image/stiker]
+╭─❒ 「 Efeito de Imagem」 
+├ ${prefix}wanted [resposta imagem/adesivo]
+├ ${prefix}utatoo [resposta imagem/adesivo]
+├ ${prefix}unsharpen [resposta imagem/adesivo]
+├ ${prefix}thanos [resposta imagem/adesivo]
+├ ${prefix}sniper [resposta imagem/adesivo]
+├ ${prefix}sharpen [resposta imagem/adesivo]
+├ ${prefix}sepia [resposta imagem/adesivo]
+├ ${prefix}scary [resposta imagem/adesivo]
+├ ${prefix}rip [resposta imagem/adesivo]
+├ ${prefix}redple [resposta imagem/adesivo]
+├ ${prefix}rejected [resposta imagem/adesivo]
+├ ${prefix}posterize [resposta imagem/adesivo]
+├ ${prefix}ps4 [resposta imagem/adesivo]
+├ ${prefix}pixelize [resposta imagem/adesivo]
+├ ${prefix}missionpassed [resposta imagem/adesivo]
+├ ${prefix}moustache [resposta imagem/adesivo]
+├ ${prefix}lookwhatkarenhave [resposta imagem/adesivo]
+├ ${prefix}jail [resposta imagem/adesivo]
+├ ${prefix}invert [resposta imagem/adesivo]
+├ ${prefix}instagram [resposta imagem/adesivo]
+├ ${prefix}greyscale [resposta imagem/adesivo]
+├ ${prefix}glitch [resposta imagem/adesivo]
+├ ${prefix}gay [resposta imagem/adesivo]
+├ ${prefix}frame [resposta imagem/adesivo]
+├ ${prefix}fire [resposta imagem/adesivo]
+├ ${prefix}distort [resposta imagem/adesivo]
+├ ${prefix}dictator [resposta imagem/adesivo]
+├ ${prefix}deepfry [resposta imagem/adesivo]
+├ ${prefix}ddungeon [resposta imagem/adesivo]
+├ ${prefix}circle [resposta imagem/adesivo]
+├ ${prefix}challenger [resposta imagem/adesivo]
+├ ${prefix}burn [resposta imagem/adesivo]
+╰❒ ${prefix}beautiful [resposta imagem/adesivo]
 
 
-╭─❒ 「 Sticker Effect 」 
-├ ${prefix}jail [reply image/stiker]
-├ ${prefix}red [reply image/stiker]
-├ ${prefix}gay [reply image/stiker]
-├ ${prefix}bloo [reply image/stiker]
-├ ${prefix}blue [reply image/stiker]
-├ ${prefix}sepia [reply image/stiker]
-├ ${prefix}green [reply image/stiker]
-├ ${prefix}glass [reply image/stiker]
-├ ${prefix}invert [reply image/stiker]
-├ ${prefix}blurple [reply image/stiker]
-├ ${prefix}blurple2 [reply image/stiker]
-├ ${prefix}wasted [reply image/stiker]
-├ ${prefix}passed [reply image/stiker]
-├ ${prefix}triggered [reply image/stiker]
-├ ${prefix}comrade [reply image/stiker]
-├ ${prefix}greyscale [reply image/stiker]
-├ ${prefix}threshold [reply image/stiker]
-├ ${prefix}brightness [reply image/stiker]
-╰❒ ${prefix}invertgreyscale [reply image/stiker]
+╭─❒ 「 Efeito Sticker 」 
+├ ${prefix}jail [resposta imagem/adesivo]
+├ ${prefix}red [resposta imagem/adesivo]
+├ ${prefix}bloo [resposta imagem/adesivo]
+├ ${prefix}blue [resposta imagem/adesivo]
+├ ${prefix}sepia [resposta imagem/adesivo]
+├ ${prefix}green [resposta imagem/adesivo]
+├ ${prefix}glass [resposta imagem/adesivo]
+├ ${prefix}invert [resposta imagem/adesivo]
+├ ${prefix}blurple [resposta imagem/adesivo]
+├ ${prefix}blurple2 [resposta imagem/adesivo]
+├ ${prefix}wasted [resposta imagem/adesivo]
+├ ${prefix}passed [resposta imagem/adesivo]
+├ ${prefix}triggered [resposta imagem/adesivo]
+├ ${prefix}comrade [resposta imagem/adesivo]
+├ ${prefix}greyscale [resposta imagem/adesivo]
+├ ${prefix}threshold [resposta imagem/adesivo]
+├ ${prefix}brightness [resposta imagem/adesivo]
+╰❒ ${prefix}invertgreyscale [resposta imagem/adesivo]
 
 
-╭─❒ 「 Download 」 
+╭─❒ 「 Downloaders 」 
 ├ ${prefix}tiktok [link]
 ├ ${prefix}tiktoknowm [link]
 ├ ${prefix}tiktokwm [link]
@@ -283,120 +272,6 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 ├ ${prefix}mediafire [link]
 ╰❒ ${prefix}twitter link
 
-
-╭─❒ 「 Random Anime 」
-├ ${prefix}loli
-├ ${prefix}neko
-├ ${prefix}waifu
-├ ${prefix}shinobu
-├ ${prefix}megumin
-├ ${prefix}bully
-├ ${prefix}cuddle
-├ ${prefix}cry
-├ ${prefix}hug
-├ ${prefix}awoo
-├ ${prefix}kiss
-├ ${prefix}lick
-├ ${prefix}pat
-├ ${prefix}smug
-├ ${prefix}bonk
-├ ${prefix}yeet
-├ ${prefix}blush
-├ ${prefix}smile
-├ ${prefix}wave
-├ ${prefix}highfive
-├ ${prefix}handhold
-├ ${prefix}nom
-├ ${prefix}bite
-├ ${prefix}glomp
-├ ${prefix}slap
-├ ${prefix}kill
-├ ${prefix}happy
-├ ${prefix}wink
-├ ${prefix}poke
-├ ${prefix}dance
-╰❒ ${prefix}cringe
-
-╭─❒ 「 Nsfw & Sfw 」
-├ ${prefix}ahegao
-├ ${prefix}ass
-├ ${prefix}bdsm
-├ ${prefix}blowjob
-├ ${prefix}cuckold
-├ ${prefix}cum
-├ ${prefix}ero
-├ ${prefix}femdom
-├ ${prefix}foot
-├ ${prefix}gangbang
-├ ${prefix}glasses
-├ ${prefix}jahy
-├ ${prefix}manga
-├ ${prefix}masturbation
-├ ${prefix}neko
-├ ${prefix}orgy
-├ ${prefix}panties
-├ ${prefix}pussy
-├ ${prefix}tentacles
-├ ${prefix}thighs
-├ ${prefix}yuri
-├ ${prefix}feet
-├ ${prefix}lewdkemo
-├ ${prefix}woof
-├ ${prefix}gasm
-├ ${prefix}solo
-├ ${prefix}8ball
-├ ${prefix}goose
-├ ${prefix}avatar
-├ ${prefix}hololewd
-├ ${prefix}gecg
-├ ${prefix}holo
-├ ${prefix}fox_girl
-├ ${prefix}tits
-├ ${prefix}eroyuri
-├ ${prefix}holoyero
-├ ${prefix}lizard
-├ ${prefix}keta
-├ ${prefix}eron
-├ ${prefix}erok
-├ ${prefix}kemonomimi
-├ ${prefix}cum_jpg
-├ ${prefix}nsfw_avatar
-├ ${prefix}erofeet
-├ ${prefix}meow
-├ ${prefix}wallpaper
-├ ${prefix}waifu
-├ ${prefix}trap
-├ ${prefix}lewd
-├ ${prefix}pussy_jpg
-├ ${prefix}futanari
-├ ${prefix}lewdk
-├ ${prefix}solog
-├ ${prefix}smug
-├ ${prefix}cum
-├ ${prefix}slap
-├ ${prefix}les
-├ ${prefix}erokemo
-├ ${prefix}bj
-├ ${prefix}pwankg
-├ ${prefix}pat
-├ ${prefix}poke
-├ ${prefix}feed
-├ ${prefix}nsfw_neko_gif
-├ ${prefix}pussy
-├ ${prefix}feetg
-├ ${prefix}baka
-├ ${prefix}hug
-├ ${prefix}kiss
-├ ${prefix}tickle
-├ ${prefix}spank
-├ ${prefix}kuni
-├ ${prefix}classic
-├ ${prefix}boobs
-├ ${prefix}anal
-├ ${prefix}ngif
-├ ${prefix}cuddle
-╰❒ ${prefix}zettai
-
 ╭─❒ 「 Textpro Menu 」
 ├ ${prefix}halloween2 text|text2
 ├ ${prefix}horror text|text2
@@ -411,7 +286,6 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 ├ ${prefix}stone text|text2
 ├ ${prefix}marvel text|text2
 ├ ${prefix}marvel2 text|text2
-├ ${prefix}pornhub text|text2
 ├ ${prefix}avengers text|text2
 ├ ${prefix}metalr text|text2
 ├ ${prefix}metalg text|text2
@@ -580,100 +454,91 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 ╰❒ ${prefix}metalg text
 
 
-╭─❒ 「 Others 」
-├ ${prefix}afk [reason]
-├ ${prefix}translate kode_bahasa text
-├ ${prefix}kalkulator [query]
+╭─❒ 「 Outros 」
+├ ${prefix}afk [razao]
+├ ${prefix}translate lingua texto
+├ ${prefix}kalkulator [numeros]
 ├ ${prefix}smeme [text]
 ├ ${prefix}smeme2 [text|text]
 ├ ${prefix}memegen [text|text]
 ╰❒
 
 ╭─❒ 「 TqTo 」 
-├ My God
-├ My Parents
-├ Fatih A.
-├ Ferdi
-├ DikaArdnt
-├ Mhankbarbar
-├ Nurutomo
-├ Rashid
-├ ZeeoneOfc
-├ Penyedia Module
+├ Workx
 ╰❒ And All Support
     `
 }
 
 exports.rules = (prefix) => {
     return `
-*── 「 RULES AND FAQ 」 ──*
+*── 「 REGRAS E PERGUNTAS FREQUENTES」 ──*
 
-1. Jangan spam bot. 🙅
-Sanksi: *❎ WARN/SOFT BLOCK*
+1. Não envie spam para mim. ️
+(Spam significa enviar muitas mensagens sem sentido para mim)
 
-2. Jangan telepon bot. ☎️
-Sanksi: *❎ SOFT BLOCK*
+Sanções: *❎ AVISO / SOFT BLOCK*
 
-3. Jangan mengeksploitasi bot.😖
-Sanksi: *PERMANENT BLOCK*
+2. Não ligue para mim. ️
+Sanções: *❎ BLOQUEIO SUAVE*
 
-🗯️ Bot tidak atau lambat merespon ?
-➡️ Mungkin dipengaruhi oleh jaringan, signal, banned oleh Whatsapp dan beberapa asalan. Tetap patuhi rules‼️
+3. Não me explore.😖
+Para ter acesso a mim nos seus Grupos Pague ou doe para apoiar a causa
+Sanções: *BLOQUEIO PERMANENTE*
 
-🗯️ Dimana saya bisa mendapatkan Script dari bot ini ?
-➡️ Script ini masih private dan tidak pernah diperjual belikan ,bijaklah dalam mengetahui penipu.
+🗯️ O bot não está ou está lento para responder?
+➡️ Pode ser afetado por rede, sinal, banido pelo Whatsapp e algum motivo. Continue obedecendo as regras‼️
 
-🗯️ Boleh saya menambah ke grup?
-➡️ Untuk sementara bot dalam status free to add.
+🗯️ Como Posso comprar um bot?
+➡️ Para adquirir um Bot fale com administrador e tenha acesso a eles.
 
-🗯️ Prefixnya apa ya?
-➡️ Bot ini menggunakan multi prefix. Berarti anda bisa menggunakan prefix #, . , Dan prefix wajar lainnya.
+🗯️ Posso adicionar ao grupo?
+➡️ Por um tempo, o bot fica livre para adicionar status.
 
-🗯️ Kak, kok syaa chat owner tidak direspon?
-➡️ Owner hanya merespon pertanyaan seputar bot Dan kendala eror, tidak untuk kenalan ataupun mengemis script.
+🗯️ Qual é o prefixo??
+➡️ Este bot usa vários prefixos. Isso significa que você pode usar o prefixo #,. e outros prefixos razoáveis.
 
 
-Jika sudah dipahami rules-nya, silakan ketik *${prefix}allmenu* untuk memulai!
 
-⚠️ Segala kebijakan dan ketentuan Alphabot di pegang oleh owner dan segala perubahan kebijakan, sewaktu waktu owner berhak mencabut, memblokir user(*﹏*) 
+Se você entende as regras, digite *${prefix}allmenu* para aceder ao menu!
 
-Arigatou Gozaimasu! Untuk kalian user ramah dan Beberapa orang yg ikut membantu juga dalam project pembuatan Alphabot
+⚠️ Todas as políticas e disposições do Cosmos são mantidas pelo proprietário e todas as mudanças de política, a qualquer momento o proprietário tem o direito de revogar, bloquear usuários (* ﹏ *)
+
+Muito obrigado! Para vocês, usuários amigáveis ​​e algumas pessoas que também ajudaram no projeto de confecção do Cosmos
 😖🙏
 `
 }
 exports.welcome = () =>{
-	return`𝖩𝖺𝗇𝗀𝖺𝗇 𝗅𝗎𝗉𝖺 𝗂𝗇𝗍𝗋𝗈 𝗄𝖺𝗄 🤗
+	return`Seja Bem Vindo e Aproveite o Compaheirismo do Grupo 🤗
 	
-╭ 𝖭𝖺𝗆𝖺 :
-├ 𝖴𝗆𝗎𝗋 :
-├ 𝖦𝖾𝗇𝖽𝖾𝗋 :
-├ 𝖠𝗌𝗄𝗈𝗍 :
-╰❒ 𝖯𝖺𝗍𝗎𝗁𝗂 𝗋𝗎𝗅𝖾𝗌 𝗀𝗋𝗎𝗉 𝗒𝖺 𝗄𝖺k ~`
+╭ Nome :
+├ Idade :
+├ Genero :
+├ Cidade :
+╰❒ 𝖯ergunte antes as regras do Grupo e leia a descrição ~`
 }
-exports.leave = () =>{
-	return`Yah kok out 😣 Mental aman kan kak >.<
-Goodbye`
+exports.sair = () =>{
+	return`Parece que vc n gosta de ser Social 😣 Adeus >.<
+    Mtish`
 }
 exports.source = () =>{
-return`*------「 SOURCE CODE 」 ------*
+return`*── 「 Codigo Fonte 」 ──*
 
-Base : https://github.com/DikaArdnt/Hisoka-Morou
-Recode : https://github.com/zeeoneofc/Alphabot-Md
+DE MOMENTO O CODIGO FONTE PODE SER ADQUIRIDO APENAS COMPRANDO COM O ADMINISTRADOR WA.ME/258848858288
 `
 }
 exports.tos = (ownernomer) => {
     return `
-*-------「 DONATE 」 -------*
+    *── 「 DOAR 」 ──*
 
-Hai kak ☺️ 
-Kalian bisa mendukung saya agar bot ini tetap up to date dengan cara donasi
-
-Berapapun donasi kalian akan sangat berarti 👍
-
-Thanks!
-
-Contact person Owner:
-wa.me/${ownernomer}
+    OI ☺️ 
+    Você pode me ajudar a manter este bot atualizado doando
+    
+    Qualquer quantia da sua doação significará muito 👍
+    
+    Thanks!
+    
+    Para Doar Contacte o Admin:
+    wa.me/${ownernomer} (Proprietario)
 
     `
 }
@@ -736,11 +601,11 @@ exports.group = (prefix) =>{
 ├ ${prefix}setdesk [text]
 ├ ${prefix}setppgrup [reply image]
 ├ ${prefix}antilink [on/off]
-├ ${prefix}revoke
-├ ${prefix}leave
-├ ${prefix}add [62***]
-├ ${prefix}kick @tag
-├ ${prefix}leave
+├ ${prefix}revogar
+├ ${prefix}sair
+├ ${prefix}add [258***]
+├ ${prefix}remover @tag
+├ ${prefix}sair
 ├ ${prefix}linkgc
 ├ ${prefix}group [open/close]
 ├ ${prefix}tagall [text]
@@ -771,19 +636,15 @@ exports.stalk = (prefix) =>{
 `}
 
 exports.search = (prefix) =>{
-	return`╭─❒ 「 Search 」 
+	return`╭─❒ 「 Pesquisa 」 
 ├ ${prefix}ytsearch [query]
 ├ ${prefix}wallpaper [query]
 ├ ${prefix}wikimedia [query]
-├ ${prefix}hentai
-├ ${prefix}wattpad [query]
-├ ${prefix}webtoons [query]
-├ ${prefix}drakor [query]
 ╰❒ ${prefix}pinterest [query]
 `}
 
 exports.converter = (prefix) =>{
-	return`╭─❒ 「 Converter 」 
+	return`╭─❒ 「 Conversores 」 
 ├ ${prefix}stiker [reply image]
 ├ ${prefix}tourl [image/video]
 ├ ${prefix}togif [sticker]
@@ -792,70 +653,67 @@ exports.converter = (prefix) =>{
 `}
 
 exports.effect = (prefix) =>{
-	return`╭─❒ 「 Image Effect 」 
-├ ${prefix}wanted [reply image/stiker]
-├ ${prefix}utatoo [reply image/stiker]
-├ ${prefix}unsharpen [reply image/stiker]
-├ ${prefix}thanos [reply image/stiker]
-├ ${prefix}sniper [reply image/stiker]
-├ ${prefix}sharpen [reply image/stiker]
-├ ${prefix}sepia [reply image/stiker]
-├ ${prefix}scary [reply image/stiker]
-├ ${prefix}rip [reply image/stiker]
-├ ${prefix}redple [reply image/stiker]
-├ ${prefix}rejected [reply image/stiker]
-├ ${prefix}posterize [reply image/stiker]
-├ ${prefix}ps4 [reply image/stiker]
-├ ${prefix}pixelize [reply image/stiker]
-├ ${prefix}missionpassed [reply image/stiker]
-├ ${prefix}moustache [reply image/stiker]
-├ ${prefix}lookwhatkarenhave [reply image/stiker]
-├ ${prefix}jail [reply image/stiker]
-├ ${prefix}invert [reply image/stiker]
-├ ${prefix}instagram [reply image/stiker]
-├ ${prefix}greyscale [reply image/stiker]
-├ ${prefix}glitch [reply image/stiker]
-├ ${prefix}gay [reply image/stiker]
-├ ${prefix}frame [reply image/stiker]
-├ ${prefix}fire [reply image/stiker]
-├ ${prefix}distort [reply image/stiker]
-├ ${prefix}dictator [reply image/stiker]
-├ ${prefix}deepfry [reply image/stiker]
-├ ${prefix}ddungeon [reply image/stiker]
-├ ${prefix}circle [reply image/stiker]
-├ ${prefix}challenger [reply image/stiker]
-├ ${prefix}burn [reply image/stiker]
-├ ${prefix}brazzers [reply image/stiker]
-╰❒ ${prefix}beautiful [reply image/stiker]
+	return`╭─❒ 「 Efeito de Imagem 」 
+├ ${prefix}wanted [resposta imagem/adesivo]
+├ ${prefix}utatoo [resposta imagem/adesivo]
+├ ${prefix}unsharpen [resposta imagem/adesivo]
+├ ${prefix}thanos [resposta imagem/adesivo]
+├ ${prefix}sniper [resposta imagem/adesivo]
+├ ${prefix}sharpen [resposta imagem/adesivo]
+├ ${prefix}sepia [resposta imagem/adesivo]
+├ ${prefix}scary [resposta imagem/adesivo]
+├ ${prefix}rip [resposta imagem/adesivo]
+├ ${prefix}redple [resposta imagem/adesivo]
+├ ${prefix}rejected [resposta imagem/adesivo]
+├ ${prefix}posterize [resposta imagem/adesivo]
+├ ${prefix}ps4 [resposta imagem/adesivo]
+├ ${prefix}pixelize [resposta imagem/adesivo]
+├ ${prefix}missionpassed [resposta imagem/adesivo]
+├ ${prefix}moustache [resposta imagem/adesivo]
+├ ${prefix}lookwhatkarenhave [resposta imagem/adesivo]
+├ ${prefix}jail [resposta imagem/adesivo]
+├ ${prefix}invert [resposta imagem/adesivo]
+├ ${prefix}instagram [resposta imagem/adesivo]
+├ ${prefix}greyscale [resposta imagem/adesivo]
+├ ${prefix}glitch [resposta imagem/adesivo]
+├ ${prefix}frame [resposta imagem/adesivo]
+├ ${prefix}fire [resposta imagem/adesivo]
+├ ${prefix}distort [resposta imagem/adesivo]
+├ ${prefix}dictator [resposta imagem/adesivo]
+├ ${prefix}deepfry [resposta imagem/adesivo]
+├ ${prefix}ddungeon [resposta imagem/adesivo]
+├ ${prefix}circle [resposta imagem/adesivo]
+├ ${prefix}challenger [resposta imagem/adesivo]
+├ ${prefix}burn [resposta imagem/adesivo]
+╰❒ ${prefix}beautiful [resposta imagem/adesivo]
 `}
 
 //
 exports.effect2 = (prefix) =>{
 	return`╭─❒ 「 Sticker Effect 」 
-├ ${prefix}jail [reply image/stiker]
-├ ${prefix}red [reply image/stiker]
-├ ${prefix}gay [reply image/stiker]
-├ ${prefix}bloo [reply image/stiker]
-├ ${prefix}blue [reply image/stiker]
-├ ${prefix}sepia [reply image/stiker]
-├ ${prefix}green [reply image/stiker]
-├ ${prefix}glass [reply image/stiker]
-├ ${prefix}invert [reply image/stiker]
-├ ${prefix}blurple [reply image/stiker]
-├ ${prefix}blurple2 [reply image/stiker]
-├ ${prefix}wasted [reply image/stiker]
-├ ${prefix}passed [reply image/stiker]
-├ ${prefix}triggered [reply image/stiker]
-├ ${prefix}comrade [reply image/stiker]
-├ ${prefix}greyscale [reply image/stiker]
-├ ${prefix}threshold [reply image/stiker]
-├ ${prefix}brightness [reply image/stiker]
-╰❒ ${prefix}invertgreyscale [reply image/stiker]
+├ ${prefix}jail [resposta imagem/adesivo]
+├ ${prefix}red [resposta imagem/adesivo]
+├ ${prefix}bloo [resposta imagem/adesivo]
+├ ${prefix}blue [resposta imagem/adesivo]
+├ ${prefix}sepia [resposta imagem/adesivo]
+├ ${prefix}green [resposta imagem/adesivo]
+├ ${prefix}glass [resposta imagem/adesivo]
+├ ${prefix}invert [resposta imagem/adesivo]
+├ ${prefix}blurple [resposta imagem/adesivo]
+├ ${prefix}blurple2 [resposta imagem/adesivo]
+├ ${prefix}wasted [resposta imagem/adesivo]
+├ ${prefix}passed [resposta imagem/adesivo]
+├ ${prefix}triggered [resposta imagem/adesivo]
+├ ${prefix}comrade [resposta imagem/adesivo]
+├ ${prefix}greyscale [resposta imagem/adesivo]
+├ ${prefix}threshold [resposta imagem/adesivo]
+├ ${prefix}brightness [resposta imagem/adesivo]
+╰❒ ${prefix}invertgreyscale [resposta imagem/adesivo]
 `
 }
 
 exports.download = (prefix) =>{
-return`╭─❒ 「 Download 」 
+return`╭─❒ 「 Downloaders 」 
 ├ ${prefix}tiktok [link]
 ├ ${prefix}tiktoknowm [link]
 ├ ${prefix}tiktokwm [link]
@@ -884,121 +742,15 @@ return`╭─❒ 「 Download 」
 }
 
 exports.ranime = (prefix) =>{
-	return`╭─❒ 「 Random Anime 」
-├ ${prefix}loli
-├ ${prefix}neko
-├ ${prefix}waifu
-├ ${prefix}shinobu
-├ ${prefix}megumin
-├ ${prefix}bully
-├ ${prefix}cuddle
-├ ${prefix}cry
-├ ${prefix}hug
-├ ${prefix}awoo
-├ ${prefix}kiss
-├ ${prefix}lick
-├ ${prefix}pat
-├ ${prefix}smug
-├ ${prefix}bonk
-├ ${prefix}yeet
-├ ${prefix}blush
-├ ${prefix}smile
-├ ${prefix}wave
-├ ${prefix}highfive
-├ ${prefix}handhold
-├ ${prefix}nom
-├ ${prefix}bite
-├ ${prefix}glomp
-├ ${prefix}slap
-├ ${prefix}kill
-├ ${prefix}happy
-├ ${prefix}wink
-├ ${prefix}poke
-├ ${prefix}dance
-╰❒ ${prefix}cringe
+	return`╭─❒ 「 INDISPONIVEL 」
+├ ${prefix}OHH
+╰❒ ${prefix}INDISPONIVEL
 `
 }
 
 exports.nsfw = (prefix) =>{
-	return`╭─❒ 「 Nsfw & Sfw 」
-├ ${prefix}ahegao
-├ ${prefix}ass
-├ ${prefix}bdsm
-├ ${prefix}blowjob
-├ ${prefix}cuckold
-├ ${prefix}cum
-├ ${prefix}ero
-├ ${prefix}femdom
-├ ${prefix}foot
-├ ${prefix}gangbang
-├ ${prefix}glasses
-├ ${prefix}jahy
-├ ${prefix}manga
-├ ${prefix}masturbation
-├ ${prefix}neko
-├ ${prefix}orgy
-├ ${prefix}panties
-├ ${prefix}pussy
-├ ${prefix}tentacles
-├ ${prefix}thighs
-├ ${prefix}yuri
-├ ${prefix}feet
-├ ${prefix}lewdkemo
-├ ${prefix}woof
-├ ${prefix}gasm
-├ ${prefix}solo
-├ ${prefix}8ball
-├ ${prefix}goose
-├ ${prefix}avatar
-├ ${prefix}hololewd
-├ ${prefix}gecg
-├ ${prefix}holo
-├ ${prefix}fox_girl
-├ ${prefix}tits
-├ ${prefix}eroyuri
-├ ${prefix}holoyero
-├ ${prefix}lizard
-├ ${prefix}keta
-├ ${prefix}eron
-├ ${prefix}erok
-├ ${prefix}kemonomimi
-├ ${prefix}cum_jpg
-├ ${prefix}nsfw_avatar
-├ ${prefix}erofeet
-├ ${prefix}meow
-├ ${prefix}wallpaper
-├ ${prefix}waifu
-├ ${prefix}trap
-├ ${prefix}lewd
-├ ${prefix}pussy_jpg
-├ ${prefix}futanari
-├ ${prefix}lewdk
-├ ${prefix}solog
-├ ${prefix}smug
-├ ${prefix}cum
-├ ${prefix}slap
-├ ${prefix}les
-├ ${prefix}erokemo
-├ ${prefix}bj
-├ ${prefix}pwankg
-├ ${prefix}pat
-├ ${prefix}poke
-├ ${prefix}feed
-├ ${prefix}nsfw_neko_gif
-├ ${prefix}pussy
-├ ${prefix}feetg
-├ ${prefix}baka
-├ ${prefix}hug
-├ ${prefix}kiss
-├ ${prefix}tickle
-├ ${prefix}spank
-├ ${prefix}kuni
-├ ${prefix}classic
-├ ${prefix}boobs
-├ ${prefix}anal
-├ ${prefix}ngif
-├ ${prefix}cuddle
-╰❒ ${prefix}zettai
+	return`╭─❒ 「 INDISPONIVEL 」
+├ ${prefix}INDISPONIVEL
 `
 }
 
@@ -1017,7 +769,6 @@ exports.textpro = (prefix) =>{
 ├ ${prefix}stone text|text2
 ├ ${prefix}marvel text|text2
 ├ ${prefix}marvel2 text|text2
-├ ${prefix}pornhub text|text2
 ├ ${prefix}avengers text|text2
 ├ ${prefix}metalr text|text2
 ├ ${prefix}metalg text|text2
@@ -1203,16 +954,7 @@ return`╭─❒ 「 Others 」
 
 exports.tqto = () =>{
 	return`╭─❒ 「 TqTo 」 
-├ My God
-├ My Parents
-├ Fatih A.
-├ Ferdi
-├ DikaArdnt
-├ Mhankbarbar
-├ Nurutomo
-├ Rashid
-├ ZeeoneOfc
-├ Penyedia Module
+├ WORKX
 ╰❒ And All Support
 `
 }

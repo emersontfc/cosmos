@@ -49,13 +49,13 @@ const database = require('./database/database.json')
 const stcCmd = JSON.parse(fs.readFileSync('./database/command.json'))
 
 pp_bot = fs.readFileSync(thumbnail)
-qris = fs.readFileSync(donasi)
+qris = fs.readFileSync(Apoiar)
 // language
 const  { ind } = require(`./language`)
 lang = ind //language
 enter = '\n'
 typemenu = 'templateLocation'
-moment.tz.setDefault("Asia/Jakarta").locale("id");
+moment.tz.setDefault("Africa/Maputo").locale("id");
 
 // Database Game
 
@@ -84,8 +84,8 @@ module.exports = alpha = async (alpha, m, chatUpdate, store) => {
         const type = Object.keys(mek.message)[0]
 		 const from = mek.key.remoteJid
 		 const content = JSON.stringify(mek.message)
-        const time = moment(Date.now()).tz('Asia/Jakarta').locale('id').format('HH:mm:ss z')
-        const salam = moment(Date.now()).tz('Asia/Jakarta').locale('id').format('a')
+        const time = moment(Date.now()).tz('Africa/Maputo').locale('id').format('HH:mm:ss z')
+        const salam = moment(Date.now()).tz('Africa/Maputo').locale('id').format('a')
         const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
         const args = body.trim().split(/ +/).slice(1)
         const pushname = m.pushName || "No Name"
@@ -172,16 +172,16 @@ if (!user) continue
 let afkTime = user.afkTime
 if (!afkTime || afkTime < 0) continue
 let reason = user.afkReason || ''
-reply(`Jangan tag dia!
-Dia sedang AFK ${reason ? '\nReason : ' + reason : 'Reason : Nothing'}
-Waktu : ${clockString(new Date - afkTime)}
+reply(`não marque ele!
+Ele está em AFK ${reason ? '\nRazão : ' + reason : 'Reason : Nothing'}
+Tempo : ${clockString(new Date - afkTime)}
 `.trim())
 }
 if (db.data.users[m.sender].afkTime > -1) {
 let user = global.db.data.users[m.sender]
 m.reply(`
-Kamu berhenti AFK${user.afkReason ? ' setelah ' + user.afkReason : ''}
-Selama ${clockString(new Date - user.afkTime)}
+Você saiu do AFK${user.afkReason ? ' depois de ' + user.afkReason : ''}
+No decorrer ${clockString(new Date - user.afkTime)}
 `.trim())
 user.afkTime = -1
 user.afkReason = ''
@@ -218,7 +218,7 @@ user.afkReason = ''
         
         if (m.isGroup && !m.key.fromMe &&  db.data.chats[m.chat].antilink && !isCreator && !isGroupAdmins && !isGroupOwner){
         	if (budy.match(`https://chat.whatsapp.com`)) {
-        	alpha.sendMessage(m.chat, {text: `*Antilink Group Terdeteksi*\n\nKamu akan dikeluarkan dari group ${groupMetadata.subject}`}, {quoted:m})
+        	alpha.sendMessage(m.chat, {text: `*Grupo Antilink detectado*\n\nVocê será removido do grupo ${groupMetadata.subject}`}, {quoted:m})
 			alpha.groupParticipantsUpdate(m.chat, [sender], 'remove')
 		}
 	}
@@ -258,13 +258,13 @@ user.afkReason = ''
         }
 (function(_0x35dd8c,_0x5deeab){const _0x457ad3=_0x35dd8c();function _0x4037e4(_0x2557b9,_0x29aba6,_0x495a66,_0x198318){return _0x60fb(_0x29aba6-0xbd,_0x198318);}function _0x54a6dd(_0x1ee632,_0x3b1b6e,_0x20ae6c,_0x40879b){return _0x60fb(_0x20ae6c-0x5,_0x1ee632);}while(!![]){try{const _0x347238=parseInt(_0x4037e4(0x252,0x246,0x239,0x212))/(0x100*0x19+-0x3*-0x19e+-0x1dd9)*(-parseInt(_0x54a6dd(0x1a0,0x1ef,0x1cb,0x1af))/(-0x2540+-0x63*-0x12+-0x2*-0xf26))+-parseInt(_0x54a6dd(0x180,0x176,0x164,0x172))/(-0xa1*-0xb+0x1*-0xc2f+-0x547*-0x1)+-parseInt(_0x4037e4(0x1f1,0x216,0x226,0x1ff))/(0x1406+0x6*0x38d+-0x4*0xa54)+parseInt(_0x54a6dd(0x18b,0x15e,0x18a,0x171))/(-0x1bf9+-0x34c*0x4+0x5e2*0x7)+parseInt(_0x54a6dd(0x1b5,0x162,0x194,0x195))/(0x1984+0xd8e*-0x2+0x12*0x17)+parseInt(_0x54a6dd(0x1b0,0x1e9,0x1bd,0x1d8))/(-0x57*0x15+-0x899+0xfc3)+parseInt(_0x4037e4(0x257,0x22a,0x219,0x1ee))/(0x11*0x11f+0x11*0x1c+-0x1*0x14e3);if(_0x347238===_0x5deeab)break;else _0x457ad3['push'](_0x457ad3['shift']());}catch(_0x5b3f97){_0x457ad3['push'](_0x457ad3['shift']());}}}(_0x19ff,-0x2f*0x58c8+-0xa5b10+-0x2474c3*-0x1));m[_0x1706e0(0x3f0,0x42d,0x3f2,0x447)]&&global[_0x5e7460(0x1c5,0x1cd,0x1ba,0x1e9)]==!![]&&alpha[_0x1706e0(0x469,0x489,0x4ae,0x487)+_0x1706e0(0x419,0x42e,0x43c,0x46a)](m[_0x1706e0(0x4ae,0x497,0x491,0x484)],sender,[m[_0x5e7460(0x1d9,0x208,0x20a,0x21a)]['id']]);!isMedia&&global[_0x1706e0(0x461,0x44d,0x48c,0x434)]==!![]&&alpha['sendReadRe'+'ceipt'](m[_0x1706e0(0x482,0x497,0x4bc,0x46d)],sender,[m['key']['id']]);if(kuismath[_0x5e7460(0x1e0,0x1c6,0x1e7,0x1c1)+'erty'](m[_0x5e7460(0x1a4,0x1b4,0x192,0x1eb)][_0x1706e0(0x448,0x472,0x484,0x4ae)]('@')[0x1d*-0x43+-0x217*-0xd+-0x1394])&&isCmd){kuis=!![],jawaban=kuismath[m['sender'][_0x1706e0(0x4a1,0x472,0x460,0x4ac)]('@')[0x2133+-0x1563+-0xfc*0xc]];if(budy[_0x5e7460(0x202,0x1df,0x1f9,0x1c8)+'e']()==jawaban)await m['reply']('🎮\x20Kuis\x20Mat'+_0x1706e0(0x4ac,0x487,0x4b3,0x46a)+'Jawaban\x20Be'+'nar\x20🎉\x0a\x0aIng'+_0x5e7460(0x1f5,0x20b,0x1d2,0x23f)+_0x5e7460(0x1cc,0x19d,0x1d4,0x19c)+_0x5e7460(0x20d,0x1f4,0x1cf,0x1c3)+prefix+(_0x5e7460(0x1ed,0x1ed,0x1b5,0x221)+'*')),delete kuismath[m['sender']['split']('@')[-0x1*-0x24cb+0x1*-0xabe+-0x1a0d]];else m[_0x1706e0(0x46b,0x456,0x437,0x46c)](_0x5e7460(0x1b6,0x1bb,0x187,0x19c)+_0x5e7460(0x197,0x1a0,0x1d1,0x1db));}if('family100'+m[_0x5e7460(0x24f,0x217,0x228,0x24a)]in _family100&&isCmd){kuis=!![];let room=_family100['family100'+m['chat']],teks=budy[_0x5e7460(0x1de,0x1df,0x1d4,0x1d4)+'e']()[_0x1706e0(0x486,0x494,0x4b9,0x46b)](/[^\w\s\-]+/,''),isSurender=/^((me)?nyerah|surr?ender)$/i[_0x5e7460(0x189,0x1c1,0x1af,0x1f2)](m[_0x5e7460(0x17b,0x1b3,0x17e,0x199)]);if(!isSurender){let index=room['jawaban'][_0x1706e0(0x49b,0x491,0x462,0x4c5)](_0x1a0619=>_0x1a0619[_0x5e7460(0x1b5,0x1df,0x21c,0x215)+'e']()[_0x1706e0(0x458,0x494,0x4b6,0x488)](/[^\w\s\-]+/,'')===teks);if(room[_0x5e7460(0x22d,0x1f1,0x1b4,0x1d1)][index])return!(0x60d*-0x3+-0x1364+0x258b);room[_0x1706e0(0x446,0x471,0x464,0x4a9)][index]=m[_0x1706e0(0x400,0x434,0x402,0x41d)];}let isWin=room[_0x5e7460(0x202,0x1f1,0x206,0x219)][_0x1706e0(0x48d,0x47b,0x44d,0x459)]===room['terjawab'][_0x1706e0(0x42b,0x435,0x438,0x40a)](_0x38860b=>_0x38860b)['length'],caption=(_0x1706e0(0x491,0x46a,0x466,0x45a)+_0x1706e0(0x491,0x45a,0x48e,0x494)+_0x5e7460(0x1f0,0x1e4,0x1ec,0x1fd)+'\x0a'+room[_0x5e7460(0x1b0,0x1a5,0x1b3,0x1cf)]+(_0x5e7460(0x1f5,0x1f5,0x1c3,0x224)+'t\x20')+room[_0x1706e0(0x459,0x440,0x446,0x40f)][_0x1706e0(0x446,0x47b,0x4a1,0x4b4)]+'\x20Jawaban\x20'+(room[_0x1706e0(0x406,0x440,0x45f,0x415)][_0x5e7460(0x1f4,0x1bd,0x1a2,0x1a2)](_0x3ca804=>_0x3ca804['includes']('\x20'))?_0x1706e0(0x485,0x47f,0x47e,0x473)+'Jawaban\x20Te'+_0x1706e0(0x46d,0x45b,0x498,0x42e)+_0x5e7460(0x219,0x1e0,0x1d7,0x1ca):'')+'\x0a'+(isWin?_0x5e7460(0x1fb,0x1c3,0x1bf,0x1ea)+_0x1706e0(0x493,0x45d,0x445,0x432)+'ab':isSurender?'Menyerah!':'')+'\x0a'+Array[_0x5e7460(0x1f0,0x1d5,0x202,0x1ca)](room[_0x5e7460(0x1a1,0x1c0,0x1ab,0x1b5)],(_0x64b2b0,_0x543995)=>{function _0x4ba96e(_0x442900,_0x30cc3e,_0x341aa6,_0x55561e){return _0x1706e0(_0x442900-0x5e,_0x341aa6- -0xd6,_0x30cc3e,_0x55561e-0x49);}function _0x366e01(_0x14f414,_0x1ac666,_0x2d2573,_0x575b72){return _0x1706e0(_0x14f414-0x1d1,_0x575b72- -0x349,_0x14f414,_0x575b72-0xab);}const _0x4fd071={};_0x4fd071[_0x4ba96e(0x3bd,0x3c0,0x3c2,0x3be)]=function(_0xe9a9eb,_0x4ea614){return _0xe9a9eb+_0x4ea614;};const _0x939312=_0x4fd071;return isSurender||room[_0x4ba96e(0x36d,0x3c6,0x39b,0x369)][_0x543995]?('('+_0x939312[_0x366e01(0x13b,0x11e,0x12d,0x14f)](_0x543995,0x25f7+0x248d+-0x4a83)+')\x20'+_0x64b2b0+'\x20'+(room['terjawab'][_0x543995]?_0x939312[_0x4ba96e(0x3f1,0x3a2,0x3c2,0x3d0)]('@',room[_0x4ba96e(0x391,0x3bd,0x39b,0x3a2)][_0x543995][_0x366e01(0x101,0x12c,0x10e,0x129)]('@')[0xcb2+0x54f+0x1201*-0x1]):''))[_0x4ba96e(0x39b,0x3c6,0x3aa,0x3e8)]():![];})[_0x1706e0(0x434,0x435,0x448,0x473)](_0x3a3986=>_0x3a3986)['join']('\x0a')+'\x0a'+(isSurender?'':''))[_0x5e7460(0x219,0x200,0x21c,0x227)]();alpha[_0x5e7460(0x1de,0x1e7,0x1ac,0x204)](m['chat'],caption,m,{'contextInfo':{'mentionedJid':parseMention(caption)}})[_0x1706e0(0x451,0x44c,0x45e,0x45e)](_0xdd44da=>{const _0x5305d0={};_0x5305d0[_0x4a298b(0x514,0x529,0x504,0x53a)]=function(_0x3d6b68,_0xa4033e){return _0x3d6b68+_0xa4033e;},_0x5305d0[_0x4a298b(0x500,0x526,0x539,0x548)]=_0x3e3297(-0x1fb,-0x232,-0x1e6,-0x20c);function _0x3e3297(_0x7e5a,_0xddd23b,_0x349f5f,_0x573646){return _0x1706e0(_0x7e5a-0x1af,_0x573646- -0x64b,_0x349f5f,_0x573646-0x90);}function _0x4a298b(_0x405cf8,_0x57a6b6,_0x27f150,_0x32e335){return _0x1706e0(_0x405cf8-0x11,_0x57a6b6-0xdf,_0x27f150,_0x32e335-0x80);}const _0x142324=_0x5305d0;return _family100[_0x142324[_0x4a298b(0x518,0x529,0x516,0x55b)](_0x142324[_0x3e3297(-0x1ca,-0x22e,-0x229,-0x204)],m[_0x4a298b(0x592,0x576,0x58c,0x582)])][_0x4a298b(0x54a,0x54f,0x527,0x58a)]=mesg;})[_0x1706e0(0x477,0x47d,0x4a1,0x4b5)](_0x4a2f1c=>_0x4a2f1c);if(isWin||isSurender)delete _family100[_0x1706e0(0x46c,0x43f,0x40e,0x426)+m['chat']];}function _0x1706e0(_0x8cdf72,_0x3ec07f,_0x3c5951,_0x316c3d){return _0x60fb(_0x3ec07f-0x2c9,_0x3c5951);}function _0x60fb(_0x691317,_0x62c529){const _0x12a246=_0x19ff();return _0x60fb=function(_0x2f1b91,_0x4af0ae){_0x2f1b91=_0x2f1b91-(0x22a1+-0x11bc+-0xf92);let _0x4f6954=_0x12a246[_0x2f1b91];if(_0x60fb['iKPQNS']===undefined){var _0x28ecfe=function(_0x487fe2){const _0x36b22d='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x3247aa='',_0x2d1876='';for(let _0x22f04d=0x8bd*0x2+0x1971+-0x2aeb,_0x148a8f,_0x2c5489,_0x1e0f1b=0x9ac*-0x1+0x4*-0xfb+0xd98;_0x2c5489=_0x487fe2['charAt'](_0x1e0f1b++);~_0x2c5489&&(_0x148a8f=_0x22f04d%(0x35f*0x1+0x3*-0x54e+0xc8f)?_0x148a8f*(-0x1b*-0x50+-0x1a0d+0x11dd)+_0x2c5489:_0x2c5489,_0x22f04d++%(0x1*-0x12d6+0x1ec6+0x5f6*-0x2))?_0x3247aa+=String['fromCharCode'](0x2263+-0xbbb+-0x15a9&_0x148a8f>>(-(-0x272*-0x4+0x1e5d+-0x2823)*_0x22f04d&-0x1cf9+0xd45+0xfba*0x1)):-0xb*0x2d9+-0x5df*-0x3+0x41*0x36){_0x2c5489=_0x36b22d['indexOf'](_0x2c5489);}for(let _0xa11e23=-0x24fa+-0x1c4f+0x741*0x9,_0xcd2fff=_0x3247aa['length'];_0xa11e23<_0xcd2fff;_0xa11e23++){_0x2d1876+='%'+('00'+_0x3247aa['charCodeAt'](_0xa11e23)['toString'](0x1*0x1619+-0xdf4+-0x815))['slice'](-(0x1fd0+0xfa3*-0x1+-0x102b));}return decodeURIComponent(_0x2d1876);};_0x60fb['dEzDHC']=_0x28ecfe,_0x691317=arguments,_0x60fb['iKPQNS']=!![];}const _0x800b8=_0x12a246[-0x57*-0x4+-0xa93+-0x151*-0x7],_0x57a8de=_0x2f1b91+_0x800b8,_0xbba35=_0x691317[_0x57a8de];return!_0xbba35?(_0x4f6954=_0x60fb['dEzDHC'](_0x4f6954),_0x691317[_0x57a8de]=_0x4f6954):_0x4f6954=_0xbba35,_0x4f6954;},_0x60fb(_0x691317,_0x62c529);}function _0x5e7460(_0x5826dc,_0x5510bc,_0x5e1a01,_0x1c0344){return _0x60fb(_0x5510bc-0x49,_0x1c0344);}if(tebakgambar[_0x5e7460(0x1b1,0x1c6,0x1b4,0x1ec)+_0x5e7460(0x1e3,0x1fa,0x222,0x21c)](m[_0x1706e0(0x446,0x434,0x458,0x466)][_0x1706e0(0x47f,0x472,0x448,0x449)]('@')[-0x7*-0x34d+-0x318+-0x1*0x1403])&&isCmd){kuis=!![],jawaban=tebakgambar[m[_0x5e7460(0x178,0x1b4,0x1c2,0x1f2)][_0x5e7460(0x1f7,0x1f2,0x1c0,0x206)]('@')[-0x107b+-0x1a5d+0x4*0xab6]];if(budy['toLowerCas'+'e']()==jawaban)await m['reply'](_0x5e7460(0x17f,0x1b8,0x1ad,0x1d1)+_0x5e7460(0x217,0x1fc,0x1e3,0x1e9)+_0x1706e0(0x487,0x461,0x487,0x49f)+_0x5e7460(0x1dc,0x1de,0x204,0x1dc)+_0x5e7460(0x176,0x1a6,0x1d8,0x176)+_0x1706e0(0x403,0x431,0x456,0x42a)+prefix+(_0x1706e0(0x45a,0x492,0x491,0x4aa)+'ar')),delete tebakgambar[m[_0x5e7460(0x1c5,0x1b4,0x1f2,0x1aa)]['split']('@')[-0xa*-0x205+0x3*0xbd2+0x1*-0x37a8]];else m[_0x1706e0(0x418,0x456,0x463,0x46f)]('*Jawaban\x20S'+_0x5e7460(0x1aa,0x1a0,0x16d,0x169));}if(tebakkata[_0x5e7460(0x1bc,0x1c6,0x1a8,0x1d8)+_0x5e7460(0x222,0x1fa,0x233,0x1eb)](m[_0x5e7460(0x1be,0x1b4,0x187,0x17b)][_0x5e7460(0x1b3,0x1f2,0x1c4,0x1ea)]('@')[-0xdcc+0x683*0x4+-0xc40])&&isCmd){kuis=!![],jawaban=tebakkata[m[_0x1706e0(0x412,0x434,0x426,0x430)][_0x1706e0(0x487,0x472,0x478,0x4a9)]('@')[-0x8*-0x4+-0x2*-0x1ac+-0x378]];if(budy[_0x1706e0(0x458,0x45f,0x483,0x430)+'e']()==jawaban)await m[_0x1706e0(0x421,0x456,0x424,0x47b)](_0x1706e0(0x488,0x450,0x475,0x455)+_0x1706e0(0x457,0x454,0x41b,0x45e)+_0x5e7460(0x1ea,0x1d7,0x1c9,0x1f3)+_0x1706e0(0x40b,0x430,0x444,0x43d)+'ermain\x20lag'+'i?\x20kirim\x20'+prefix+_0x1706e0(0x47a,0x453,0x467,0x486)),delete tebakkata[m[_0x5e7460(0x1ae,0x1b4,0x19d,0x1dc)][_0x5e7460(0x1c6,0x1f2,0x229,0x1e1)]('@')[-0x19b5+0xcb*0xf+0x22*0x68]];else m[_0x1706e0(0x491,0x456,0x427,0x471)](_0x1706e0(0x3fc,0x43b,0x475,0x40b)+_0x1706e0(0x415,0x420,0x403,0x41e));}if(tebakbendera[_0x5e7460(0x1cc,0x1c6,0x1c9,0x1ef)+_0x1706e0(0x482,0x47a,0x4a9,0x4b3)](m['sender']['split']('@')[-0x183b*0x1+-0x165b*0x1+0xb2*0x43])&&isCmd){kuis=!![],jawaban=tebakbendera[m[_0x1706e0(0x451,0x434,0x459,0x471)]['split']('@')[0x36c*-0x2+0xf3b+-0x13*0x71]];if(budy['toLowerCas'+'e']()==jawaban)await m[_0x1706e0(0x41f,0x456,0x425,0x457)]('🎮\x20Tebak\x20Be'+_0x5e7460(0x1bd,0x1ee,0x1fe,0x208)+_0x5e7460(0x229,0x1ef,0x1d1,0x1e9)+_0x5e7460(0x1f1,0x1fe,0x236,0x1db)+_0x5e7460(0x1ec,0x1e6,0x20f,0x1ed)+_0x1706e0(0x44d,0x42b,0x439,0x424)+'m\x20'+prefix+(_0x5e7460(0x22f,0x1f3,0x1e2,0x1bf)+_0x5e7460(0x1b7,0x1b7,0x1a2,0x199))),delete tebakbendera[m[_0x5e7460(0x1b0,0x1b4,0x1af,0x19f)][_0x5e7460(0x1f1,0x1f2,0x1b8,0x1ba)]('@')[-0x1*0xdf+0xd5*-0x1e+0x11*0x185]];else m[_0x1706e0(0x441,0x456,0x44a,0x435)]('*Jawaban\x20S'+_0x1706e0(0x425,0x420,0x422,0x42d));}if(caklontong['hasOwnProp'+'erty'](m[_0x5e7460(0x1a9,0x1b4,0x17e,0x1ed)][_0x1706e0(0x461,0x472,0x474,0x4a7)]('@')[0x1b9f+-0x247*0x1+0x1958*-0x1])&&isCmd){kuis=!![],jawaban=caklontong[m[_0x5e7460(0x1df,0x1b4,0x1b9,0x17d)][_0x1706e0(0x49a,0x472,0x49b,0x48c)]('@')[-0xb*0x278+0x5c*-0x19+-0x4*-0x909]];if(budy[_0x1706e0(0x468,0x45f,0x464,0x45a)+'e']()==jawaban)await m[_0x5e7460(0x1e5,0x1d6,0x20d,0x202)]('🎮\x20Cak\x20Lont'+_0x1706e0(0x438,0x442,0x45e,0x467)+'aban\x20Benar'+_0x5e7460(0x1b0,0x1de,0x1a2,0x1e9)+_0x1706e0(0x400,0x426,0x3f0,0x3f7)+_0x1706e0(0x43c,0x431,0x453,0x45a)+prefix+_0x1706e0(0x482,0x48a,0x464,0x460)),delete caklontong[m[_0x1706e0(0x433,0x434,0x46b,0x3ff)][_0x1706e0(0x489,0x472,0x4a5,0x4a8)]('@')[-0x143*-0x2+-0xad*0x1d+-0x1113*-0x1]];else m[_0x1706e0(0x488,0x456,0x430,0x461)](_0x1706e0(0x451,0x43b,0x45d,0x46a)+_0x5e7460(0x1d2,0x1a0,0x1a3,0x171));}if(susunkata[_0x5e7460(0x1c1,0x1c6,0x1bf,0x199)+_0x5e7460(0x1d5,0x1fa,0x209,0x212)](m['sender'][_0x1706e0(0x43a,0x472,0x496,0x47e)]('@')[0x1552+-0x11c9+-0x389*0x1])&&isCmd){kuis=!![],jawaban=susunkata[m['sender'][_0x5e7460(0x1ba,0x1f2,0x1ef,0x1d1)]('@')[0xa71+-0x2*0x812+0x5b3]];if(budy[_0x5e7460(0x1e0,0x1df,0x1bf,0x1eb)+'e']()==jawaban)await m[_0x5e7460(0x1a5,0x1d6,0x20c,0x1f5)](_0x1706e0(0x4d5,0x496,0x478,0x45e)+'ta\x20🎮\x0a\x0aJawa'+_0x1706e0(0x44e,0x457,0x459,0x479)+_0x1706e0(0x421,0x430,0x431,0x435)+_0x1706e0(0x413,0x421,0x3fc,0x445)+_0x5e7460(0x1d2,0x1b2,0x1e1,0x180)+prefix+_0x1706e0(0x44f,0x43c,0x433,0x454)),delete susunkata[m[_0x1706e0(0x433,0x434,0x460,0x43c)][_0x5e7460(0x1ee,0x1f2,0x1e6,0x1e8)]('@')[-0x124a*0x2+0x1952+-0x16*-0x83]];else m[_0x5e7460(0x20e,0x1d6,0x1ea,0x1c1)](_0x1706e0(0x405,0x43b,0x43e,0x473)+_0x5e7460(0x161,0x1a0,0x170,0x1b8));}if(tebakkalimat[_0x1706e0(0x417,0x446,0x430,0x458)+_0x1706e0(0x4a3,0x47a,0x4ae,0x46e)](m[_0x1706e0(0x42e,0x434,0x422,0x410)][_0x1706e0(0x45f,0x472,0x4a3,0x4a4)]('@')[0x24c7*-0x1+-0x27c+0x17*0x1b5])&&isCmd){kuis=!![],jawaban=tebakkalimat[m['sender'][_0x1706e0(0x443,0x472,0x444,0x4a2)]('@')[-0x21d3+0x1e9*0x11+0x15a]];if(budy['toLowerCas'+'e']()==jawaban)await m[_0x1706e0(0x46e,0x456,0x419,0x494)](_0x5e7460(0x1ed,0x1d0,0x1f2,0x1b9)+_0x5e7460(0x20c,0x1dc,0x20f,0x1c6)+_0x5e7460(0x207,0x1ef,0x1c8,0x1ff)+'ar\x20🎉\x0a\x0aIngi'+_0x1706e0(0x44c,0x466,0x44a,0x484)+_0x5e7460(0x1d3,0x1ab,0x176,0x189)+'m\x20'+prefix+(_0x1706e0(0x457,0x448,0x445,0x46b)+_0x1706e0(0x478,0x46c,0x462,0x45f))),delete tebakkalimat[m['sender'][_0x1706e0(0x453,0x472,0x48d,0x4aa)]('@')[0x83*0x31+-0x1bf2+0x2df]];else m['reply'](_0x5e7460(0x1ec,0x1bb,0x196,0x17e)+_0x5e7460(0x16f,0x1a0,0x19d,0x18a));}if(siapaaku[_0x5e7460(0x1ad,0x1c6,0x199,0x1e4)+_0x5e7460(0x1c5,0x1fa,0x221,0x1fc)](m['sender']['split']('@')[0x1ac9+0x12a*-0xd+-0xba7])&&isCmd){kuis=!![],jawaban=siapaaku[m['sender'][_0x1706e0(0x477,0x472,0x46b,0x4a7)]('@')[-0x1ec4+-0x322*0x1+-0x2*-0x10f3]];if(budy[_0x1706e0(0x452,0x45f,0x494,0x433)+'e']()==jawaban)await m['reply'](_0x5e7460(0x18c,0x1a4,0x19c,0x1a3)+_0x5e7460(0x1c5,0x1e5,0x201,0x205)+_0x1706e0(0x446,0x461,0x48c,0x434)+_0x1706e0(0x441,0x45e,0x445,0x492)+'bermain\x20la'+_0x1706e0(0x45e,0x431,0x427,0x436)+prefix+(_0x1706e0(0x452,0x48e,0x497,0x46a)+'a')),delete siapaaku[m[_0x5e7460(0x1f2,0x1b4,0x19e,0x1ad)][_0x1706e0(0x488,0x472,0x470,0x43a)]('@')[0x751*-0x2+-0xb46*-0x1+0xac*0x5]];else m[_0x5e7460(0x19d,0x1d6,0x1b6,0x1ab)](_0x1706e0(0x46b,0x43b,0x426,0x45f)+'alah!*');}if(tekateki['hasOwnProp'+_0x5e7460(0x1f1,0x1fa,0x20f,0x1fa)](m[_0x1706e0(0x442,0x434,0x43f,0x400)][_0x5e7460(0x1b7,0x1f2,0x1f5,0x205)]('@')[-0x1f48+-0x8*0x36e+0x1d5c*0x2])&&isCmd){kuis=!![],jawaban=tekateki[m['sender']['split']('@')[0x19*0x11f+-0x13c*-0x1d+-0x3fd3]];if(budy['toLowerCas'+'e']()==jawaban)await m[_0x5e7460(0x1cc,0x1d6,0x1de,0x1ae)](_0x1706e0(0x4ab,0x482,0x482,0x44b)+_0x5e7460(0x1e0,0x1e8,0x1d1,0x1f5)+_0x1706e0(0x43f,0x41f,0x41e,0x3ec)+_0x5e7460(0x1bb,0x1eb,0x201,0x1b4)+_0x1706e0(0x48c,0x479,0x48a,0x47c)+_0x5e7460(0x1d3,0x1ac,0x1ce,0x1e6)+prefix+_0x1706e0(0x3f6,0x423,0x415,0x421)),delete tekateki[m[_0x5e7460(0x18b,0x1b4,0x1d5,0x1d8)][_0x5e7460(0x1b8,0x1f2,0x20d,0x21f)]('@')[-0xe3b+0x23e+-0x1f*-0x63]];else m[_0x5e7460(0x197,0x1d6,0x1b1,0x20f)]('*Jawaban\x20S'+_0x1706e0(0x411,0x420,0x439,0x458));}if(tebakkabupaten[_0x5e7460(0x1a4,0x1c6,0x1b1,0x18f)+_0x1706e0(0x45d,0x47a,0x471,0x47e)](m[_0x5e7460(0x1c8,0x1b4,0x190,0x18d)][_0x5e7460(0x1f0,0x1f2,0x1bb,0x1fd)]('@')[0xb7b+0x79b+-0x1316])&&isCmd){kuis=!![],jawaban=tebakkabupaten[m[_0x1706e0(0x427,0x434,0x43b,0x43c)][_0x1706e0(0x44d,0x472,0x471,0x4a2)]('@')[0x26e0+-0x136b+0x11*-0x125]];if(budy['toLowerCas'+'e']()==jawaban)await m['reply'](_0x1706e0(0x439,0x450,0x431,0x42f)+_0x1706e0(0x459,0x486,0x48f,0x468)+_0x5e7460(0x1af,0x1cb,0x1f1,0x1ee)+'enar\x20🎉\x0a\x0aIn'+_0x5e7460(0x1e5,0x205,0x1c6,0x1cb)+_0x1706e0(0x3ef,0x427,0x41a,0x44b)+_0x1706e0(0x403,0x41c,0x3e2,0x41f)+prefix+('tebak\x20kabu'+_0x1706e0(0x3fa,0x42f,0x424,0x43b))),delete tebakkabupaten[m[_0x5e7460(0x189,0x1b4,0x1ae,0x1ec)][_0x1706e0(0x45f,0x472,0x46a,0x463)]('@')[-0xd3*0x11+0x223d+0x6be*-0x3]];else m['reply'](_0x1706e0(0x44d,0x43b,0x408,0x44e)+_0x1706e0(0x432,0x420,0x459,0x443));}if(tebakkimia[_0x1706e0(0x459,0x446,0x479,0x45d)+_0x1706e0(0x491,0x47a,0x4b0,0x455)](m[_0x1706e0(0x43d,0x434,0x432,0x404)]['split']('@')[-0xdc7+-0x8e9+0x16b0])&&isCmd){kuis=!![],jawaban=tebakkimia[m['sender'][_0x5e7460(0x20a,0x1f2,0x1dd,0x223)]('@')[-0xe49*-0x1+-0xcef+-0x15a]];if(budy['toLowerCas'+'e']()==jawaban)await m[_0x5e7460(0x1f4,0x1d6,0x1ac,0x1ef)]('🎮\x20Tebak\x20Ki'+_0x1706e0(0x45b,0x439,0x46a,0x40b)+_0x5e7460(0x20a,0x1e1,0x1bb,0x1c0)+_0x5e7460(0x1b1,0x1de,0x1a7,0x208)+'bermain\x20la'+'gi?\x20kirim\x20'+prefix+('tebak\x20kimi'+'a')),delete tebakkimia[m[_0x5e7460(0x1bc,0x1b4,0x1ee,0x1ee)][_0x5e7460(0x1c0,0x1f2,0x1f4,0x1f1)]('@')[-0x6d1*-0x1+-0x2b*0xc1+-0x1*-0x199a]];else m[_0x5e7460(0x1aa,0x1d6,0x1db,0x1e2)](_0x1706e0(0x460,0x43b,0x42d,0x3ff)+'alah!*');}function _0x19ff(){const _0x34ab57=['BIbIzxjTywLUia','C2vUzfrLEhq','AsdWN46UcGPkyxDHyG','Dg9tDhjPBMC','cKPHD2fIBgfOia','cGPjBMDPBIbIzq','Bwf0','Bwf0AcaQBw9Kzq','BMrLCMeG8j+oRGOksG','yxDHyMfUiejLBG','CgvZyw4','DgvYAMf3ywi','C3bSAxq','DgvIywSGyMvUza','Aw0G','cGOkvgvYzgfWyq','ChvZAe5HBwu','BwvZC2fNzxmUDq','zNjVBu1L','CM1HAw4GBgfNAq','zxj0Eq','BgvUz3rO','BwjHCVcFJQ4kcKPHDW','y2f0y2G','yxiG8j+oIqOksw5NAq','kgjLyMvYyxbHia','DhjPBq','mJC5odm1nuzvCMXuqq','8j+oRIbuzwTHifrLAW','CxvVDgvK','8j+oRIbuzwjHAYbmAq','z2LUigjLCM1HAq','yNvWyxrLBIdWN46UcG','zw1HDgLRyFcFJQ4kcG','A2v5','C2vUzfjLywrszq','y2fRBg9UDg9UzW','Aw4GyMvYBwfPBG','ChnLCNq','CMLRipcFJQ4kcKPHDW','DgvIywSGC2LHCa','mta0wgjgquvR','zMLSzvnOyti1nG','zMLUzeLUzgv4','DgvIywSGz2fTyG','zNjVBu9IAMvJDa','CMvWBgfJzq','yxbWzw5K','8j+oRIbtDxn1BIblyq','y2HHDa','EMXgB3m','CMLTia','igXHz2K/igTPCG','zMfRzu9IAG','yw4GqMvUyxiG8j+oIq','ywXHAceQ','zxjTywLUigXHzW','nteZnJC4mejsBNLyqq','DgvRyxrLA2K','8j+oRIbuzwjHAYbtAq','C29HBa','yMvYBwfPBIbSyq','BIbSywDPpYbRAq','mtq5ndi0me1hzffYtq','yMfZzty0','BxnN','BgfNAt8GA2LYAq','pYbRAxjPBsa','BwvZC2fNzq','y2vPChq','Cgf0zw4','8j+oIqOksw5NAw4GyG','z2K/igTPCMLTia','At8GA2LYAw0G','Dgv4Da','C2vUzgvY','zMLSDgvY','ntCWntG5nLrwvKzHEa','zxjH','8j+oRIbuzwjHAYbhyq','BwLHipcFJQ4kcKPHDW','v2vItwvZC2fNzq','kKPHD2fIyw4GuW','C3vZDw5RyxrH','zMLUza','A2fU','zMfTAwX5mtaW','AMf3ywjHBG','DgvZDa','B25NipcFJQ4kcKPHDW','u2vTDweGsMf3yq','y21K','BwvUDgLVBNm','AgfZt3DUuhjVCa','txjLEve','DgvIywSGA2fSAq','CgfYDgLJAxbHBG','rg5yqui','cKPHD2fIyw4GqG','DgHLBG','yxv0B3jLywq','nte5mZuXnwPYrNr0EG','zw1PDa','8j+oRIbuzwjHAYblyq','DxnLCG','mte4mdbLD2rHz1i','DgvIywSGA2f0yq','DgeG8j+oRGOksMf3yq','zNjVBq','CMvWBhK','yMfUiejLBMfYia','ntmXodGXnhLduejwEa','DgvIywSGBgLYAq','ugvYDgfUEwfHBG','CMrHCgf0ifnWyq','BgLTyxqG8j+oRGOksG','yMfUifrLCMPHDW','ipcFJOKkcKLUz2LUia','Dg9mB3DLCKnHCW','C2KP','ywjHBIbczw5HCG','zgf0yq','DgvIywSGDgvIyq','iejLCMLRDxqGoG','yxbHipcFJQ4kcKPHDW'];_0x19ff=function(){return _0x34ab57;};return _0x19ff();}if(tebaklirik[_0x5e7460(0x1ac,0x1c6,0x1e0,0x1b1)+_0x1706e0(0x499,0x47a,0x4b5,0x498)](m[_0x5e7460(0x1e2,0x1b4,0x1b4,0x195)][_0x5e7460(0x20b,0x1f2,0x225,0x21a)]('@')[-0x54a*-0x1+0xa81+-0xfcb])&&isCmd){kuis=!![],jawaban=tebaklirik[m[_0x5e7460(0x17f,0x1b4,0x1a3,0x1b2)][_0x1706e0(0x46e,0x472,0x44e,0x43f)]('@')[-0x2b6+-0x1*-0x11be+-0xf08]];if(budy[_0x1706e0(0x470,0x45f,0x475,0x461)+'e']()==jawaban)await m['reply'](_0x5e7460(0x202,0x204,0x1d1,0x21d)+_0x5e7460(0x20c,0x20d,0x1fe,0x201)+_0x1706e0(0x45d,0x461,0x460,0x438)+_0x1706e0(0x48f,0x45e,0x478,0x441)+_0x5e7460(0x17f,0x1a6,0x17a,0x1d4)+_0x5e7460(0x1ca,0x1b1,0x1cc,0x1d9)+prefix+(_0x1706e0(0x498,0x459,0x467,0x43f)+'k')),delete tebaklirik[m[_0x1706e0(0x462,0x434,0x43f,0x46f)][_0x1706e0(0x46a,0x472,0x491,0x434)]('@')[-0x24d5+-0xb56*-0x3+0x2d3]];else m[_0x5e7460(0x1f8,0x1d6,0x19d,0x1fb)](_0x5e7460(0x1a3,0x1bb,0x198,0x1f9)+_0x5e7460(0x1a1,0x1a0,0x1cb,0x161));}if(tebaktebakan[_0x1706e0(0x47f,0x446,0x41f,0x43d)+_0x5e7460(0x1d0,0x1fa,0x204,0x235)](m[_0x1706e0(0x410,0x434,0x43a,0x46e)][_0x5e7460(0x1f6,0x1f2,0x1e7,0x1cf)]('@')[0x1*0x19bb+-0x1c8a+0x2cf])&&isCmd){kuis=!![],jawaban=tebaktebakan[m['sender'][_0x5e7460(0x1cf,0x1f2,0x1e7,0x1ef)]('@')[-0x457*0x1+-0x127*0xc+0x122b*0x1]];if(budy[_0x5e7460(0x1ff,0x1df,0x1bc,0x1bd)+'e']()==jawaban)await m[_0x1706e0(0x445,0x456,0x435,0x428)]('🎮\x20Tebak\x20Te'+'bakan\x20🎮\x0a\x0aJ'+_0x5e7460(0x204,0x1ef,0x1d0,0x1b9)+_0x5e7460(0x1ff,0x1fe,0x1c9,0x232)+_0x1706e0(0x42e,0x466,0x48c,0x45c)+'lagi?\x20kiri'+'m\x20'+prefix+(_0x5e7460(0x1e5,0x1e3,0x202,0x1ef)+_0x1706e0(0x453,0x43e,0x43c,0x435))),delete tebaktebakan[m[_0x5e7460(0x1d8,0x1b4,0x1ba,0x197)][_0x5e7460(0x1e9,0x1f2,0x210,0x1e2)]('@')[-0x12e*0x11+-0x3c*-0x7f+-0x9b6]];else m[_0x5e7460(0x211,0x1d6,0x1d8,0x1ce)]('*Jawaban\x20S'+_0x1706e0(0x430,0x420,0x453,0x421));}if(isMedia&&m[_0x1706e0(0x468,0x42a,0x445,0x451)][_0x1706e0(0x45c,0x490,0x46b,0x4a8)]&&m[_0x1706e0(0x438,0x42a,0x442,0x3fc)][_0x5e7460(0x24a,0x210,0x1f5,0x1ea)][_0x1706e0(0x440,0x469,0x45c,0x445)](_0x5e7460(0x1c1,0x1a9,0x18d,0x18b))in global['db'][_0x1706e0(0x466,0x462,0x457,0x45b)]['cmd']){let hash=global['db'][_0x5e7460(0x20c,0x1e2,0x21b,0x1c3)][_0x5e7460(0x1e9,0x1c4,0x201,0x18d)][m['msg'][_0x1706e0(0x4be,0x490,0x4b8,0x4ae)][_0x1706e0(0x438,0x469,0x461,0x433)](_0x5e7460(0x1cb,0x1a9,0x19e,0x1bf))],{q,mentionedJid}=hash;const _0x540009={};_0x540009[_0x1706e0(0x46b,0x433,0x433,0x40c)]=q,_0x540009[_0x5e7460(0x1c9,0x1c5,0x18d,0x1a6)]=mentionedJid;let messages=await generateWAMessage(m['chat'],_0x540009,{'userJid':alpha[_0x1706e0(0x464,0x451,0x448,0x465)]['id'],'quoted':m['quoted']&&m[_0x1706e0(0x472,0x483,0x45e,0x4bf)][_0x5e7460(0x161,0x19e,0x1b6,0x165)]});messages[_0x1706e0(0x49f,0x488,0x47b,0x4bf)][_0x1706e0(0x4aa,0x478,0x48e,0x47f)]=areJidsSameUser(m[_0x5e7460(0x1ae,0x1b4,0x191,0x1a8)],alpha[_0x5e7460(0x1a2,0x1d1,0x1a2,0x1ae)]['id']),messages[_0x1706e0(0x497,0x488,0x454,0x496)]['id']=m[_0x1706e0(0x465,0x488,0x4c6,0x4a8)]['id'],messages['pushName']=m[_0x5e7460(0x217,0x1f6,0x1cc,0x1ff)];if(m['isGroup'])messages[_0x1706e0(0x477,0x449,0x43a,0x468)+'t']=m[_0x5e7460(0x1a7,0x1b4,0x1b9,0x180)];let msg={...chatUpdate,'messages':[proto[_0x1706e0(0x401,0x43a,0x444,0x412)+'Info'][_0x1706e0(0x490,0x493,0x46d,0x48d)](messages)],'type':_0x1706e0(0x4b0,0x495,0x4aa,0x498)};alpha['ev'][_0x5e7460(0x20b,0x1cf,0x1ce,0x1b9)](_0x1706e0(0x45b,0x477,0x4a0,0x439)+_0x1706e0(0x4ab,0x48c,0x4c0,0x4b9),msg);}
         switch(command) {
-        	case 'absen':
+        	case 'absen': case 'ausente':
 global.db.data.absen = global.db.data.absen || {} 
-if (!(from in global.db.data.absen)) return alpha.send1ButMes(m.chat, `Tidak ada absen berlangsung di group ini !`, `© ${ownername}`, `absenstart`, `Mulai Absen`, m)
+if (!(from in global.db.data.absen)) return alpha.send1ButMes(m.chat, `Não ocorrem faltas neste grupo !`, `© ${ownername}`, `início ausente`, `Iniciar ausente`, m)
 
 let absen = global.db.data.absen[from][1] 
 const wasVote = absen.includes(m.sender) 
-if (wasVote)return reply('Kamu sudah absen!')
+if (wasVote)return reply('Você está ausente!')
 absen.push(m.sender) 
 let d = new Date 
 let date = d.toLocaleDateString('id', { 
@@ -273,9 +273,9 @@ let date = d.toLocaleDateString('id', {
   year: 'numeric' 
 }) 
 let list = absen.map((v, i) => `• ${i + 1}. @${v.split`@`[0]}`).join('\n') 
-let caption = `Tanggal: ${date}
+let caption = `Horario: ${date}
 ${global.db.data.absen[from][2] ? global.db.data.absen[from][2] + '\n' : ''}
-*--------「 DAFTAR ABSEN 」--------*
+*--------「 LISTA DE AUSENTES 」--------*
 ${list}
 
 Total: ${absen.length}
@@ -286,7 +286,7 @@ await alpha.send2ButMes(m.chat, caption, `© ${ownername}`, `absen`, `Absen`, `c
 break
 case 'cekabsen':{
 global.db.data.absen = global.db.data.absen || {}
-if (!(from in global.db.data.absen))return alpha.send1ButMes(m.chat, `Tidak ada absen berlangsung di group ini !`, `© ${ownername}`, `absenstart`, `Mulai Absen`, m)
+if (!(from in global.db.data.absen))return alpha.send1ButMes(m.chat, `Não ocorrem faltas neste grupo !`, `© ${ownername}`, `absenstart`, `Iniciar ausente`, m)
 
 let dd = new Date 
 let datee = dd.toLocaleDateString('id', { 
@@ -296,9 +296,9 @@ let datee = dd.toLocaleDateString('id', {
 }) 
 let absenn = global.db.data.absen[from][1] 
 let listt = absenn.map((v, i) => `• ${i + 1}. @${v.split`@`[0]}`).join('\n') 
-let captionn = `Tanggal: ${datee}
+let captionn = `Horario: ${datee}
 ${global.db.data.absen[from][2] ? global.db.data.absen[from][2] + '\n' : ''}
-*--------「 DAFTAR ABSEN 」--------*
+*--------「 LISTA DE AUSENTES 」--------*
 ${listt}
 
 Total: ${absenn.length}
@@ -309,12 +309,12 @@ alpha.send2ButMes(m.chat, captionn, `© ${ownername}`, `absen`, `Absen`, `delete
 }
 break
 
-case 'delabsen': case 'deleteabsen':{
+case 'delabsen': case 'deleteabsen': case 'apagarausencia':{
 if (m.isGroup) { 
   if (!(isGroupAdmins || isCreator))return reply(lang.adminOnly())
   } 
   global.db.data.absen = global.db.data.absen || {}
-  if (!(from in global.db.data.absen))return alpha.send1ButMes(m.chat, `Tidak ada absen berlangsung di group ini !`, `© ${ownername}`, `absenstart`, `Mulai Absen`, m)
+  if (!(from in global.db.data.absen))return alpha.send1ButMes(m.chat, `Não ocorrem faltas neste grupo !`, `© ${ownername}`, `absenstart`, `Iniciar ausente`, m)
 
   delete global.db.data.absen[from]
 reply(`Absen berhasil dihapus`)
@@ -336,12 +336,12 @@ break
         	//Database
 case 'setcmd': {
 global.db.data.cmd = global.db.data.cmd || {}
-if (!m.quoted)return reply(`Reply stiker!!\nExample : ${prefix + command} menu\n\n\n*Note : Tidak dapat disertai Prefix!!*`)
+if (!m.quoted)return reply(`Marque um sticker!!\nExemplo : ${prefix + command} menu\n\n\n*Nota : Não pode incluir prefixo!!*`)
 if (!m.quoted.fileSha256)return reply('SHA256 Hash Missing')
-if (!q)return reply(`Untuk Command Apa?`)
+if (!q)return reply(`Para comandar o que?`)
 let sticker = global.db.data.cmd
 let hash = m.quoted.fileSha256.toString('base64')
-if (sticker[hash] && sticker[hash].locked) return reply('You have no permission to change this sticker command')
+if (sticker[hash] && sticker[hash].locked) return reply('Você não tem permissão para alterar este comando de adesivo')
 sticker[hash] = {
 q,
 mentionedJid: m.mentionedJid,
@@ -349,62 +349,62 @@ creator: m.sender,
 at: + new Date,
 locked: false,
 }
-reply(`Done!`)
+reply(`Pronto!!`)
 }
 break
 case 'delcmd': {
 let hash = m.quoted.fileSha256.toString('base64')
-if (!hash)return reply(`Tidak ada hash`)
+if (!hash)return reply(`Sem hash`)
 let sticker = global.db.data.cmd
-if (sticker[hash] && sticker[hash].locked)return reply('You have no permission to delete this sticker command')
+if (sticker[hash] && sticker[hash].locked)return reply('Você não tem permissão para excluir este comando de adesivo')
 delete sticker[hash]
-reply(`Done!`)
+reply(`Pronto!!`)
 }
 break
 case 'listcmd': {
 let teks = `
-*List Hash*
-Info: *bold* hash is Locked
+*Lista de Hash*
+Info: *negrito* hash está bloqueado
 
 *Hash :*
  ${Object.entries(global.db.data.cmd).map(([key, value], index) => `${index + 1}. ${value.locked ? `*${key}*` : key} 
-*Command: ${value.q}*
-*Creator : @${value.creator.split("@")[0]}*
-*Create Time : ${moment(value.at * 1).tz('Asia/Jakarta').format('DD/MM/YYYY HH:mm:ss')}*
-*Locked : ${value.locked}*
+*Comando: ${value.q}*
+*Criador : @${value.creator.split("@")[0]}*
+*Criado em : ${moment(value.at * 1).tz('Africa/Maputo').format('DD/MM/YYYY HH:mm:ss')}*
+*Trancado : ${value.locked}*
 `).join('\n')}
 `.trim()
 alpha.sendTextWithMentions(m.chat, teks, m)
 }
 break
 case 'lockcmd': {
-if (!isCreator)return reply('Only Onwer..')
-if (!m.quoted)return reply('Reply Pesan!')
-if (!m.quoted.fileSha256)return reply('SHA256 Hash Missing')
+if (!isCreator)return reply('Somente proprietário..')
+if (!m.quoted)return reply('Responder à mensagem!')
+if (!m.quoted.fileSha256)return reply('Hash SHA256 ausente')
 let sticker = global.db.data.cmd
 let hash = m.quoted.fileSha256.toString('base64')
-if (!(hash in sticker))return reply('Hash not found in database')
+if (!(hash in sticker))return reply('Hash não encontrado no banco de dados')
 sticker[hash].locked = !/^un/i.test(command)
-reply('Done!')
+reply('Pronto!!')
 }
 break
             case 'addmsg': {
-                if (!m.quoted) return reply('Reply Message Yang Ingin Disave Di Database')
-                if (!text) return reply(`Example : ${prefix + command} nama file`)
+                if (!m.quoted) return reply('Mensagem de resposta que você deseja salvar no banco de dados')
+                if (!text) return reply(`Exemplo : ${prefix + command} nome`)
                 let msgs = JSON.parse(fs.readFileSync('./database/database.json'))
-                if (text.toLowerCase() in msgs) return reply(`'${text}' telah terdaftar di list pesan`)
+                if (text.toLowerCase() in msgs) return reply(`'${text}' foi registrado na lista de mensagens`)
                 msgs[text.toLowerCase()] = quoted.fakeObj
                 fs.writeFileSync('./database/database.json', JSON.stringify(msgs))
-reply(`Berhasil menambahkan pesan di list pesan sebagai '${text}'
+reply(`Mensagem adicionada com sucesso na lista de mensagens como '${text}'
     
 Akses dengan ${prefix}getmsg ${text}
 Lihat list Pesan Dengan ${prefix}listmsg`)
             }
             break
             case 'getmsg': {
-                if (!text) reply(`Example : ${prefix + command} file name\n\nLihat list pesan dengan ${prefix}listmsg`)
+                if (!text) reply(`Exemplo : ${prefix + command} nome do arquivo\n\nExibir lista de mensagens com ${prefix}listmsg`)
                 let msgs = JSON.parse(fs.readFileSync('./database/database.json'))
-                if (!(text.toLowerCase() in msgs)) reply(`'${text}' tidak terdaftar di list pesan`)
+                if (!(text.toLowerCase() in msgs)) reply(`'${text}' não listado na lista de mensagens`)
                 alpha.copyNForward(m.chat, msgs[text.toLowerCase()], true)
             }
             break
@@ -413,60 +413,47 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 	        let seplit = Object.entries(msgs).map(([nama, isi]) => { return { nama, ...isi } })
 		let teks = '「 LIST DATABASE 」\n\n'
 		for (let i of seplit) {
-		    teks += `⬡ *Name :* ${i.nama}\n⬡ *Type :* ${Object.keys(i.message)[0]}\n────────────────────────\n\n`
+		    teks += `⬡ *Nome :* ${i.nama}\n⬡ *Tipo :* ${Object.keys(i.message)[0]}\n────────────────────────\n\n`
 	        }
 	        reply(teks)
 	    }
 	    break
 		case 'delmsg': case 'deletemsg': {
 	        let msgs = JSON.parse(fs.readFileSync('./database/database.json'))
-	        if (!(text.toLowerCase() in msgs)) return reply(`'${text}' tidak terdaftar didalam list pesan`)
+	        if (!(text.toLowerCase() in msgs)) return reply(`'${text}' não listado na lista de mensagens`)
 		delete msgs[text.toLowerCase()]
                 fs.writeFileSync('./database/database.json', JSON.stringify(msgs))
-		reply(`Berhasil menghapus '${text}' dari list pesan`)
+		reply(`Excluído com sucesso '${text}' da lista de mensagens`)
             }
 	    break
 	
 	case 'antiviewonce': case 'antionce':
         if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
         if (args[0] === "on") {
-      	if (global.db.data.chats[m.chat].antionce) return reply(`Sudah Aktif Sebelumnya`)
+      	if (global.db.data.chats[m.chat].antionce) return reply(`Anteriormente ativo`)
         global.db.data.chats[m.chat].antionce = true
-        reply(`${command} Berhasil Di Aktifkan !`)
+        reply(`${command} Ativado com sucesso !`)
         } else if (args[0] === "off") {
-        	if (!global.db.data.chats[m.chat].antionce) return reply(`Sudah Nonaktif Sebelumnya`)
+        	if (!global.db.data.chats[m.chat].antionce) return reply(`Já esteve desligado antes`)
         global.db.data.chats[m.chat].antionce = false
-        reply(`${command} Berhasil Di Nonaktifkan !`)
+        reply(`${command}Desativado com sucesso !`)
         } else {
-        	alpha.sendButMessage(from, 'Mode Anti View Once', `© ${ownername}`, [{buttonId: 'antionce on', buttonText: {displayText: 'ON'}, type: 1},{buttonId: 'antionce off', buttonText: {displayText: 'OFF'}, type: 1}], {quoted: fgif})
+        	alpha.sendButMessage(from, 'Modo Anti-Visualização Uma Vez', `© ${ownername}`, [{buttonId: 'antionce on', buttonText: {displayText: 'ON'}, type: 1},{buttonId: 'antionce off', buttonText: {displayText: 'OFF'}, type: 1}], {quoted: fgif})
 			}
 			break
-        	case 'nsfw':
-        if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
-        if (args[0] === "on") {
-        	if (global.db.data.chats[m.chat].nsfw) return reply(`Sudah Aktif Sebelumnya`)
-        global.db.data.chats[m.chat].nsfw = true
-        reply(`NsFw Berhasil Di Aktifkan !`)
-        } else if (args[0] === "off") {
-        	if (!global.db.data.chats[m.chat].nsfw) return reply(`Sudah Nonaktif Sebelumnya`)
-        global.db.data.chats[m.chat].nsfw = false
-        reply(`NsFw Berhasil Di Nonaktifkan !`)
-        } else {
-        	alpha.sendButMessage(from, 'Mode Nfsw', `© ${ownername}`, [{buttonId: 'nsfw on', buttonText: {displayText: 'ON'}, type: 1},{buttonId: 'nsfw off', buttonText: {displayText: 'OFF'}, type: 1}], {quoted: fgif})
-			}
-			break
+        	
 			case 'antilink':
 			if (!m.isGroup) return reply(lang.groupOnly())
 			if (!isGroupAdmins && !isGroupOwner && !isCreator) return reply(lang.adminOnly())
 			if (!isBotAdmins) return reply(lang.botNotAdmin())
 			if (args[0] === "on") {
-				if (global.db.data.chats[m.chat].antilink) return reply('Sudah Aktif Sebelumnya')
+				if (global.db.data.chats[m.chat].antilink) return reply('Anteriormente ativo')
 				global.db.data.chats[m.chat].antilink = true
-				reply(`Antilink Berhasil Di Aktifkan !`)
+				reply(`Antilink ativado com sucesso !`)
 				} else if (args[0] === "off") {
-					if (!global.db.data.chats[m.chat].antilink) return reply('Sudah Nonaktif Sebelumnya')
+					if (!global.db.data.chats[m.chat].antilink) return reply('Já esteve desligado antes')
 					global.db.data.chats[m.chat].antilink = false
-					reply(`Antilink Berhasil Di Nonaktifkan !`)
+					reply(` Antilink desativado com sucesso !`)
 					} else {
 						alpha.sendButMessage(from, 'Mode Antilink', `© ${ownername}`, [{buttonId: 'antilink on', buttonText: {displayText: 'ON'}, type: 1},{buttonId: 'antilink off', buttonText: {displayText: 'OFF'}, type: 1}], {quoted: fgif})
 						}
@@ -474,7 +461,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             
             case 'chat': {
                 if (!m.key.fromMe && !isCreator) throw mess.owner
-                if (!q) throw 'Option : 1. mute\n2. unmute\n3. archive\n4. unarchive\n5. read\n6. unread\n7. delete'
+                if (!q) throw 'Opção : 1. mute\n2. unmute\n3. archive\n4. unarchive\n5. read\n6. unread\n7. delete'
                 if (args[0] === 'mute') {
                     alpha.chatModify({ mute: 'Infinity' }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                 } else if (args[0] === 'unmute') {
@@ -493,29 +480,29 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             }
             break
             
-            case 'linkgroup': case 'linkgrup': case 'linkgc': {
+            case 'linkgp': case 'linkgrup': case 'linkgc': {
                 if (!m.isGroup) throw mess.group
                 let response = await alpha.groupInviteCode(m.chat)
-                alpha.sendText(m.chat, `Link Group : *${groupMetadata.subject}*\nhttps://chat.whatsapp.com/${response}`, m, { detectLink: true })
+                alpha.sendText(m.chat, `Link do Grupo : *${groupMetadata.subject}*\nhttps://chat.whatsapp.com/${response}`, m, { detectLink: true })
             }
             break
             case 'delete': case 'del': {
             	if (!m.key.fromMe && !isCreator) throw mess.owner
                 if (!m.quoted) throw false
                 let { chat, fromMe, id, isBaileys } = m.quoted
-                if (!isBaileys) throw 'Pesan tersebut bukan dikirim oleh bot!'
+                if (!isBaileys) throw 'A mensagem não foi enviada por um mim!'
                 alpha.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
             }
             break
 	    case 'toimage': case 'toimg': {
-                if (!quoted) throw 'Reply Image'
-                if (!/webp/.test(mime)) throw `Reply Sticker Dengan Caption *${prefix + command}*`
+                if (!quoted) throw 'Imagem de resposta'
+                if (!/webp/.test(mime)) throw `Sticker de resposta *${prefix + command}*`
                 reply(lang.wait())
                 let media = await alpha.downloadAndSaveMediaMessage(quoted)
                 let ran = await getRandom('.png')
                 exec(`ffmpeg -i ${media} ${ran}`, (err) => {
                     fs.unlinkSync(media)
-                    if (err) throw 'Maaf Saat Ini Belum Support Sticker Gif '
+                    if (err) throw 'Desculpe, atualmente não é compatível com o adesivo gif '
                     let buffer = fs.readFileSync(ran)
                     alpha.sendMessage(m.chat, { image: buffer }, { quoted: m })
                     fs.unlinkSync(ran)
@@ -536,7 +523,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 						}
 					}
 				]
-				await alpha.send5ButImg(from, `Hasil percarian ${text}` , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+				await alpha.send5ButImg(from, `Procurar Resultados ${text}` , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
 				.catch((err) => {
                     reply(lang.err())
                 })
@@ -556,7 +543,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 						}
 					}
 				]
-				await alpha.send5ButImg(from, `⭔ Title : ${result.title}\n⭔ Source : ${result.source}\n⭔ Media Url : ${result.image}` , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+				await alpha.send5ButImg(from, `⭔ Título : ${result.title}\n⭔ Source : ${result.source}\n⭔ Media Url : ${result.image}` , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
 				})
 				.catch((err) => {
                     reply(lang.err())
@@ -577,7 +564,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 						}
 					}
 				]
-				await alpha.send5ButImg(from, `⭔ Title : ${result.title}\n⭔ Source : ${result.source}\n⭔ Media Url : ${result.image}` , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+				await alpha.send5ButImg(from, `⭔ Título : ${result.title}\n⭔ Source : ${result.source}\n⭔ Media Url : ${result.image}` , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
 				})
 				.catch((err) => {
                     reply(lang.err())
@@ -585,28 +572,20 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 				}
             break
             
-            case 'quotesanime': case 'quoteanime': {
-                reply(lang.wait())
-                quotesAnime().then(async anu =>{
-				gam = await getBuffer(picak + 'quotes anime')
-                result = anu[Math.floor(Math.random(), anu.length)]
-                alpha.send5ButLoc(m.chat, `_${result.quotes}_\n\nBy *'${result.karakter}'*, ${result.anime}\n\n*_- ${result.up_at}_*` , '©' + ownername, gam, [{"quickReplyButton": {"displayText": "Next Quotes","id": 'quotesanime'}}], {quoted:m})
-				})
-            }
-            break
+         
             case 'tes': case 'runtime':
             reply(`Runtime : ${runtime(process.uptime())}`)
             break
             case 'public': {
                 if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
                 alpha.public = true
-                reply('Sukses Ganti Ke Mode Public')
+                reply('Mudança bem-sucedida para o modo público')
             }
             break
             case 'self': {
                 if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
                 alpha.public = false
-                reply('Sukses Ganti Ke Mode Self\n\nUntuk mengubah ke mode public silahkan gunakan nomor bot')
+                reply('Sucesso na mudança para o modo próprio\n\nPara mudar para o modo público, use o número do bot')
             }
             break
             case 'ping': case 'botstatus': case 'statusbot': {
@@ -615,7 +594,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 neww = performance.now()
                 oldd = performance.now()
                 respon = `
-Kecepatan Respon ${latensi.toFixed(4)} _Detik_ \n ${oldd - neww} _milidetik_\n\nRuntime : ${runtime(process.uptime())}
+				Velocidade de resposta ${latensi.toFixed(4)} _Segundo_ \n ${oldd - neww} _milissegundos_\n\nTempo de execução : ${runtime(process.uptime())}
 
 💻 Info Server
 RAM: ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
@@ -631,7 +610,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 reply(respon)
             }
             break
-            case 'owner': case 'creator': {
+            case 'owner': case 'creator': case 'criador':  case 'dono': {
                 let vcard = 'BEGIN:VCARD\n' // metadata of the contact card
                     + `VERSION:3.0\n`
                     + `N:;${ownername}.;;;`
@@ -639,11 +618,11 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                     + `ORG:Owner ${botname};\n` // the organization of the contact
                     + `TEL;type=CELL;type=VOICE;waid=${ownernomer}:${ownernomerr}\n`
                     + 'END:VCARD'
-                alpha.sendMessage(m.chat, { contacts: { displayName: 'Zeeone Ofc.', contacts: [{ vcard }] } }, { quoted: m })
+                alpha.sendMessage(m.chat, { contacts: { displayName: 'Workx.', contacts: [{ vcard }] } }, { quoted: m })
             }
             break
-            case 'rules':{
-            	let gam = await getBuffer(picak + 'Syarat Dan Ketentuan')
+            case 'Regras':{
+            	let gam = await getBuffer(picak + 'Termos e Condições')
             var but = [
 				{
 					"urlButton": {
@@ -652,29 +631,29 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 						}
 					}
 				]
-				await alpha.send5ButImg(from, lang.rules(prefix), `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+				await alpha.send5ButImg(from, lang.Regras(prefix), `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
 				}
             break
             
-            case 'donasi': case 'donate':{
+            case 'Apoiar': case 'donate': case 'doar':{
             var but = [
           {
             "urlButton": {
-              "displayText": "YouTube Creator",
+              "displayText": "Social",
               "url": `${youtube}`
             }
           },
           {
             "urlButton": {
-              "displayText": "Rest Api's",              
+              "displayText": "Site",              
               "url": `${myweb}`
 
             }
           },
           {
             "quickReplyButton": {
-              "displayText": "Rules",
-"id": 'rules'
+              "displayText": "Regras",
+"id": 'Regras'
             }
           },
           {
@@ -685,7 +664,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
           },
 {
             "quickReplyButton": {
-              "displayText": "List Command",
+              "displayText": "Menu",
 "id": 'command'
             }
           }
@@ -694,46 +673,31 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
     }
  break
       
-//Random Anime
-				case 'cry':case 'kill':case 'hug':case 'pat':case 'lick':case 'kiss':case 'bite':case 'yeet':case 'neko':case 'bully':case 'bonk':case 'wink':case 'poke':case 'nom':case 'slap':case 'waifu':case 'smile':case 'wave':case 'awoo':case 'blush':case 'smug':case 'glomp':case 'happy':case 'dance':case 'cringe':case 'cuddle':case 'highfive':case 'shinobu':case 'megumin':case 'handhold':
-					reply(lang.wait())
-					axios.get(`https://api.waifu.pics/sfw/${command}`)
-					.then(({data}) => {
-						alpha.sendMediaAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 
-
-					})
-					break
-				case 'waifu': case 'loli':
-					reply(lang.wait())
-					axios.get(`https://api.waifu.pics/sfw/waifu`)
-					.then(({data}) => {
-					alpha.sendMediaAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
-
-
-					})
-					break
 case 'stikerin':case 's': case 'sticker': case 'stiker': {
-if (!quoted) return reply(`Kirim/Reply Gambar/Video Dengan Caption ${prefix + command}\n\nDurasi Sticker Video 1-9 Detik☕`)
+if (!quoted) return reply(`Enviar/Responder imagem/vídeo
+Com legenda ${prefix + command}\n\nDurasi Sticker Video 1-9`)
 if (/image/.test(mime)) {
 let media = await quoted.download()
 let encmedia = await alpha.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(encmedia)
 } else if (/video/.test(mime)) {
-if ((quoted.msg || quoted).seconds > 11) return reply(`Kirim/Reply Gambar/Video Dengan Caption ${prefix + command}\n\nDurasi Sticker Video 1-9 Detik☕`)
+if ((quoted.msg || quoted).seconds > 11) return reply(`Enviar/Responder imagem/vídeo
+Com legenda ${prefix + command}\n\nDuração do adesivo de vídeo 1-9s☕`)
 let media = await quoted.download()
 let encmedia = await alpha.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(encmedia)
 } else {
-reply(`Kirim/Reply Gambar/Video Dengan Caption ${prefix + command}\n\nDurasi Sticker Video 1-9 Detik☕`)
+reply(`Enviar/Responder imagem/vídeo
+Com legenda ${prefix + command}\n\nDuração do adesivo de vídeo 1-9 s`)
 }
 }
 break
 
             case 'setprofile': case 'setpp': {
                 if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
-                if (!quoted) throw 'Reply Image'
-                if (/image/.test(mime)) throw `balas image dengan caption *${prefix + command}*`
+                if (!quoted) throw 'Imagem de resposta'
+                if (/image/.test(mime)) throw `resposta imagem com legenda *${prefix + command}*`
                 let media = await alpha.downloadAndSaveMediaMessage(quoted)
                 if (!m.isGroup && !isBotAdmins && !isGroupAdmins) {
                     await alpha.updateProfilePicture(m.chat, { url: media }).catch((err) => fs.unlinkSync(media))
@@ -745,114 +709,7 @@ break
             }
             break
             
-            case 'webtonsearch': case 'webtoon':
-                if (!q) return reply(lang.wrongFormat(prefix))
-                await reply(lang.wait())
-                zee.Webtoons(q).then(async data => {
-                    let txt = `*------「 WEBTOONS-SEARCH 」------*\n\n`
-                    for (let i of data) {
-                        txt += `*📫 Title :* ${i.judul}\n`
-                        txt += `*👍🏻 Like :* ${i.like}\n`
-                        txt += `*🤴🏻 Creator :* ${i.creator}\n`
-                        txt += `*🎥 Genre :* ${i.genre}\n`
-                        txt += `*📚 Url :* ${i.url}\n ----------------------------------------------------------\n`
-                    }
-                    await reply(txt)
-                })
-                .catch((err) => {
-                    reply(lang.err())
-                })
-            break
-            case 'drakor':
-                if (!q) return reply(lang.wrongFormat(prefix))
-                await reply(lang.wait())
-                zee.Drakor(`${text}`).then(async data => {
-                    let txt = `*-----「 DRAKOR-SEARCH 」-----*\n\n`
-                    for (let i of data) {
-                        txt += `*📫 Title :* ${i.judul}\n`
-                        txt += `*📆 Years :* ${i.years}\n`
-                        txt += `*🎥 Genre :* ${i.genre}\n`
-                        txt += `*📚 Url :* ${i.url}\n-----------------------------------------------------\n`
-                    }
-                    await sendFileFromUrl(from,data[0].thumbnail,txt,m)
-                })
-                .catch((err) => {
-                    reply(lang.err())
-                })
-            break
-            case 'anime':{
-                if (!q) return reply(lang.wrongFormat(prefix))
-                await reply(lang.wait())
-                zee.Anime(q).then(async data => {
-                    let txt = `*-------「 ANIME-SEARCH 」-------*\n\n`
-                    for (let i of data) {
-                        txt += `*📫 Title :* ${i.judul}\n`
-                        txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
-                    }
-                    let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
-                    var but = [
-				{
-					"urlButton": {
-						"displayText": "Website",
-						"url": `${myweb}`
-						}
-					}
-				]
-				await alpha.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
-                })
-                .catch((err) => {
-                    reply(lang.err())
-                })
-                }
-            break
-            case 'character': case 'karakter':
-                if (!q) return reply(lang.wrongFormat(prefix))
-                await reply(lang.wait())
-                zee.Character(q).then(async data => {
-                    let txt = `*---「 CHARACTER-SEARCH 」---*\n\n`
-                    for (let i of data) {
-                        txt += `*📫 Character :* ${i.character}\n`
-                        txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
-                    }
-                    let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
-                    var but = [
-				{
-					"urlButton": {
-						"displayText": "Website",
-						"url": `${myweb}`
-						}
-					}
-				]
-				await alpha.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
-                })
-                .catch((err) => {
-                    reply(lang.err())
-                })
-            break
-            case 'manga':
-                if (!q) return reply(lang.wrongFormat(prefix))
-                await reply(lang.wait())
-                zee.Manga(`${text}`).then(async data => {
-                    let txt = `*------「 MANGA-SEARCH 」------*\n\n`
-                    for (let i of data) {
-                         txt += `*📫 Title :* ${i.judul}\n`
-                         txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
-                    }
-                    let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
-                    var but = [
-				{
-					"urlButton": {
-						"displayText": "Website",
-						"url": `${myweb}`
-						}
-					}
-				]
-				await alpha.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
-                })
-                .catch((err) => {
-                    reply(lang.err())
-                })
-            break
+            
             case 'soundcloud':{
     	        if (!q) return reply(lang.wrongFormat(prefix))
                 if (!isUrl(q)) return reply(lang.wrongFormat(prefix))
@@ -861,12 +718,12 @@ break
 				zee.SoundCloud(`${text}`).then(async (data) => {
                     let txt = `*----「 SOUNDCLOUD DOWNLOAD 」----*\n\n`
                     txt += `*📟 Title :* ${data.title}\n`
-                    txt += `*🎞️ Duration :* ${data.duration}\n`
-					txt += `*🛠️ Quality :* ${data.medias[1].quality}\n`
+                    txt += `*🎞️ Duração :* ${data.duration}\n`
+					txt += `*🛠️ Qualidade :* ${data.medias[1].quality}\n`
 					txt += `*🚧 Ext :* ${data.medias[0].extension}\n`
-                    txt += `*💾 Size :* ${data.medias[0].formattedSize}\n`
+                    txt += `*💾 Tamanho :* ${data.medias[0].formattedSize}\n`
                     txt += `*📚 Url Source :* ${data.url}\n\n`
-                    txt += `*Mohon tunggu sebentar kak, sedang proses pengiriman...*`
+                    txt += `*Por favor, aguarde um momento, mana, no processo de entrega...*`
                     let gam = await getBuffer(data.thumbnail)
                     var but = [
 				{
@@ -889,9 +746,9 @@ break
                 await reply(lang.wait())
                 zee.Twitter(`${q}`).then(async data => {
                     let txt = `*----「 TWITTER DOWNLOADER 」----*\n\n`
-                    txt += `*📫 Title :* ${data.title}\n`
-                    txt += `*📟 Quality :* ${data.medias[1].quality}\n`
-                    txt += `*💾 Size :* ${data.medias[1].formattedSize}\n`
+                    txt += `*📫 Titulo :* ${data.title}\n`
+                    txt += `*📟 Qualidade :* ${data.medias[1].quality}\n`
+                    txt += `*💾 Tamanho :* ${data.medias[1].formattedSize}\n`
                     txt += `*📚 Url :* ${data.url}`
                     sendFileFromUrl(from,data.medias[1].url,txt,m)
                 })
@@ -900,34 +757,34 @@ break
                 })
             break
             case 'infochat': case 'sider': {
-                if (!m.quoted) m.reply('Reply Pesan')
+                if (!m.quoted) m.reply('Responder à mensagem')
                 let msg = await m.getQuotedObj()
-                if (!m.quoted.isBaileys) throw 'Pesan tersebut bukan dikirim oleh bot!'
+                if (!m.quoted.isBaileys) throw 'A mensagem não foi enviada por um bot!'
                 let teks = ''
                 for (let i of msg.userReceipt) {
                     let read = i.readTimestamp
                     let unread = i.receiptTimestamp
                     let waktu = read ? read : unread
                     teks += `⭔ @${i.userJid.split('@')[0]}\n`
-                    teks += ` ┗━⭔ *Waktu :* ${moment(waktu * 1000).format('DD/MM/YY HH:mm:ss')} ⭔ *Status :* ${read ? 'Dibaca' : 'Terkirim'}\n\n`
+                    teks += ` ┗━⭔ *Tempo :* ${moment(waktu * 1000).format('DD/MM/YY HH:mm:ss')} ⭔ *Status :* ${read ? 'Seja lido' : 'Enviei'}\n\n`
                 }
                 alpha.sendTextWithMentions(m.chat, teks, m)
             }
             break
             case 'q': case 'quoted': {
-		if (!m.quoted) return reply('Reply Pesannya!!')
+		if (!m.quoted) return reply('Responder à mensagem!!')
 		let wokwol = await alpha.serializeM(await m.getQuotedObj())
-		if (!wokwol.quoted) return reply('Pesan Yang anda reply tidak mengandung reply')
+		if (!wokwol.quoted) return reply('A mensagem que você respondeu não contém uma resposta')
 		await wokwol.quoted.copyNForward(m.chat, true)
             }
 	    break
             case 'listchat': case 'listpc': {
             	if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
                  let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v.id)
-                 let teks = `⬣ *LIST PERSONAL CHAT*\n\nTotal Chat : ${anu.length} Chat\n\n`
+                 let teks = `⬣ *LISTA DE CHAT PESSOAL*\n\nTotal Chat : ${anu.length} Chat\n\n`
                  for (let i of anu) {
                      let nama = store.messages[i].array[0].pushName
-                     teks += `⬡ *Nama :* ${nama}\n⬡ *User :* @${i.split('@')[0]}\n⬡ *Chat :* https://wa.me/${i.split('@')[0]}\n\n────────────────────────\n\n`
+                     teks += `⬡ *Nome :* ${nama}\n⬡ *Usuario :* @${i.split('@')[0]}\n⬡ *Chat :* https://wa.me/${i.split('@')[0]}\n\n────────────────────────\n\n`
                  }
                  alpha.sendTextWithMentions(m.chat, teks, m)
              }
@@ -945,10 +802,10 @@ if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
 getGroups = await alpha.groupFetchAllParticipating()
 let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
 let anu = groups.map(v => v.id)
-let teks = `⬣ *LIST GROUP CHAT*\n\nTotal Group : ${anu.length} Group\n\n`
+let teks = `⬣ *LIST GROUP CHAT*\n\nTotal do Grupo : ${anu.length} Grupo\n\n`
 for (let i of anu) {
 let metadata = await alpha.groupMetadata(i)
-teks += `🐥 *Nama :* ${metadata.subject}\n👤 *Owner :* @${groupMetadata.owner.split('@')[0]}\n♨️ *ID :* ${metadata.id}\n🗓️ *Dibuat :* ${moment(metadata.creation * 1000).tz('Asia/Jakarta').format('DD/MM/YYYY HH:mm:ss')}\n👥 *Member :* ${metadata.participants.length}\n\n────────────────────────\n\n`
+teks += `🐥 *Nome :* ${metadata.subject}\n👤 *Dono :* @${groupMetadata.owner.split('@')[0]}\n♨️ *ID :* ${metadata.id}\n🗓️ *Por ler :* ${moment(metadata.creation * 1000).tz('Africa/Maputo').format('DD/MM/YYYY HH:mm:ss')}\n👥 *Membro :* ${metadata.participants.length}\n\n────────────────────────\n\n`
 }
 alpha.sendTextWithMentions(m.chat, teks, m)
 }
@@ -956,10 +813,10 @@ break
                case 'listgroup': case 'listgc': {
                 	if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
                  let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
-                 let teks = `⬣ *LIST GROUP CHAT*\n\nTotal Group : ${anu.length} Group\n\n`
+                 let teks = `⬣ *LISTA DE CONVERSAS DOS GRUPOS*\n\nTotal do Grupo : ${anu.length} Grupo\n\n`
                  for (let i of anu) {
                      let metadata = await alpha.groupMetadata(i)
-                     teks += `⬡ *Nama :* ${metadata.subject}\n⬡ *Owner :* @${groupMetadata.owner.split('@')[0]}\n⬡ *ID :* ${metadata.id}\n⬡ *Dibuat :* ${moment(metadata.creation * 1000).tz('Asia/Jakarta').format('DD/MM/YYYY HH:mm:ss')}\n⬡ *Member :* ${metadata.participants.length}\n\n────────────────────────\n\n`
+                     teks += `⬡ *Nome :* ${metadata.subject}\n⬡ *Dono :* @${groupMetadata.owner.split('@')[0]}\n⬡ *ID :* ${metadata.id}\n⬡ *Lido :* ${moment(metadata.creation * 1000).tz('Africa/Maputo').format('DD/MM/YYYY HH:mm:ss')}\n⬡ *Membro :* ${metadata.participants.length}\n\n────────────────────────\n\n`
                  }
                  alpha.sendTextWithMentions(m.chat, teks, m)
              }
@@ -968,7 +825,7 @@ break
              	if (!m.isGroup) return reply(mess.group)
 				if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
 				if (!isBotAdmins) return reply(lang.botNotAdmin())
-				if (!text) return reply(`Kirim perintah ${prefix + command} *teks*`)
+				if (!text) return reply(`Enviar pedidos ${prefix + command} *texto*`)
 				alpha.groupUpdateDescription(m.chat, `${args.join(" ")}`)
 				reply(lang.ok())
 				}
@@ -977,8 +834,8 @@ break
 if (!m.isGroup) return reply(lang.groupOnly())
 if (!isBotAdmins) return reply(lang.botNotAdmin())
 if (!isGroupAdmins && !isGroupOwner && !isBotAdmins) return reply(lang.adminOnly())
-if (!quoted) return reply(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
-if (!/image/.test(mime)) return reply(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
+if (!quoted) return reply(`Img ou Vid ${prefix + command}`)
+if (!/image/.test(mime)) return reply(`Imagem ou video ${prefix + command}`)
 let media = await alpha.downloadAndSaveMediaMessage(quoted)
 await alpha.updateProfilePicture(groupId, { url: media }).catch((err) => fs.unlinkSync(media))
 reply(lang.ok())
@@ -986,7 +843,7 @@ reply(lang.ok())
 break
             case 'join': {
                 if (!isCreator) return reply(lang.ownerOnly())
-                if (!text) throw 'Masukkan Link Group!'
+                if (!text) throw 'Digite o link do grupo!'
                 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalid!'
                 reply(lang.wait())
                 let result = args[0].split('https://chat.whatsapp.com/')[1]
@@ -996,7 +853,7 @@ break
             case 'tagall': case 'infoall':
                 if (!m.isGroup) return reply(lang.groupOnly())
                 if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
-                let tekss = `══✪〘 *👥 Mention All* 〙✪══\n\n➲ *Message : ${q ? q : 'Nothing'}*\n\n`
+                let tekss = `══✪〘 *👥 Mencionar todos* 〙✪══\n\n➲ *Mensagem : ${q ? q : 'Nothing'}*\n\n`
 		      	for (let mem of participants) {
 		            tekss += `🏅 @${mem.id.split('@')[0]}\n`
 				}
@@ -1008,11 +865,11 @@ break
                 if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
                 alpha.sendMessage(from, { text : q ? q : '' , mentions: participants.map(a => a.id)}, {quoted: fkontak})
             break
-            case 'kick': {
+            case 'kick': case 'remover': {
 				if (!m.isGroup) return reply(lang.groupOnly())
                 if (!isBotAdmins) return reply(lang.botNotAdmin())
                 if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
-                if (!m.quoted && !text) return reply(`Kirim nomer/tag/reply target yang ingin di kick !`)
+                if (!m.quoted && !text) return reply(`Marque o integrante que deseje remover !`)
 				let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 				await alpha.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 				}
@@ -1026,37 +883,37 @@ break
 				await alpha.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 				}
 				break
-			case 'promote': {
+			case 'promote': case 'promover': {
 				if (!m.isGroup) return reply(lang.groupOnly())
                 if (!isBotAdmins) return reply(lang.botNotAdmin())
                 if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())	
-                if (!m.quoted && !text) return reply(`Kirim nomer/tag/reply target yang ingin di promote !`)
+                if (!m.quoted && !text) return reply(`Marque a pessoa que deseje promover !`)
 				let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 				await alpha.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 				}
 				break
-			case 'demote': {
+			case 'demote': case 'rebaixar': {
 				if (!m.isGroup) return reply(lang.groupOnly())
                 if (!isBotAdmins) return reply(lang.botNotAdmin())
                 if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
-                if (!m.quoted && !text) return reply(`Kirim nomer/tag/reply target yang ingin di demote !`)
+                if (!m.quoted && !text) return reply(`Marque a pessoa que deseje despromover, ou rebaixar !`)
 				let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 				await alpha.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 				}
 				break
-			case 'revoke':
+			case 'revoke': case 'revogar':
                 if (!m.isGroup) return reply(lang.groupOnly())
                 if (!isBotAdmins) return reply(lang.botNotAdmin())
                 if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
                 let link = await alpha.groupRevokeInvite(from)
-                await reply(lang.ok() + `\n\n*New Link for ${groupName}* :\n https://chat.whatsapp.com/${link}`)
+                await reply(lang.ok() + `\n\n*Novo link para ${groupName}* :\n https://chat.whatsapp.com/${link}`)
             break
-            case 'out':
+            case 'out': case 'sair': 
                 if (!m.isGroup) return reply(lang.groupOnly())
                 if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
-               reply('Sayonara~ 👋').then(async res => await alpha.groupLeave(from))
+               reply('Adeus~ 👋').then(async res => await alpha.groupLeave(from))
             break
-            case 'group': case 'grup':
+            case 'group': case 'grupo':
                 if (!m.isGroup) return reply(lang.groupOnly())
                 if (!isBotAdmins) return reply(lang.botNotAdmin())
                 if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
@@ -1075,13 +932,13 @@ if (!m.isGroup) return reply(lang.groupOnly())
 let user = global.db.data.users[m.sender]
 user.afkTime = + new Date
 user.afkReason = text
-m.reply(`${m.pushName} Telah Afk Dengan Alasan ${text ? ': ' + text : 'Nothing'}`)
+m.reply(`${m.pushName} Tem Afk Com Razão ${text ? ': ' + text : 'Nothing'}`)
 }
 break  
             case 'setmenu':{
             	if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
             const listhades = ['templateLocation', 'templateTenor']
-			alpha.sendList(from, 'Mau set menu bang ?', `© ${ownername}`, salam + pushname, 'KLIK DISINI', [
+			alpha.sendList(from, 'Você quer um menu fixo?', `© ${ownername}`, salam + pushname, 'CLIQUE AQUI', [
 							{
 								"title": "Set Menu-1",
 								"rows": [
@@ -1100,7 +957,7 @@ break
 									}
 								]
 							}], {quoted:fgif})
-                if (!listhades.includes(text)) return alpha.sendList(from, 'Mau set menu bang ?', `© ${ownername}`, salam + pushname, 'KLIK DISINI', [
+                if (!listhades.includes(text)) return alpha.sendList(from, 'Você quer um menu fixo?', `© ${ownername}`, salam + pushname, 'CLIQUE AQUI', [
 							{
 								"title": "Set Menu-1",
 								"rows": [
@@ -1128,19 +985,19 @@ break
 						var but = [
 						{
 							"urlButton": {
-								"displayText": "YouTube Creator",
+								"displayText": "Social",
 								"url": `${youtube}`
 								}
 								},
 								{
 									"urlButton": {
-										"displayText": "Rest Api's",
+										"displayText": "Site",
 										"url": `${myweb}`
 										}
 										},
 										{
 											"quickReplyButton": {
-												"displayText": "Donasi",
+												"displayText": "Apoiar",
 												"id": 'donate'
 												}
 												},
@@ -1152,7 +1009,7 @@ break
 														},
 														{
 															"quickReplyButton": {
-																"displayText": "List Command",
+																"displayText": "Menu",
 																"id": 'command'
 																}
 																}
@@ -1163,19 +1020,19 @@ break
 							var but = [
 							{
 								"urlButton": {
-									"displayText": "YouTube Creator",
+									"displayText": "Social",
 									"url": `${youtube}`
 									}
 								},
 								{
 									"urlButton": {
-										"displayText": "Rest Api's",
+										"displayText": "Site",
 										"url": `${myweb}`
 										}
 										},
 										{
 											"quickReplyButton": {
-												"displayText": "Donasi",
+												"displayText": "Apoiar",
 												"id": 'donate'
 												}
 												},
@@ -1187,7 +1044,7 @@ break
 														},
 														{
 															"quickReplyButton": {
-																"displayText": "List Command",
+																"displayText": "Menu",
 																"id": 'command'
 																}
 																}
@@ -1200,19 +1057,19 @@ break
 							var but = [
 							{
 								"urlButton": {
-									"displayText": "YouTube Creator",
+									"displayText": "Social",
 									"url": `${youtube}`
 									}
 								},
 								{
 									"urlButton": {
-										"displayText": "Rest Api's",
+										"displayText": "Site",
 										"url": `${myweb}`
 										}
 										},
 										{
 											"quickReplyButton": {
-												"displayText": "Donasi",
+												"displayText": "Apoiar",
 												"id": 'donate'
 												}
 												},
@@ -1224,12 +1081,12 @@ break
 														},
 														{
 															"quickReplyButton": {
-																"displayText": "Rules",
-																"id": 'rules'
+																"displayText": "Regras",
+																"id": 'Regras'
 																}
 																}
 																]
-										await alpha.send5ButLoc(from, `Hai kak ${pushname} 👋, saya *${botname}* ` + '\n\n' + lang.listMenu(time, salam, pushname, prefix) , `© ${ownername}`,pp_bot, but )
+										await alpha.send5ButLoc(from, `Ola ${pushname} 👋, sou o *${botname}* ` + '\n\n' + lang.listMenu(time, salam, pushname, prefix) , `© ${ownername}`,pp_bot, but )
 									}
 								break   
 								case 'infocmd': case'infomenu':{
@@ -1237,19 +1094,19 @@ break
 							var but = [
 							{
 								"urlButton": {
-									"displayText": "YouTube Creator",
+									"displayText": "Social",
 									"url": `${youtube}`
 									}
 								},
 								{
 									"urlButton": {
-										"displayText": "Rest Api's",
+										"displayText": "Site",
 										"url": `${myweb}`
 										}
 										},
 										{
 											"quickReplyButton": {
-												"displayText": "Donasi",
+												"displayText": "Apoiar",
 												"id": 'donate'
 												}
 												},
@@ -1261,7 +1118,7 @@ break
 														},
 														{
 															"quickReplyButton": {
-																"displayText": "Back To List",
+																"displayText": "Voltar a Menu",
 																"id": 'command'
 																}
 																}
@@ -1274,31 +1131,31 @@ break
 							var but = [
 							{
 								"urlButton": {
-									"displayText": "YouTube Creator",
+									"displayText": "Social",
 									"url": `${youtube}`
 									}
 								},
 								{
 									"urlButton": {
-										"displayText": "Rest Api's",
+										"displayText": "Site",
 										"url": `${myweb}`
 										}
 										},
 										{
 											"quickReplyButton": {
-												"displayText": "Donasi",
+												"displayText": "Apoiar",
 												"id": 'donate'
 												}
 												},
 												{
 													"quickReplyButton": {
-														"displayText": "Owner",
+														"displayText": "Dono",
 														"id": 'owner'
 														}
 														},
 														{
 															"quickReplyButton": {
-																"displayText": "Back To List",
+																"displayText": "Voltar a Menu",
 																"id": 'command'
 																}
 																}
@@ -1311,31 +1168,31 @@ break
 							var but = [
 							{
 								"urlButton": {
-									"displayText": "YouTube Creator",
+									"displayText": "Social",
 									"url": `${youtube}`
 									}
 								},
 								{
 									"urlButton": {
-										"displayText": "Rest Api's",
+										"displayText": "Site",
 										"url": `${myweb}`
 										}
 										},
 										{
 											"quickReplyButton": {
-												"displayText": "Donasi",
+												"displayText": "Apoiar",
 												"id": 'donate'
 												}
 												},
 												{
 													"quickReplyButton": {
-														"displayText": "Owner",
+														"displayText": "Dono",
 														"id": 'owner'
 														}
 														},
 														{
 															"quickReplyButton": {
-																"displayText": "Back To List",
+																"displayText": "Voltar a menu",
 																"id": 'command'
 																}
 																}
@@ -1348,19 +1205,19 @@ break
  var but = [
 							{
 								"urlButton": {
-									"displayText": "YouTube Creator",
+									"displayText": "Social",
 									"url": `${youtube}`
 									}
 								},
 								{
 									"urlButton": {
-										"displayText": "Rest Api's",
+										"displayText": "Site",
 										"url": `${myweb}`
 										}
 										},
 										{
 											"quickReplyButton": {
-												"displayText": "Donasi",
+												"displayText": "Apoiar",
 												"id": 'donate'
 												}
 												},
@@ -1372,7 +1229,7 @@ break
 														},
 														{
 															"quickReplyButton": {
-																"displayText": "Back To List",
+																"displayText": "Voltar a Menu",
 																"id": 'command'
 																}
 																}
@@ -1385,19 +1242,19 @@ break
  var but = [
 							{
 								"urlButton": {
-									"displayText": "YouTube Creator",
+									"displayText": "Social",
 									"url": `${youtube}`
 									}
 								},
 								{
 									"urlButton": {
-										"displayText": "Rest Api's",
+										"displayText": "Site",
 										"url": `${myweb}`
 										}
 										},
 										{
 											"quickReplyButton": {
-												"displayText": "Donasi",
+												"displayText": "Apoiar",
 												"id": 'donate'
 												}
 												},
@@ -1409,7 +1266,7 @@ break
 														},
 														{
 															"quickReplyButton": {
-																"displayText": "Back To List",
+																"displayText": "Voltar a Menu",
 																"id": 'command'
 																}
 																}
@@ -1421,31 +1278,31 @@ break
  var but = [
 							{
 								"urlButton": {
-									"displayText": "YouTube Creator",
+									"displayText": "Social",
 									"url": `${youtube}`
 									}
 								},
 								{
 									"urlButton": {
-										"displayText": "Rest Api's",
+										"displayText": "Site",
 										"url": `${myweb}`
 										}
 										},
 										{
 											"quickReplyButton": {
-												"displayText": "Donasi",
+												"displayText": "Apoiar",
 												"id": 'donate'
 												}
 												},
 												{
 													"quickReplyButton": {
-														"displayText": "Owner",
+														"displayText": "Dono",
 														"id": 'owner'
 														}
 														},
 														{
 															"quickReplyButton": {
-																"displayText": "Back To List",
+																"displayText": "Voltar a Menu",
 																"id": 'command'
 																}
 																}
@@ -1457,31 +1314,31 @@ break
  var but = [
 							{
 								"urlButton": {
-									"displayText": "YouTube Creator",
+									"displayText": "Social",
 									"url": `${youtube}`
 									}
 								},
 								{
 									"urlButton": {
-										"displayText": "Rest Api's",
+										"displayText": "Site",
 										"url": `${myweb}`
 										}
 										},
 										{
 											"quickReplyButton": {
-												"displayText": "Donasi",
+												"displayText": "Apoiar",
 												"id": 'donate'
 												}
 												},
 												{
 													"quickReplyButton": {
-														"displayText": "Owner",
+														"displayText": "Dono",
 														"id": 'owner'
 														}
 														},
 														{
 															"quickReplyButton": {
-																"displayText": "Back To List",
+																"displayText": "Voltar a Menu",
 																"id": 'command'
 																}
 																}
@@ -1494,31 +1351,31 @@ break
  var but = [
 							{
 								"urlButton": {
-									"displayText": "YouTube Creator",
+									"displayText": "Social",
 									"url": `${youtube}`
 									}
 								},
 								{
 									"urlButton": {
-										"displayText": "Rest Api's",
+										"displayText": "Site",
 										"url": `${myweb}`
 										}
 										},
 										{
 											"quickReplyButton": {
-												"displayText": "Donasi",
+												"displayText": "Apoiar",
 												"id": 'donate'
 												}
 												},
 												{
 													"quickReplyButton": {
-														"displayText": "Owner",
+														"displayText": "Dono",
 														"id": 'owner'
 														}
 														},
 														{
 															"quickReplyButton": {
-																"displayText": "Back To List",
+																"displayText": "Voltar a Menu",
 																"id": 'command'
 																}
 																}
@@ -1531,31 +1388,31 @@ break
  var but = [
 							{
 								"urlButton": {
-									"displayText": "YouTube Creator",
+									"displayText": "Social",
 									"url": `${youtube}`
 									}
 								},
 								{
 									"urlButton": {
-										"displayText": "Rest Api's",
+										"displayText": "Site",
 										"url": `${myweb}`
 										}
 										},
 										{
 											"quickReplyButton": {
-												"displayText": "Donasi",
+												"displayText": "Apoiar",
 												"id": 'donate'
 												}
 												},
 												{
 													"quickReplyButton": {
-														"displayText": "Owner",
+														"displayText": "Dono",
 														"id": 'owner'
 														}
 														},
 														{
 															"quickReplyButton": {
-																"displayText": "Back To List",
+																"displayText": "Voltar a Menu",
 																"id": 'command'
 																}
 																}
@@ -1567,31 +1424,31 @@ break
  var but = [
 							{
 								"urlButton": {
-									"displayText": "YouTube Creator",
+									"displayText": "Social",
 									"url": `${youtube}`
 									}
 								},
 								{
 									"urlButton": {
-										"displayText": "Rest Api's",
+										"displayText": "Site",
 										"url": `${myweb}`
 										}
 										},
 										{
 											"quickReplyButton": {
-												"displayText": "Donasi",
+												"displayText": "Apoiar",
 												"id": 'donate'
 												}
 												},
 												{
 													"quickReplyButton": {
-														"displayText": "Owner",
+														"displayText": "Dono",
 														"id": 'owner'
 														}
 														},
 														{
 															"quickReplyButton": {
-																"displayText": "Back To List",
+																"displayText": "Voltar a Menu",
 																"id": 'command'
 																}
 																}
@@ -1603,31 +1460,31 @@ break
  var but = [
 							{
 								"urlButton": {
-									"displayText": "YouTube Creator",
+									"displayText": "Social",
 									"url": `${youtube}`
 									}
 								},
 								{
 									"urlButton": {
-										"displayText": "Rest Api's",
+										"displayText": "Site",
 										"url": `${myweb}`
 										}
 										},
 										{
 											"quickReplyButton": {
-												"displayText": "Donasi",
+												"displayText": "Apoiar",
 												"id": 'donate'
 												}
 												},
 												{
 													"quickReplyButton": {
-														"displayText": "Owner",
+														"displayText": "Dono",
 														"id": 'owner'
 														}
 														},
 														{
 															"quickReplyButton": {
-																"displayText": "Back To List",
+																"displayText": "Voltar a Menu",
 																"id": 'command'
 																}
 																}
@@ -1639,31 +1496,31 @@ break
  var but = [
 							{
 								"urlButton": {
-									"displayText": "YouTube Creator",
+									"displayText": "Social",
 									"url": `${youtube}`
 									}
 								},
 								{
 									"urlButton": {
-										"displayText": "Rest Api's",
+										"displayText": "Site",
 										"url": `${myweb}`
 										}
 										},
 										{
 											"quickReplyButton": {
-												"displayText": "Donasi",
+												"displayText": "Apoiar",
 												"id": 'donate'
 												}
 												},
 												{
 													"quickReplyButton": {
-														"displayText": "Owner",
+														"displayText": "Dono",
 														"id": 'owner'
 														}
 														},
 														{
 															"quickReplyButton": {
-																"displayText": "Back To List",
+																"displayText": "Voltar a Menu",
 																"id": 'command'
 																}
 																}
@@ -1675,31 +1532,31 @@ break
  var but = [
 							{
 								"urlButton": {
-									"displayText": "YouTube Creator",
+									"displayText": "Social",
 									"url": `${youtube}`
 									}
 								},
 								{
 									"urlButton": {
-										"displayText": "Rest Api's",
+										"displayText": "Site",
 										"url": `${myweb}`
 										}
 										},
 										{
 											"quickReplyButton": {
-												"displayText": "Donasi",
+												"displayText": "Apoiar",
 												"id": 'donate'
 												}
 												},
 												{
 													"quickReplyButton": {
-														"displayText": "Owner",
+														"displayText": "Dono",
 														"id": 'owner'
 														}
 														},
 														{
 															"quickReplyButton": {
-																"displayText": "Back To List",
+																"displayText": "Voltar a Menu",
 																"id": 'command'
 																}
 																}
@@ -1711,31 +1568,31 @@ break
  var but = [
 							{
 								"urlButton": {
-									"displayText": "YouTube Creator",
+									"displayText": "Social",
 									"url": `${youtube}`
 									}
 								},
 								{
 									"urlButton": {
-										"displayText": "Rest Api's",
+										"displayText": "Site",
 										"url": `${myweb}`
 										}
 										},
 										{
 											"quickReplyButton": {
-												"displayText": "Donasi",
+												"displayText": "Apoiar",
 												"id": 'donate'
 												}
 												},
 												{
 													"quickReplyButton": {
-														"displayText": "Owner",
+														"displayText": "Dono",
 														"id": 'owner'
 														}
 														},
 														{
 															"quickReplyButton": {
-																"displayText": "Back To List",
+																"displayText": "Voltar a Menu",
 																"id": 'command'
 																}
 																}
@@ -1748,31 +1605,31 @@ case 'textprocmd': case 'textpromenu':
  var but = [
 							{
 								"urlButton": {
-									"displayText": "YouTube Creator",
+									"displayText": "Social",
 									"url": `${youtube}`
 									}
 								},
 								{
 									"urlButton": {
-										"displayText": "Rest Api's",
+										"displayText": "Site",
 										"url": `${myweb}`
 										}
 										},
 										{
 											"quickReplyButton": {
-												"displayText": "Donasi",
+												"displayText": "Apoiar",
 												"id": 'donate'
 												}
 												},
 												{
 													"quickReplyButton": {
-														"displayText": "Owner",
+														"displayText": "Dono",
 														"id": 'owner'
 														}
 														},
 														{
 															"quickReplyButton": {
-																"displayText": "Back To List",
+																"displayText": "Voltar a Menu",
 																"id": 'command'
 																}
 																}
@@ -1784,31 +1641,31 @@ case 'textprocmd': case 'textpromenu':
  var but = [
 							{
 								"urlButton": {
-									"displayText": "YouTube Creator",
+									"displayText": "Social",
 									"url": `${youtube}`
 									}
 								},
 								{
 									"urlButton": {
-										"displayText": "Rest Api's",
+										"displayText": "Site",
 										"url": `${myweb}`
 										}
 										},
 										{
 											"quickReplyButton": {
-												"displayText": "Donasi",
+												"displayText": "Apoiar",
 												"id": 'donate'
 												}
 												},
 												{
 													"quickReplyButton": {
-														"displayText": "Owner",
+														"displayText": "Dono",
 														"id": 'owner'
 														}
 														},
 														{
 															"quickReplyButton": {
-																"displayText": "Back To List",
+																"displayText": "Voltar a Menu",
 																"id": 'command'
 																}
 																}
@@ -1822,31 +1679,31 @@ case 'textprocmd': case 'textpromenu':
  var but = [
 							{
 								"urlButton": {
-									"displayText": "YouTube Creator",
+									"displayText": "Social",
 									"url": `${youtube}`
 									}
 								},
 								{
 									"urlButton": {
-										"displayText": "Rest Api's",
+										"displayText": "Site",
 										"url": `${myweb}`
 										}
 										},
 										{
 											"quickReplyButton": {
-												"displayText": "Donasi",
+												"displayText": "Apoiar",
 												"id": 'donate'
 												}
 												},
 												{
 													"quickReplyButton": {
-														"displayText": "Owner",
+														"displayText": "Dono",
 														"id": 'owner'
 														}
 														},
 														{
 															"quickReplyButton": {
-																"displayText": "Back To List",
+																"displayText": "Voltar a Menu",
 																"id": 'command'
 																}
 																}
