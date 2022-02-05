@@ -212,7 +212,6 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 ├ ${prefix}instagram [resposta imagem/adesivo]
 ├ ${prefix}greyscale [resposta imagem/adesivo]
 ├ ${prefix}glitch [resposta imagem/adesivo]
-├ ${prefix}gay [resposta imagem/adesivo]
 ├ ${prefix}frame [resposta imagem/adesivo]
 ├ ${prefix}fire [resposta imagem/adesivo]
 ├ ${prefix}distort [resposta imagem/adesivo]

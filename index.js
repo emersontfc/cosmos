@@ -564,7 +564,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 						}
 					}
 				]
-				await alpha.send5ButImg(from, `⭔ Título : ${result.title}\n⭔ Source : ${result.source}\n⭔ Media Url : ${result.image}` , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+				await alpha.send5ButImg(from, `⭔ Título : ${result.title}\n⭔ Fonte : ${result.source}\n⭔ Media Url : ${result.image}` , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
 				})
 				.catch((err) => {
                     reply(lang.err())
@@ -621,7 +621,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 alpha.sendMessage(m.chat, { contacts: { displayName: 'Workx.', contacts: [{ vcard }] } }, { quoted: m })
             }
             break
-            case 'Regras':{
+            case 'regras': case 'rules': case 'normas':{
             	let gam = await getBuffer(picak + 'Termos e Condições')
             var but = [
 				{
@@ -658,7 +658,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
           },
           {
             "quickReplyButton": {
-              "displayText": "Owner",
+              "displayText": "Dono",
 "id": 'owner'
             }
           },
@@ -935,6 +935,124 @@ user.afkReason = text
 m.reply(`${m.pushName} Tem Afk Com Razão ${text ? ': ' + text : 'Nothing'}`)
 }
 break  
+
+//Menu Novo
+const sendButloc = async (id, text1, desc1, gam1, but = [], options = {}) => {
+	kma = gam1
+	mhan = await alpha.prepareMessage(from, kma, location)
+	const buttonMessages = {
+	locationMessage: mhan.message.locationMessage,
+	contentText: text1,
+	footerText: desc1,
+	buttons: but,
+	headerType: 6
+	}
+	alpha.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
+	}
+		const sendButMessage = (id, text1, desc1, but = [], options = {}) => {
+		  const buttonMessage = {
+			contentText: text1,
+			footerText: desc1,
+			buttons: but,
+			headerType: 1,
+		  };
+		  alpha.sendMessage(
+			id,
+			buttonMessage,
+			MessageType.buttonsMessage,
+			options
+		  );
+		};
+				if (budy == 'Jarvis') {
+	
+					reply(`Oi Amigo, em que eu posso te ajudar? Para acessar ao menu do bot digite ${prefix}menu Ok?`)
+	
+				}
+	
+				if (budy == 'P') {
+	
+					reply(`Sim, eu posso te ajudar? Se o tipo estiver confuso digite ${prefix}menu Ok?`)
+	
+				}
+	
+				if (budy == 'Ola') {
+	
+					reply(`Oi, tudo bem com vc??`)
+	
+				}
+	
+				if (budy == 'bot') {
+					reply(`Sim, o que há de errado com o bot? quer convidar para um grupo😒`)
+	
+				}
+	
+	
+				if (budy == 'assalamualaikum') {
+	
+					reply(` وَعَلَيْكُمُ السَّلاَمُ \nAda Yang Bisa Saya Bantu? kalo Bingung Ketik ${prefix}menu Ya Kak`)
+	
+				}
+				
+				if (budy == 'mastah') {
+	
+					reply(`Waw Ada Mastah Ampun Mastah`)
+	
+				}
+				
+				if (budy == 'Mastah') {
+	
+					reply(`Waw Ada Mastah Ampun Mastah`)
+	
+				}
+	
+				if (budy == 'Assalamualaikum') {
+	
+					reply(`Waalaikumsalam, Ada Yang Bisa Saya Bantu? kalo Bingung Ketik ${prefix}menu Ya Kak`)
+	
+				}
+	
+				if (budy == 'Bom Dia') {
+	
+					reply(`Bom dia Querido Amigo/a :)`)
+	
+				}
+	
+				if (budy == 'terimakasih') {
+	
+					reply(`Sama sama, Semoga Harimu Menyenangkan :)`)
+	
+				}
+	
+				if (budy == 'makasih') {
+	
+					reply(`Sama sama, Semoga Harimu Menyenangkan :)`)
+	
+				}
+	
+				if (budy == 'Thanks') {
+	
+					reply(`Sama sama, Semoga Harimu Menyenangkan :)`)
+	
+				}
+	
+				if (budy == 'thanks') {
+	
+					reply(`Sama sama, Semoga Harimu Menyenangkan :)`)
+	
+				}
+	
+				if (budy == 'Tq') {
+	
+					reply(`Sama sama, Semoga Harimu Menyenangkan :)`)
+	
+				}
+	
+				if (budy == 'tq') {
+	
+					reply(`Sama sama, Semoga Harimu Menyenangkan :)`)
+	
+				}
+				/******************************* AUTO *******************************/
             case 'setmenu':{
             	if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
             const listhades = ['templateLocation', 'templateTenor']
@@ -1038,7 +1156,7 @@ break
 												},
 												{
 													"quickReplyButton": {
-														"displayText": "Owner",
+														"displayText": "Dono",
 														"id": 'owner'
 														}
 														},
@@ -1075,7 +1193,7 @@ break
 												},
 												{
 													"quickReplyButton": {
-														"displayText": "Owner",
+														"displayText": "Dono",
 														"id": 'owner'
 														}
 														},
