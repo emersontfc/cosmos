@@ -49,7 +49,7 @@ const database = require('./database/database.json')
 const stcCmd = JSON.parse(fs.readFileSync('./database/command.json'))
 
 pp_bot = fs.readFileSync(thumbnail)
-qris = fs.readFileSync(Apoiar)
+qris = fs.readFileSync(donasi)
 // language
 const  { ind } = require(`./language`)
 lang = ind //language
@@ -635,7 +635,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 				}
             break
             
-            case 'Apoiar': case 'donate': case 'doar':{
+            case 'apoiar': case 'donate': case 'doar':{
             var but = [
           {
             "urlButton": {
