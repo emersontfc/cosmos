@@ -361,6 +361,24 @@ delete sticker[hash]
 reply(`Pronto!!`)
 }
 break
+//Testando novos comandos...
+case 'block': {
+	if (!isCreator) throw mess.owner
+	let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+	await alpha.updateBlockStatus(users, 'block').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+}
+break
+	case 'unblock': {
+	if (!isCreator) throw mess.owner
+	let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+	await alpha.updateBlockStatus(users, 'unblock').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+}
+break
+
+
+
+//Fim dos novos comandosS
+
 case 'listcmd': {
 let teks = `
 *Lista de Hash*
@@ -635,7 +653,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 				}
             break
             
-            case 'apoiar': case 'donate': case 'doar':{
+            case 'apoiar': case 'donate': case 'doar': case 'donasi': {
             var but = [
           {
             "urlButton": {
@@ -844,7 +862,7 @@ break
             case 'join': {
                 if (!isCreator) return reply(lang.ownerOnly())
                 if (!text) throw 'Digite o link do grupo!'
-                if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalid!'
+                if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalido!'
                 reply(lang.wait())
                 let result = args[0].split('https://chat.whatsapp.com/')[1]
                 await alpha.groupAcceptInvite(result).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
@@ -1004,7 +1022,7 @@ case 'setmenu':{
 												},
 												{
 													"quickReplyButton": {
-														"displayText": "Owner",
+														"displayText": "Dono",
 														"id": 'owner'
 														}
 														},
