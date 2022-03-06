@@ -186,13 +186,6 @@ user.afkTime = -1
 user.afkReason = ''
 }
 
-////
-if (messagesC.includes("Oi")){
-    alpha.updatePresence(from, Presence.composing)
-    reply(`Oi tudo bem Querido/a`)
-    }
-
-
         // Bot Status
         const used = process.memoryUsage()
         const cpus = os.cpus().map(cpu => {
