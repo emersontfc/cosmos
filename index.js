@@ -678,6 +678,128 @@ Ver lista de mensagens com ${prefix}listmsg`)
         break
 
 
+    //══════════[ APK FEATURES ]══════════//
+
+case 'uapkpro':
+    if (args.length == 0) return reply(`Example: ${prefix + command} Bgmi`)
+    query = args.join(' ')
+    get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/uapkpro?apps=${query}&page=1&apikey=cabd55849002ea851ce8`, { method: 'get' })
+    kontol = get_result.result
+    ini_txt = '「 Search for applications on the steamkpro.org platform and provide the result data 」\n\n'
+    for (var x of kontol) {
+      ini_txt += `Name : ${x.apps_name}\n`
+      ini_txt += `Link :${x.apps_linkdl}\n`
+      ini_txt += `Tag : ${x.apps_tag}\n`
+      ini_txt += `\n`
+    }
+    reply(ini_txt)
+    break
+  case 'toraccino':
+    if (args.length == 0) return reply(`Example: ${prefix + command} Bgmi`)
+    query = args.join(' ')
+    get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/toraccino?apps=${query}&page=1&apikey=cabd55849002ea851ce8`, { method: 'get' })
+    kontol = get_result.result
+    ini_txt = '「 Searching for Applications through the website and sending a data which is the result of the search! 」\n\n'
+    for (var x of kontol) {
+      ini_txt += `Name : ${x.apps_name}\n`
+      ini_txt += `Link :${x.apps_linkdl}\n`
+      ini_txt += `Tag : ${x.apps_tag}\n`
+      ini_txt += `Upload : ${x.apps_upload}\n`
+      ini_txt += `Author : ${x.apps_author}\n`
+      ini_txt += `Desc : ${x.apps_desc}\n`
+      ini_txt += `\n`
+    }
+    reply(ini_txt)
+    break
+  case 'revdl':
+    if (args.length == 0) return reply(`Example: ${prefix + command} Bgmi`)
+    query = args.join(' ')
+    get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/revdl?apps=${query}&page=1&apikey=cabd55849002ea851ce8`, { method: 'get' })
+    kontol = get_result.result
+    ini_txt = '「 Searching for Applications through the website and sending a data which is the result of the search! 」\n\n'
+    for (var x of kontol) {
+      ini_txt += `Name : ${x.apps_name}\n`
+      ini_txt += `Link :${x.apps_linkdl}\n`
+      ini_txt += `\n`
+    }
+    reply(ini_txt)
+    break
+  case 'hostapk':
+    if (args.length == 0) return reply(`Example: ${prefix + command} Bgmi`)
+    query = args.join(' ')
+    get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/hostapk?apps=${query}&page=1&apikey=cabd55849002ea851ce8`, { method: 'get' })
+    kontol = get_result.result
+    ini_txt = '「 Search for applications on the hostapk.com website and provide data from the search results 」\n\n'
+    for (var x of kontol) {
+      ini_txt += `Name : ${x.apps_name}\n`
+      ini_txt += `Link :${x.apps_linkdl}\n`
+      ini_txt += `Released : ${x.apps_released}\n`
+      ini_txt += `Author : ${x.apps_author}\n`
+      ini_txt += `Desc : ${x.apps_desc}\n`
+      ini_txt += `\n`
+    }
+    reply(ini_txt)
+    break
+  case 'apkshub':
+    if (args.length == 0) return reply(`Example: ${prefix + command} Bgmi`)
+    query = args.join(' ')
+    get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/apkshub?apps=${query}&apikey=cabd55849002ea851ce8`, { method: 'get' })
+    kontol = get_result.result
+    ini_txt = '「 Search for applications on the apkshub.com platform and provide the result data 」\n\n'
+    for (var x of kontol) {
+      ini_txt += `Name : ${x.apps_name}\n`
+      ini_txt += `Link :${x.apps_linkdl}\n`
+      ini_txt += `Views :${x.apps_views}\n`
+      ini_txt += `\n`
+    }
+    reply(ini_txt)
+    break
+case 'apkmody':
+    if (args.length == 0) return reply(`Example: ${prefix + command} Bgmi`)
+    query = args.join(' ')
+    get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/apkmody?apps=${query}&apikey=cabd55849002ea851ce8`, { method: 'get' })
+    kontol = get_result.result
+    ini_txt = '「 Search for applications on the apkmody.io platform and provide the result data 」\n\n'
+    for (var x of kontol) {
+      ini_txt += `Name : ${x.apps_name}\n`
+      ini_txt += `Desc :${x.apps_desc}\n`
+      ini_txt += `Link : ${x.apps_linkdl}\n`
+      ini_txt += `\n`
+    }
+    reply(ini_txt)
+    break
+case 'apkgoogle':
+    if (args.length == 0) return reply(`Example: ${prefix + command} Bgmi`)
+    query = args.join(' ')
+    get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/apkgoogle?apps=${query}&page=1&apikey=cabd55849002ea851ce8`, { method: 'get' })
+    kontol = get_result.result
+    ini_txt = '「 Search for applications on the apkgoogle.org platform and provide the result data 」\n\n'
+    for (var x of kontol) {
+      ini_txt += `Name : ${x.apps_name}\n`
+      ini_txt += `Link :${x.apps_linkdl}\n`
+      ini_txt += `Tag : ${x.apps_tag}\n`
+      ini_txt += `\n`
+    }
+    reply(ini_txt)
+    break
+          case 'apkdone':
+    if (args.length == 0) return reply(`Example: ${prefix + command} Bgmi`)
+    query = args.join(' ')
+    get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/apkdone?apps=${query}&apikey=cabd55849002ea851ce8`, { method: 'get' })
+    kontol = get_result.result
+    ini_txt = '「 Search for applications on the apkdone.com website and provide data from the search results 」\n\n'
+    for (var x of kontol) {
+      ini_txt += `Name : ${x.apps_name}\n`
+      ini_txt += `Link :${x.apps_linkdl}\n`
+      ini_txt += `Version : ${x.apps_version}\n`
+      ini_txt += `Rate : ${x.apps_rate}\n`
+      ini_txt += `Tag : ${x.apps_tag}\n\n`
+      ini_txt += `\n`
+    }
+    reply(ini_txt)
+    break
+
+
 //fim
 
 
