@@ -650,19 +650,20 @@ Ver lista de mensagens com ${prefix}listmsg`)
             }
             
             break
-
             case 'attp':
-try{ 
-if (!c) return m.reply(`preciso do text krl`)
-url = encodeURI(`https://api.xteam.xyz/attp?file&text=${c}`)
-venomkkk = await getBuffer(url)
-alpha.sendMessage(m.chat, {sticker: venomkkk}, {quoted: m})
-} catch(e) {
-console.log(e)
-m.reply('deu erro na api filho')
-}
-break
+                try{ 
+                if (!c) return m.reply(`preciso do text krl`)
+                url = encodeURI(`https://api.xteam.xyz/attp?file&text=${c}`)
+                attp2 = await getBuffer(url)
+                alpha.sendMessage(m.chat, {sticker: attp2}, {quoted: m})
+                } catch(e) {
+                console.log(e)
+                m.reply('deu erro')
+                }
+                break
 
+
+//fim
 
 
 
@@ -866,8 +867,8 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 let vcard = 'BEGIN:VCARD\n' // metadata do ctt
                     + 'VERSION:3.0\n' 
                     + 'N:;Cosmos💞.;;;'
-                    + 'FN:Cosmos💞.\n' // nome todo
-                    + 'ORG:Cosmos💞;\n' // organização
+                    + 'FN:Boss💞.\n' // nome todo
+                    + 'ORG:Workx💞;\n' // organização
                     + 'TEL;type=CELL;type=VOICE;waid=258848858288:+258 84 8858-288\n' // WhatsApp ID + número
                     + 'END:VCARD' // finalização
                 alpha.sendMessage(m.chat, { contacts: { displayName: 'Workx💞.', contacts: [{ vcard }] } }, { quoted: m })
