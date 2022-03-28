@@ -661,6 +661,21 @@ Ver lista de mensagens com ${prefix}listmsg`)
                 m.reply('deu erro')
                 }
                 break
+                 //══════════[ SEARCH FEATURES ]══════════//
+
+    case 'playstore':
+        if(!c) return reply('Oque esta buscando?')
+        let play = await hx.playstore(`${c}`)
+        let store = '❉─────────────────────❉\n'
+        for (let i of play){
+        store += `\n*「 *PLAY STORE* 」*\n
+- *Nome* : ${i.name}
+- *Link* : ${i.link}\n
+- *Desenvolvedor* : ${i.developer}
+- *Dev Link* : ${i.link_dev}\n❉─────────────────────❉`
+        }
+        reply(store)
+        break
 
 
 //fim
