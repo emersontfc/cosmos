@@ -677,6 +677,39 @@ Ver lista de mensagens com ${prefix}listmsg`)
         reply(store)
         break
 
+        case 'google':
+case 'googlesearch':
+case 'ggs':
+if (args.length < 1) return reply('Oque Busca??')
+teks = args.join(' ')
+reply(mess.wait)
+res = await ggs({'query' : `${teks}`})
+kant = ``
+for (let i of res) {
+kant += `*Title* : ${i.title}
+*Link* : ${i.link}
+*Description* : ${i.snippet}`
+}
+var akhir = kant.trim()
+reply(akhir)
+break
+case 'gimage':
+case 'googleimage':
+case 'googleimg':
+if (args.length < 1) return reply('O que você deseja procurar?')
+reply(mess.wait)
+teks = args.join(' ')
+res = await googleImage(teks, google)
+function google(error, result){
+if (error){ return reply('_[ ! ] Api Error Or Result Not Found_')}
+else {
+var gugIm = result
+var random =  gugIm[Math.floor(Math.random() * gugIm.length)].url
+sendFileFromUrl(random, image, {quoted: mek, caption: `*Resultado da pesquisa :* ${teks}`})
+}
+}
+break
+
 
     //══════════[ APK FEATURES ]══════════//
 
@@ -685,7 +718,7 @@ case 'uapkpro':
     query = args.join(' ')
     get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/uapkpro?apps=${query}&page=1&apikey=cabd55849002ea851ce8`, { method: 'get' })
     kontol = get_result.result
-    ini_txt = '「 Search for applications on the steamkpro.org platform and provide the result data 」\n\n'
+    ini_txt = '「 Pesquisando por aplicativos emthe steamkpro.org e encontrei os seguintes dados 」\n\n'
     for (var x of kontol) {
       ini_txt += `Name : ${x.apps_name}\n`
       ini_txt += `Link :${x.apps_linkdl}\n`
@@ -699,9 +732,9 @@ case 'uapkpro':
     query = args.join(' ')
     get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/toraccino?apps=${query}&page=1&apikey=cabd55849002ea851ce8`, { method: 'get' })
     kontol = get_result.result
-    ini_txt = '「 Searching for Applications through the website and sending a data which is the result of the search! 」\n\n'
+    ini_txt = '「 Buscando por Aplicativos através do site e enviando um dado que é o resultado da busca 」\n\n'
     for (var x of kontol) {
-      ini_txt += `Name : ${x.apps_name}\n`
+      ini_txt += `Nome : ${x.apps_name}\n`
       ini_txt += `Link :${x.apps_linkdl}\n`
       ini_txt += `Tag : ${x.apps_tag}\n`
       ini_txt += `Upload : ${x.apps_upload}\n`
@@ -716,22 +749,22 @@ case 'uapkpro':
     query = args.join(' ')
     get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/revdl?apps=${query}&page=1&apikey=cabd55849002ea851ce8`, { method: 'get' })
     kontol = get_result.result
-    ini_txt = '「 Searching for Applications through the website and sending a data which is the result of the search! 」\n\n'
+    ini_txt = '「 Buscando por Aplicativos através do site e enviando um dado que é o resultado da busca 」\n\n'
     for (var x of kontol) {
-      ini_txt += `Name : ${x.apps_name}\n`
+      ini_txt += `Nome : ${x.apps_name}\n`
       ini_txt += `Link :${x.apps_linkdl}\n`
       ini_txt += `\n`
     }
     reply(ini_txt)
     break
   case 'hostapk':
-    if (args.length == 0) return reply(`Example: ${prefix + command} Bgmi`)
+    if (args.length == 0) return reply(`Exemplo: ${prefix + command} Bgmi`)
     query = args.join(' ')
     get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/hostapk?apps=${query}&page=1&apikey=cabd55849002ea851ce8`, { method: 'get' })
     kontol = get_result.result
-    ini_txt = '「 Search for applications on the hostapk.com website and provide data from the search results 」\n\n'
+    ini_txt = '「 Pesquisando por aplicativos em hostapk.com」\n\n'
     for (var x of kontol) {
-      ini_txt += `Name : ${x.apps_name}\n`
+      ini_txt += `Nome : ${x.apps_name}\n`
       ini_txt += `Link :${x.apps_linkdl}\n`
       ini_txt += `Released : ${x.apps_released}\n`
       ini_txt += `Author : ${x.apps_author}\n`
@@ -745,7 +778,7 @@ case 'uapkpro':
     query = args.join(' ')
     get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/apkshub?apps=${query}&apikey=cabd55849002ea851ce8`, { method: 'get' })
     kontol = get_result.result
-    ini_txt = '「 Search for applications on the apkshub.com platform and provide the result data 」\n\n'
+    ini_txt = '「 Pesquisando por aplicativos em apkshub.com e encontrei os seguintes dados 」\n\n'
     for (var x of kontol) {
       ini_txt += `Name : ${x.apps_name}\n`
       ini_txt += `Link :${x.apps_linkdl}\n`
@@ -759,7 +792,7 @@ case 'apkmody':
     query = args.join(' ')
     get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/apkmody?apps=${query}&apikey=cabd55849002ea851ce8`, { method: 'get' })
     kontol = get_result.result
-    ini_txt = '「 Search for applications on the apkmody.io platform and provide the result data 」\n\n'
+    ini_txt = '「 Pesquisando por aplicativos em apkmody.io e encontrei os seguintes dados 」\n\n'
     for (var x of kontol) {
       ini_txt += `Name : ${x.apps_name}\n`
       ini_txt += `Desc :${x.apps_desc}\n`
@@ -773,7 +806,7 @@ case 'apkgoogle':
     query = args.join(' ')
     get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/apkgoogle?apps=${query}&page=1&apikey=cabd55849002ea851ce8`, { method: 'get' })
     kontol = get_result.result
-    ini_txt = '「 Search for applications on the apkgoogle.org platform and provide the result data 」\n\n'
+    ini_txt = '「 Pesquisando por aplicativos emthe apkgoogle.org e encontrei os seguintes dados 」\n\n'
     for (var x of kontol) {
       ini_txt += `Name : ${x.apps_name}\n`
       ini_txt += `Link :${x.apps_linkdl}\n`
@@ -787,7 +820,7 @@ case 'apkgoogle':
     query = args.join(' ')
     get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/apkdone?apps=${query}&apikey=cabd55849002ea851ce8`, { method: 'get' })
     kontol = get_result.result
-    ini_txt = '「 Search for applications on the apkdone.com website and provide data from the search results 」\n\n'
+    ini_txt = '「 Pesquisando por aplicativos emthe apkdone.com website and provide data from the Resultado da pesquisas 」\n\n'
     for (var x of kontol) {
       ini_txt += `Name : ${x.apps_name}\n`
       ini_txt += `Link :${x.apps_linkdl}\n`
