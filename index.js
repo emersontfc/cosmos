@@ -832,13 +832,13 @@ case 'apkgoogle':
     reply(ini_txt)
     break
 
-    //══════════[ JOGOS]══════════//
-    case 'bugreport':
+    //══════════[ UTILITARIOS]══════════//
+    case 'bugreport': case 'reportar':
         //
         const bug = body.slice(10)
          if (args.length > 300) return alpha.sendMessage(from, 'Máximo 300 caracteres', msgType.text, {quoted: mek})
         var nomor = mek.participant
-        teks1 = `[REPORT]\nDe: wa.me/${sender.split("@s.whatsapp.net")[0]}\nErro ou bug: ${bug}`
+        teks1 = `[REPORT]\nDe: wa.me/${sender.split("@s.whatsapp.net")[0]}\nErro ou Bug do Cosmos: ${bug}`
         var options = {
          text: teks1, 
         contextInfo: {mentionedJid: [sender]}, 
@@ -846,6 +846,13 @@ case 'apkgoogle':
         alpha.sendMessage('258848858288@s.whatsapp.net', options, text, {quoted: mek})
         reply("Mensagem enviada ao meu dono; Spam = block + ban.")
         break
+        case 'qrcode':
+//
+					const tex = encodeURIComponent(body.slice(8))
+					if (!tex) return alpha.sendMessage(from, 'Digite um texto/url que deseja criar um código qr', text, {quoted: mek})
+					const bufferr = await getBuffer(`https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${tex}`)
+					client.sendMessage(from, bufferr, image, {quoted: mek})
+					break
 
 //fim
 
