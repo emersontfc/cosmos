@@ -833,21 +833,19 @@ case 'apkgoogle':
     break
 
     //══════════[ JOGOS]══════════//
-    case 'reportar': case 'bugreport':
-        const cfrr = body.slice(8)
-        if (cfrr.length > 300) return alpha.sendMessage(from, 'Desculpe, o texto é muito longo, máximo de 300 textos', msgType.text, {quoted: mek})
+    case 'bugreport':
+        //
+        const bug = body.slice(10)
+         if (args.length > 300) return alpha.sendMessage(from, 'Máximo 300 caracteres', msgType.text, {quoted: mek})
         var nomor = mek.participant
-        const ress = `*[SOLICITAR ATENDIMENTO]*\nNome : @${nomor.split("@s.whatsapp.net")[0]}\nMensagem : ${cfrr}`
-                var options = {
-                text: ress,
-                             contextInfo: {mentionedJid: [nomor]},
-                     }
+        teks1 = `[REPORT]\nDe: wa.me/${sender.split("@s.whatsapp.net")[0]}\nErro ou bug: ${bug}`
+        var options = {
+         text: teks1, 
+        contextInfo: {mentionedJid: [sender]}, 
+        }
         alpha.sendMessage('258848858288@s.whatsapp.net', options, text, {quoted: mek})
-        alpha.sendMessage('258848858288@s.whatsapp.net', options, text, {quoted: mek})
-        alpha.sendMessage('258848858288@s.whatsapp.net', options, text, {quoted: mek})
-        reply('SUA SOLICITAÇÃO CHEGOU AO ADMINISTRADOR DO *COSMOS*, solicitações falsas ou de pegadinha não serão respondidas.')
+        reply("Mensagem enviada ao meu dono; Spam = block + ban.")
         break
-
 
 //fim
 
