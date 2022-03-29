@@ -918,10 +918,8 @@ case 'apkgoogle':
 "send abusive words in any grup, excepting this grup, and send screenshot proof here"
 ]
         const der = desafio[Math.floor(Math.random() * desafio.length)]
-        buffer = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
-        alpha.sendMessage(from, buffer, image, { quoted: mek, caption: '_*DESAFIO*_\n'+ der })
         break
-                      break
+                    
  case 'verdade':
         const verdade =[
 "Have you ever liked anyone? How long?",
@@ -1015,8 +1013,6 @@ case 'apkgoogle':
 "do you play pubg, if you then send ur id number"
 ]
         const trut = verdade[Math.floor(Math.random() * verdade.length)]
-        buffer = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
-        alpha.sendMessage(from, buffer, image, { quoted: mek, caption: '_*VERDADE*_\n'+ trut })
         break
 
 
