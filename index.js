@@ -1,15 +1,24 @@
 /**
-	@ Leve em conta os Direitos autorais 😏
-	@ Codigo Fonte em  https://github.com/emersontfc/cosmos
+	@ No Re Upload, recode sendiri base nya klo mau 😏
+	@ Sc no enc silahkan cek https://github.com/DikaArdnt/alpha-Morou
  
 	 「 TqTo 」
-	@ Workx
+	@ My God
+	@ My Parents
+	@ Fatih A.
+	@ Ferdi
+	@ DikaArdnt [author]
+	@ Mhankbarbar
+	@ Nurutomo
+	@ Rashid
+	@ ZeeoneOfc
+	@ Penyedia Module
 	@ And All Support
 **/
 
 
 require('./settings')
-const { default: makeWASocket, BufferJSON, WAMessageStubType, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia , generateWAMessage, areJidsSameUser, makeInMemoryStore} = require('@adiwajshing/baileys-md')
+const { default: makeWASocket, BufferJSON, WAMessageStubType, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia , generateWAMessage, areJidsSameUser, makeInMemoryStore} = require('@adiwajshing/baileys')
 const translate = require('@vitalets/google-translate-api')
 const fs = require('fs')
 const util = require('util')
@@ -217,9 +226,9 @@ user.afkReason = ''
         
         
         if (m.isGroup && !m.key.fromMe &&  db.data.chats[m.chat].antilink && !isCreator && !isGroupAdmins && !isGroupOwner){
-        	if (budy.match(`https://chat.whatsapp.com`)) {
-        	alpha.sendMessage(m.chat, {text: `*Link detectado no Grupo*\n\nVocê será removido do grupo ${groupMetadata.subject}`}, {quoted:m})
-			alpha.groupParticipantsUpdate(m.chat, [sender], 'remove')
+            if (budy.match(`https://chat.whatsapp.com`)) {
+                alpha.sendMessage(m.chat, {text: `*Link detectado no Grupo*\n\nVocê será removido do grupo ${groupMetadata.subject}`}, {quoted:m})
+                alpha.groupParticipantsUpdate(m.chat, [sender], 'remove')
 		}
 	}
         
@@ -271,157 +280,158 @@ user.afkReason = ''
 
  //FUN
 
-if (kuismath.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
-kuis = true
-jawaban = kuismath[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
-	alpha.sendButtonText(m.chat, [{ buttonId: 'meio matemático', buttonText: { displayText: 'Quiz Math' }, type: 1 }], ` 🎮 Quiz de Matematica🎮\n\nResposta correta 🎉\n\nQuer jogar de novo? kirim ${prefix}math *mode*`, `© ${ownername}`, m)
-delete kuismath[m.sender.split('@')[0]]
-} else m.reply('*Resposta errada!*')
-}
 
-
-if (('family100'+m.chat in _family100) && isCmd) {
-kuis = true
-let room = _family100['family100'+m.chat]
-let teks = budy.toLowerCase().replace(/[^\w\s\-]+/, '')
-let isSurender = /^((me)?nyerah|surr?ender)$/i.test(m.text)
-if (!isSurender) {
-let index = room.jawaban.findIndex(v => v.toLowerCase().replace(/[^\w\s\-]+/, '') === teks)
-if (room.terjawab[index]) return !0
-room.terjawab[index] = m.sender
-}
-let isWin = room.terjawab.length === room.terjawab.filter(v => v).length
-let caption = `
-Jawablah Pertanyaan Berikut :\n${room.soal}\n\n\nTerdapat ${room.jawaban.length} Jawaban ${room.jawaban.find(v => v.includes(' ')) ? `(beberapa Jawaban Terdapat Spasi)` : ''}
-${isWin ? `Semua Jawaban Terjawab` : isSurender ? 'Menyerah!' : ''}
-${Array.from(room.jawaban, (jawaban, index) => {
-return isSurender || room.terjawab[index] ? `(${index + 1}) ${jawaban} ${room.terjawab[index] ? '@' + room.terjawab[index].split('@')[0] : ''}`.trim() : false
-}).filter(v => v).join('\n')}
-${isSurender ? '' : ``}`.trim()
-alpha.sendText(m.chat, caption, m, { contextInfo: { mentionedJid: parseMention(caption) }}).then(mes => { return _family100['family100'+m.chat].pesan = mesg }).catch(_ => _)
-if (isWin || isSurender) delete _family100['family100'+m.chat]
-}
-
-if (tebakgambar.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
-kuis = true
-jawaban = tebakgambar[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
-await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak gambar', buttonText: { displayText: 'Tebak Gambar' }, type: 1 }], `🎮 Tebak Gambar 🎮\n\nResposta correta 🎉\n\nQuer jogar de novo? aperte o botão abaixo`, `© ${ownername}`, m)
-delete tebakgambar[m.sender.split('@')[0]]
-} else m.reply('*Resposta errada!*')
-}
-
-
-if (tebakkata.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
-kuis = true
-jawaban = tebakkata[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
-await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak kata', buttonText: { displayText: 'Tebak Kata' }, type: 1 }], `🎮 Tebak Kata 🎮\n\nResposta correta 🎉\n\nQuer jogar de novo? aperte o botão abaixo`, `© ${ownername}`, m)
-delete tebakkata[m.sender.split('@')[0]]
-} else m.reply('*Resposta errada!*')
-}
-
-
-if (tebakbendera.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
-kuis = true
-jawaban = tebakbendera[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
-await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak bendera', buttonText: { displayText: 'Tebak Bendera' }, type: 1 }], `🎮 Tebak Bendera 🎮\n\nResposta correta 🎉\n\nQuer jogar de novo? aperte o botão abaixo`, `© ${ownername}`, m)
-delete tebakbendera[m.sender.split('@')[0]]
-} else m.reply('*Resposta errada!*')
-}
-
-
-if (caklontong.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
-kuis = true
-jawaban = caklontong[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
-await alpha.sendButtonText(m.chat, [{ buttonId: 'caklontong', buttonText: { displayText: 'Cak Lontong' }, type: 1 }], `🎮 Cak Lontong 🎮\n\nResposta correta 🎉\n\nQuer jogar de novo? aperte o botão abaixo`, `© ${ownername}`, m)
-delete caklontong[m.sender.split('@')[0]]
-} else m.reply('*Resposta errada!*')
-}
-
-
-if (susunkata.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
-kuis = true
-jawaban = susunkata[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
-await alpha.sendButtonText(m.chat, [{ buttonId: 'susunkata', buttonText: { displayText: 'Susun Kata' }, type: 1 }], `🎮 Susun Kata 🎮\n\nResposta correta 🎉\n\nQuer jogar de novo? aperte o botão abaixo`, `© ${ownername}`, m)
-delete susunkata[m.sender.split('@')[0]]
-} else m.reply('*Resposta errada!*')
-}
-
-
-if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
-kuis = true
-jawaban = tebakkalimat[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
-await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak kalimat', buttonText: { displayText: 'Tebak Kalimat' }, type: 1 }], `🎮 Tebak Kalimat 🎮\n\nResposta correta 🎉\n\nQuer jogar de novo? aperte o botão abaixo`, `© ${ownername}`, m)
-delete tebakkalimat[m.sender.split('@')[0]]
-} else m.reply('*Resposta errada!*')
-}
-
-
-if (siapaaku.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
-kuis = true
-jawaban = siapaaku[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
-await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak siapa', buttonText: { displayText: 'Tebak Siapa' }, type: 1 }], `🎮 Tebak Siapa 🎮\n\nResposta correta 🎉\n\nQuer jogar de novo? aperte o botão abaixo`, `© ${ownername}`, m)
-delete siapaaku[m.sender.split('@')[0]]
-} else m.reply('*Resposta errada!*')
-}
-
-
-
-if (tekateki.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
-kuis = true
-jawaban = tekateki[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
-await alpha.sendButtonText(m.chat, [{ buttonId: 'tekateki', buttonText: { displayText: 'Teka Teki' }, type: 1 }], `🎮 Teka Teki 🎮\n\nResposta correta 🎉\n\nQuer jogar de novo? aperte o botão abaixo`, `© ${ownername}`, m)
-delete tekateki[m.sender.split('@')[0]]
-} else m.reply('*Resposta errada!*')
-}
-
-
-if (tebakkabupaten.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
-kuis = true
-jawaban = tebakkabupaten[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
-await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak kabupaten', buttonText: { displayText: 'Tebak Kabupaten' }, type: 1 }], `🎮 Tebak Kabupaten 🎮\n\nResposta correta 🎉\n\nQuer jogar de novo? aperte o botão abaixo`, `© ${ownername}`, m)
-delete tebakkabupaten[m.sender.split('@')[0]]
-} else m.reply('*Resposta errada!*')
-}
-
-
-if (tebakkimia.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
-kuis = true
-jawaban = tebakkimia[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
-await alpha.sendButtonText(m.chat, [{ buttonId: 'adivinhar química', buttonText: { displayText: 'adivinhar química' }, type: 1 }], `🎮 adivinhar química 🎮\n\nResposta correta 🎉\n\nQuer jogar de novo? aperte o botão abaixo`, `© ${ownername}`, m)
-delete tebakkimia[m.sender.split('@')[0]]
-} else m.reply('*Resposta errada!*')
-}
-
-
-if (tebaklirik.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
-kuis = true
-jawaban = tebaklirik[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
-await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak lirik', buttonText: { displayText: 'Tebak Lirik' }, type: 1 }], `🎮 Tebak Lirik 🎮\n\nResposta correta 🎉\n\nQuer jogar de novo? aperte o botão abaixo`, `© ${ownername}`, m)
-delete tebaklirik[m.sender.split('@')[0]]
-} else m.reply('*Resposta errada!*')
-}
-
-
-if (tebaktebakan.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
-kuis = true
-jawaban = tebaktebakan[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
-await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak tebakan', buttonText: { displayText: 'Tebak Tebakan' }, type: 1 }], `🎮 Tebak Tebakan 🎮\n\nResposta correta 🎉\n\nQuer jogar de novo? aperte o botão abaixo`, `© ${ownername}`, m)
-delete tebaktebakan[m.sender.split('@')[0]]
-} else m.reply('*Resposta errada!*')
-}
+ if (kuismath.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
+    kuis = true
+    jawaban = kuismath[m.sender.split('@')[0]]
+    if (budy.toLowerCase() == jawaban) {
+        alpha.sendButtonText(m.chat, [{ buttonId: 'meio matemático', buttonText: { displayText: 'Quiz Math' }, type: 1 }], ` 🎮 Quiz de Matematica🎮\n\nResposta correta 🎉\n\nQuer jogar de novo? kirim ${prefix}math *mode*`, `© ${ownername}`, m)
+    delete kuismath[m.sender.split('@')[0]]
+    } else m.reply('*Resposta errada!*')
+    }
+    
+    
+    if (('family100'+m.chat in _family100) && isCmd) {
+    kuis = true
+    let room = _family100['family100'+m.chat]
+    let teks = budy.toLowerCase().replace(/[^\w\s\-]+/, '')
+    let isSurender = /^((me)?nyerah|surr?ender)$/i.test(m.text)
+    if (!isSurender) {
+    let index = room.jawaban.findIndex(v => v.toLowerCase().replace(/[^\w\s\-]+/, '') === teks)
+    if (room.terjawab[index]) return !0
+    room.terjawab[index] = m.sender
+    }
+    let isWin = room.terjawab.length === room.terjawab.filter(v => v).length
+    let caption = `
+    Jawablah Pertanyaan Berikut :\n${room.soal}\n\n\nTerdapat ${room.jawaban.length} Jawaban ${room.jawaban.find(v => v.includes(' ')) ? `(beberapa Jawaban Terdapat Spasi)` : ''}
+    ${isWin ? `Semua Jawaban Terjawab` : isSurender ? 'Menyerah!' : ''}
+    ${Array.from(room.jawaban, (jawaban, index) => {
+    return isSurender || room.terjawab[index] ? `(${index + 1}) ${jawaban} ${room.terjawab[index] ? '@' + room.terjawab[index].split('@')[0] : ''}`.trim() : false
+    }).filter(v => v).join('\n')}
+    ${isSurender ? '' : ``}`.trim()
+    alpha.sendText(m.chat, caption, m, { contextInfo: { mentionedJid: parseMention(caption) }}).then(mes => { return _family100['family100'+m.chat].pesan = mesg }).catch(_ => _)
+    if (isWin || isSurender) delete _family100['family100'+m.chat]
+    }
+    
+    if (tebakgambar.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
+    kuis = true
+    jawaban = tebakgambar[m.sender.split('@')[0]]
+    if (budy.toLowerCase() == jawaban) {
+    await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak gambar', buttonText: { displayText: 'Tebak Gambar' }, type: 1 }], `🎮 Tebak Gambar 🎮\n\nResposta correta 🎉\n\nQuer jogar de novo? aperte o botão abaixo`, `© ${ownername}`, m)
+    delete tebakgambar[m.sender.split('@')[0]]
+    } else m.reply('*Resposta errada!*')
+    }
+    
+    
+    if (tebakkata.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
+    kuis = true
+    jawaban = tebakkata[m.sender.split('@')[0]]
+    if (budy.toLowerCase() == jawaban) {
+    await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak kata', buttonText: { displayText: 'Tebak Kata' }, type: 1 }], `🎮 Tebak Kata 🎮\n\nResposta correta 🎉\n\nQuer jogar de novo? aperte o botão abaixo`, `© ${ownername}`, m)
+    delete tebakkata[m.sender.split('@')[0]]
+    } else m.reply('*Resposta errada!*')
+    }
+    
+    
+    if (tebakbendera.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
+    kuis = true
+    jawaban = tebakbendera[m.sender.split('@')[0]]
+    if (budy.toLowerCase() == jawaban) {
+    await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak bendera', buttonText: { displayText: 'Tebak Bendera' }, type: 1 }], `🎮 Tebak Bendera 🎮\n\nResposta correta 🎉\n\nQuer jogar de novo? aperte o botão abaixo`, `© ${ownername}`, m)
+    delete tebakbendera[m.sender.split('@')[0]]
+    } else m.reply('*Resposta errada!*')
+    }
+    
+    
+    if (caklontong.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
+    kuis = true
+    jawaban = caklontong[m.sender.split('@')[0]]
+    if (budy.toLowerCase() == jawaban) {
+    await alpha.sendButtonText(m.chat, [{ buttonId: 'caklontong', buttonText: { displayText: 'Cak Lontong' }, type: 1 }], `🎮 Cak Lontong 🎮\n\nResposta correta 🎉\n\nQuer jogar de novo? aperte o botão abaixo`, `© ${ownername}`, m)
+    delete caklontong[m.sender.split('@')[0]]
+    } else m.reply('*Resposta errada!*')
+    }
+    
+    
+    if (susunkata.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
+    kuis = true
+    jawaban = susunkata[m.sender.split('@')[0]]
+    if (budy.toLowerCase() == jawaban) {
+    await alpha.sendButtonText(m.chat, [{ buttonId: 'susunkata', buttonText: { displayText: 'Susun Kata' }, type: 1 }], `🎮 Susun Kata 🎮\n\nResposta correta 🎉\n\nQuer jogar de novo? aperte o botão abaixo`, `© ${ownername}`, m)
+    delete susunkata[m.sender.split('@')[0]]
+    } else m.reply('*Resposta errada!*')
+    }
+    
+    
+    if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
+    kuis = true
+    jawaban = tebakkalimat[m.sender.split('@')[0]]
+    if (budy.toLowerCase() == jawaban) {
+    await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak kalimat', buttonText: { displayText: 'Tebak Kalimat' }, type: 1 }], `🎮 Tebak Kalimat 🎮\n\nResposta correta 🎉\n\nQuer jogar de novo? aperte o botão abaixo`, `© ${ownername}`, m)
+    delete tebakkalimat[m.sender.split('@')[0]]
+    } else m.reply('*Resposta errada!*')
+    }
+    
+    
+    if (siapaaku.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
+    kuis = true
+    jawaban = siapaaku[m.sender.split('@')[0]]
+    if (budy.toLowerCase() == jawaban) {
+    await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak siapa', buttonText: { displayText: 'Tebak Siapa' }, type: 1 }], `🎮 Tebak Siapa 🎮\n\nResposta correta 🎉\n\nQuer jogar de novo? aperte o botão abaixo`, `© ${ownername}`, m)
+    delete siapaaku[m.sender.split('@')[0]]
+    } else m.reply('*Resposta errada!*')
+    }
+    
+    
+    
+    if (tekateki.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
+    kuis = true
+    jawaban = tekateki[m.sender.split('@')[0]]
+    if (budy.toLowerCase() == jawaban) {
+    await alpha.sendButtonText(m.chat, [{ buttonId: 'tekateki', buttonText: { displayText: 'Teka Teki' }, type: 1 }], `🎮 Teka Teki 🎮\n\nResposta correta 🎉\n\nQuer jogar de novo? aperte o botão abaixo`, `© ${ownername}`, m)
+    delete tekateki[m.sender.split('@')[0]]
+    } else m.reply('*Resposta errada!*')
+    }
+    
+    
+    if (tebakkabupaten.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
+    kuis = true
+    jawaban = tebakkabupaten[m.sender.split('@')[0]]
+    if (budy.toLowerCase() == jawaban) {
+    await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak kabupaten', buttonText: { displayText: 'Tebak Kabupaten' }, type: 1 }], `🎮 Tebak Kabupaten 🎮\n\nResposta correta 🎉\n\nQuer jogar de novo? aperte o botão abaixo`, `© ${ownername}`, m)
+    delete tebakkabupaten[m.sender.split('@')[0]]
+    } else m.reply('*Resposta errada!*')
+    }
+    
+    
+    if (tebakkimia.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
+    kuis = true
+    jawaban = tebakkimia[m.sender.split('@')[0]]
+    if (budy.toLowerCase() == jawaban) {
+    await alpha.sendButtonText(m.chat, [{ buttonId: 'adivinhar química', buttonText: { displayText: 'adivinhar química' }, type: 1 }], `🎮 adivinhar química 🎮\n\nResposta correta 🎉\n\nQuer jogar de novo? aperte o botão abaixo`, `© ${ownername}`, m)
+    delete tebakkimia[m.sender.split('@')[0]]
+    } else m.reply('*Resposta errada!*')
+    }
+    
+    
+    if (tebaklirik.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
+    kuis = true
+    jawaban = tebaklirik[m.sender.split('@')[0]]
+    if (budy.toLowerCase() == jawaban) {
+    await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak lirik', buttonText: { displayText: 'Tebak Lirik' }, type: 1 }], `🎮 Tebak Lirik 🎮\n\nResposta correta 🎉\n\nQuer jogar de novo? aperte o botão abaixo`, `© ${ownername}`, m)
+    delete tebaklirik[m.sender.split('@')[0]]
+    } else m.reply('*Resposta errada!*')
+    }
+    
+    
+    if (tebaktebakan.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
+    kuis = true
+    jawaban = tebaktebakan[m.sender.split('@')[0]]
+    if (budy.toLowerCase() == jawaban) {
+    await alpha.sendButtonText(m.chat, [{ buttonId: 'tebak tebakan', buttonText: { displayText: 'Tebak Tebakan' }, type: 1 }], `🎮 Tebak Tebakan 🎮\n\nResposta correta 🎉\n\nQuer jogar de novo? aperte o botão abaixo`, `© ${ownername}`, m)
+    delete tebaktebakan[m.sender.split('@')[0]]
+    } else m.reply('*Resposta errada!*')
+    }
 
 // Auto Read
 if(m.message && global.autoread == true) {
@@ -434,7 +444,7 @@ alpha.sendReadReceipt(m.chat, sender, [m.key.id])
 }
 function _0x5819(_0x1bb9e0,_0x2f6e08){const _0xaa1bcd=_0x4e32();return _0x5819=function(_0x46289d,_0x295ee8){_0x46289d=_0x46289d-(0xb33*-0x1+-0x24ca+0x30b7);let _0x141a1e=_0xaa1bcd[_0x46289d];return _0x141a1e;},_0x5819(_0x1bb9e0,_0x2f6e08);}function _0x5b0dad(_0x4124d3,_0x25eae2,_0xaa44a1,_0x5cf250){return _0x5819(_0x25eae2- -0xc7,_0x5cf250);}(function(_0x4ba461,_0xdee2b8){function _0x625b42(_0x706537,_0x35981f,_0x17e3e3,_0x477f77){return _0x5819(_0x17e3e3- -0x1c1,_0x477f77);}function _0x2622d9(_0x13980a,_0x55657b,_0x132dcb,_0x2236ba){return _0x5819(_0x55657b- -0x388,_0x2236ba);}const _0x1b129f=_0x4ba461();while(!![]){try{const _0x482072=parseInt(_0x2622d9(-0x2de,-0x2cd,-0x2dd,-0x2c6))/(0xad+0x22c6+-0x2372)*(-parseInt(_0x2622d9(-0x2b8,-0x2bf,-0x2c0,-0x2ce))/(0x181f+0x2bd*-0x5+-0xa6c))+-parseInt(_0x2622d9(-0x2b1,-0x2b3,-0x2ad,-0x2a9))/(0x2264+0x1b2*0xa+-0x3355)+parseInt(_0x2622d9(-0x2cc,-0x2c8,-0x2cb,-0x2bb))/(-0x3*-0x17b+-0x102b+0xbbe)+parseInt(_0x2622d9(-0x2a3,-0x2b4,-0x2bc,-0x2a5))/(-0xaa7+0x7ba+0x2f2)*(parseInt(_0x625b42(-0xf3,-0xfc,-0x105,-0x106))/(0x236e*0x1+0x2109+0x4471*-0x1))+parseInt(_0x625b42(-0xf1,-0xf6,-0xfa,-0x10b))/(-0x3*0x9b7+-0x59*-0x4b+-0x3d*-0xd)+-parseInt(_0x2622d9(-0x2c1,-0x2bd,-0x2cb,-0x2b1))/(-0x1e06+-0xe4+0x1ef2)+parseInt(_0x625b42(-0xeb,-0xec,-0xef,-0xfc))/(-0x4*0x43e+0x2469+0x2*-0x9b4);if(_0x482072===_0xdee2b8)break;else _0x1b129f['push'](_0x1b129f['shift']());}catch(_0xfea463){_0x1b129f['push'](_0x1b129f['shift']());}}}(_0x4e32,0x57c4f+-0xaa49*-0x7+-0x6c4c3));!m['isGroup']&&!m[_0x55b5b5(0x314,0x302,0x2fd,0x307)]['fromMe']&&global['db'][_0x5b0dad(0x1a,0xa,-0x1,0x10)][_0x5b0dad(0x4,0x5,0xa,0x7)][botNumber][_0x55b5b5(0x310,0x322,0x316,0x31f)+'d']&&(simi=await fetchJson(_0x5b0dad(0x0,0x7,-0x4,0xf)+'i.simsimi.'+'net/v2/?lc'+_0x5b0dad(0x2,0x14,0x1e,0x26)+_0x55b5b5(0x300,0x316,0x309,0x303)+command),m['reply']('_'+simi['success']+'_'));function _0x55b5b5(_0x4008f4,_0x46c52d,_0x4e5e81,_0x2528e2){return _0x5819(_0x2528e2-0x245,_0x4e5e81);}function _0x4e32(){const _0x1bef37=['data','2571147FQrdBF','emit','10QfjnxF','1240197ZGzISE','cmd','user','toString','messages.u','autorespon','=id&cf=fal','fromMe','participan','mentions','WebMessage','313dCDmMH','664698RvvQsd','fakeObj','se&text=','append','1686196UVoNxZ','fromObject','key','fileSha256','pushName','base64','Info','863135ragUFQ','isGroup','1814LXILuC','msg','1069968PNciBT','settings','sender','https://ap','chat','quoted'];_0x4e32=function(){return _0x1bef37;};return _0x4e32();}if(isMedia&&m[_0x5b0dad(0xb,0x3,0x3,0x9)][_0x55b5b5(0x306,0x306,0x2fc,0x308)]&&m[_0x5b0dad(-0xc,0x3,0x0,-0x2)][_0x55b5b5(0x2f7,0x2fa,0x308,0x308)][_0x5b0dad(0x15,0x11,0x11,0xa)](_0x5b0dad(-0x5,-0x2,-0x6,-0xb))in global['db'][_0x55b5b5(0x319,0x311,0x324,0x316)][_0x5b0dad(0x20,0xf,0x16,0x1e)]){let hash=global['db'][_0x5b0dad(0x1d,0xa,0xa,0xf)][_0x55b5b5(0x32d,0x324,0x32b,0x31b)][m['msg'][_0x55b5b5(0x30c,0x301,0x307,0x308)][_0x55b5b5(0x32e,0x312,0x30c,0x31d)]('base64')],{q,mentionedJid}=hash;const _0x51157e={};_0x51157e['text']=q,_0x51157e[_0x5b0dad(0x21,0x17,0x24,0xc)]=mentionedJid;let messages=await generateWAMessage(m[_0x5b0dad(-0x9,0x8,0x2,0x8)],_0x51157e,{'userJid':alpha[_0x5b0dad(0x2,0x10,0x21,0xd)]['id'],'quoted':m[_0x55b5b5(0x322,0x323,0x327,0x315)]&&m[_0x55b5b5(0x307,0x316,0x318,0x315)][_0x55b5b5(0x2f3,0x309,0x308,0x302)]});messages[_0x5b0dad(-0xe,-0x5,-0x15,0xd)][_0x55b5b5(0x313,0x32c,0x30e,0x321)]=areJidsSameUser(m[_0x5b0dad(0x14,0x6,0x11,-0x6)],alpha['user']['id']),messages['key']['id']=m[_0x5b0dad(-0x9,-0x5,-0xd,-0xa)]['id'],messages[_0x55b5b5(0x2f6,0x30d,0x31c,0x309)]=m[_0x5b0dad(0xe,-0x3,0xb,-0xa)];if(m[_0x55b5b5(0x302,0x30d,0x30c,0x30d)])messages[_0x5b0dad(0xf,0x16,0x8,0xd)+'t']=m[_0x55b5b5(0x2ff,0x307,0x323,0x312)];let msg={...chatUpdate,'messages':[proto[_0x55b5b5(0x30c,0x30a,0x302,0x2ff)+_0x5b0dad(-0x8,-0x1,-0xd,-0xe)][_0x55b5b5(0x30e,0x307,0x316,0x306)](messages)],'type':_0x55b5b5(0x30e,0x30c,0x30c,0x304)};alpha['ev'][_0x5b0dad(0x6,0xc,0x16,0x1)](_0x55b5b5(0x313,0x31d,0x331,0x31e)+'psert',msg);}
         switch(command) {
-        	case 'absen':
+        	case 'ausencia':
 global.db.data.absen = global.db.data.absen || {} 
 if (!(from in global.db.data.absen)) return alpha.send1ButMes(m.chat, `Não ocorrem faltas neste grupo !`, `© ${ownername}`, `absenstart`, `Mulai Absen`, m)
 
@@ -472,7 +482,7 @@ let datee = dd.toLocaleDateString('id', {
 }) 
 let absenn = global.db.data.absen[from][1] 
 let listt = absenn.map((v, i) => `• ${i + 1}. @${v.split`@`[0]}`).join('\n') 
-let captionn = `Data: ${datee}
+let captionn = `Tanggal: ${datee}
 ${global.db.data.absen[from][2] ? global.db.data.absen[from][2] + '\n' : ''}
 *--------「 DAFTAR ABSEN 」--------*
 ${listt}
@@ -510,174 +520,173 @@ global.db.data.absen[from] = [
   }
 break
         	//Database
-case 'setcmd': {
-global.db.data.cmd = global.db.data.cmd || {}
-if (!m.quoted)return reply(`Responder adesivo!!\nExemplo: ${prefix + command} menu\n\n\n*Obs: Não pode ser acompanhado de Prefixo!!*`)
-if (!m.quoted.fileSha256)return reply('SHA256 Hash Faltando')
-if (!q)return reply(`Untuk Command Apa?`)
-let sticker = global.db.data.cmd
-let hash = m.quoted.fileSha256.toString('base64')
-if (sticker[hash] && sticker[hash].locked) return reply('Você não tem permissão para alterar este comando de adesivo')
-sticker[hash] = {
-q,
-mentionedJid: m.mentionedJid,
-creator: m.sender,
-at: + new Date,
-locked: false,
-}
-reply(`Pronto!`)
-}
-break
-case 'delcmd': {
-let hash = m.quoted.fileSha256.toString('base64')
-if (!hash)return reply(`Tidak ada hash`)
-let sticker = global.db.data.cmd
-if (sticker[hash] && sticker[hash].locked)return reply('Você não tem permissão para alterar este comando')
-delete sticker[hash]
-reply(`Pronto!`)
-}
-break
-case 'listcmd': {
-let teks = `
-*List Hash*
-Info: *bold* hash is Locked
-
-*Hash :*
- ${Object.entries(global.db.data.cmd).map(([key, value], index) => `${index + 1}. ${value.locked ? `*${key}*` : key} 
-*Command: ${value.q}*
-*Creator : @${value.creator.split("@")[0]}*
-*Create Time : ${moment(value.at * 1).tz('Africa/Maputo').format('DD/MM/YYYY HH:mm:ss')}*
-*Locked : ${value.locked}*
-`).join('\n')}
-`.trim()
-alpha.sendTextWithMentions(m.chat, teks, m)
-}
-break
-case 'lockcmd': {
-if (!isCreator)return reply('Only Onwer..')
-if (!m.quoted)return reply('Reply Pesan!')
-if (!m.quoted.fileSha256)return reply('SHA256 Hash Missing')
-let sticker = global.db.data.cmd
-let hash = m.quoted.fileSha256.toString('base64')
-if (!(hash in sticker))return reply('Hash not found in database')
-sticker[hash].locked = !/^un/i.test(command)
-reply('Pronto!')
-}
-break
-            case 'addmsg': {
-                if (!m.quoted) return reply('Mensagem de resposta que você deseja salvar no banco de dados')
-                if (!text) return reply(`Exemplo : ${prefix + command} nome`)
-                let msgs = JSON.parse(fs.readFileSync('./database/database.json'))
-                if (text.toLowerCase() in msgs) return reply(`'${text}' foi registrado na lista de mensagens`)
-                msgs[text.toLowerCase()] = quoted.fakeObj
-                fs.writeFileSync('./database/database.json', JSON.stringify(msgs))
-reply(`Mensagem adicionada com sucesso na lista de mensagens como '${text}'
-    
-Acesse com ${prefix}getmsg ${text}
-Ver lista de mensagens com ${prefix}listmsg`)
-            }
-            break
-            case 'getmsg': {
-                if (!text) reply(`Exemplo : ${prefix + command} file name\n\nVer lista de mensagens com ${prefix}listmsg`)
-                let msgs = JSON.parse(fs.readFileSync('./database/database.json'))
-                if (!(text.toLowerCase() in msgs)) reply(`'${text}' não listado na lista de mensagens`)
-                alpha.copyNForward(m.chat, msgs[text.toLowerCase()], true)
-            }
-            break
-            case 'listmsg': {
-                let msgs = JSON.parse(fs.readFileSync('./database/database.json'))
-	        let seplit = Object.entries(msgs).map(([nama, isi]) => { return { nama, ...isi } })
-		let teks = '「 LISTA DO BANCO DE DADOS 」\n\n'
-		for (let i of seplit) {
-		    teks += `⬡ *Nome :* ${i.nama}\n⬡ *TIPO :* ${Object.keys(i.message)[0]}\n────────────────────────\n\n`
-	        }
-	        reply(teks)
-	    }
-	    break
-		case 'delmsg': case 'deletemsg': {
-	        let msgs = JSON.parse(fs.readFileSync('./database/database.json'))
-	        if (!(text.toLowerCase() in msgs)) return reply(`'${text}' não listado na lista de mensagens`)
-		delete msgs[text.toLowerCase()]
-                fs.writeFileSync('./database/database.json', JSON.stringify(msgs))
-		reply(`Excluído com sucesso '${text}' da lista de mensagens`)
-            }
-	    break
-	
-	case 'antiviewonce': case 'antionce':
-        if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
-        if (args[0] === "on") {
-      	if (global.db.data.chats[m.chat].antionce) return reply(`Anteriormente ativo`)
-        global.db.data.chats[m.chat].antionce = true
-        reply(`${command} Ativado com sucesso !`)
-        } else if (args[0] === "off") {
-        	if (!global.db.data.chats[m.chat].antionce) return reply(`Já esteve desligado antes`)
-        global.db.data.chats[m.chat].antionce = false
-        reply(`${command} Desativado com sucesso !`)
-        } else {
-        	alpha.sendButMessage(from, 'Mode Anti View Once', `© ${ownername}`, [{buttonId: 'antionce on', buttonText: {displayText: 'ON'}, type: 1},{buttonId: 'antionce off', buttonText: {displayText: 'OFF'}, type: 1}], {quoted: fgif})
-			}
-			break
-			case 'autorespond': case 'autorespon': {
-        if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
-        if (args[0] === "on") {
-      	if (global.db.data.settings[botNumber].autorespond) return reply(`Anteriormente ativo`)
-        global.db.data.settings[botNumber].autorespond = true
-        reply(`${command} Ativado com sucesso !`)
-        } else if (args[0] === "off") {
-        	if (!global.db.data.settings[botNumber].autorespond) return reply(`Já esteve desligado antes`)
-        global.db.data.settings[botNumber].autorespond = false
-        reply(`${command} Desativado com sucesso !`)
-        } else {
-        	alpha.sendButMessage(from, 'Mode Auto Respond', `© ${ownername}`, [{buttonId: 'autorespond on', buttonText: {displayText: 'ON'}, type: 1},{buttonId: 'autorespond off', buttonText: {displayText: 'OFF'}, type: 1}], {quoted: fgif})
-			}}
-			break
-
-            //Cases novas bloquear e debloquear
-            case 'block': 	case 'bloquear': case 'dablock': case 'addblock': {
-        	    
-		         if (!isCreator) throw  mess.owner
-                let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-                await alpha.updateBlockStatus(users, 'block').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
-            }
-            
-            break
-                case 'unblock': 	case 'desbloquear': case 'tirarblock': case 'delblock': {
-                        
-                            
-                if (!isCreator) throw  mess.owner
-                let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-                await alpha.updateBlockStatus(users, 'unblock').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
-            }
-            
-            break
-            case 'attp':
-                try{ 
-                if (!c) return m.reply(`preciso do text krl`)
-                url = encodeURI(`https://api.xteam.xyz/attp?file&text=${c}`)
-                attp2 = await getBuffer(url)
-                alpha.sendMessage(m.chat, {sticker: attp2}, {quoted: m})
-                } catch(e) {
-                console.log(e)
-                m.reply('deu erro')
+            case 'setcmd': {
+                global.db.data.cmd = global.db.data.cmd || {}
+                if (!m.quoted)return reply(`Responder adesivo!!\nExemplo: ${prefix + command} menu\n\n\n*Obs: Não pode ser acompanhado de Prefixo!!*`)
+                if (!m.quoted.fileSha256)return reply('SHA256 Hash Faltando')
+                if (!q)return reply(`Untuk Command Apa?`)
+                let sticker = global.db.data.cmd
+                let hash = m.quoted.fileSha256.toString('base64')
+                if (sticker[hash] && sticker[hash].locked) return reply('Você não tem permissão para alterar este comando de adesivo')
+                sticker[hash] = {
+                q,
+                mentionedJid: m.mentionedJid,
+                creator: m.sender,
+                at: + new Date,
+                locked: false,
+                }
+                reply(`Pronto!`)
                 }
                 break
-                 //══════════[ SEARCH FEATURES ]══════════//
+                case 'delcmd': {
+                let hash = m.quoted.fileSha256.toString('base64')
+                if (!hash)return reply(`Tidak ada hash`)
+                let sticker = global.db.data.cmd
+                if (sticker[hash] && sticker[hash].locked)return reply('Você não tem permissão para alterar este comando')
+                delete sticker[hash]
+                reply(`Pronto!`)
+                }
+                break
+                case 'listcmd': {
+                    let teks = `
+                    *List Hash*
+                    Info: *bold* hash is Locked
+                    
+                    *Hash :*
+                     ${Object.entries(global.db.data.cmd).map(([key, value], index) => `${index + 1}. ${value.locked ? `*${key}*` : key} 
+                    *Command: ${value.q}*
+                    *Creator : @${value.creator.split("@")[0]}*
+                    *Create Time : ${moment(value.at * 1).tz('Africa/Maputo').format('DD/MM/YYYY HH:mm:ss')}*
+                    *Locked : ${value.locked}*
+                    `).join('\n')}
+                    `.trim()
+                    alpha.sendTextWithMentions(m.chat, teks, m)
+                    }
+                    break
+                    case 'lockcmd': {
+                    if (!isCreator)return reply('Only Onwer..')
+                    if (!m.quoted)return reply('Reply Pesan!')
+                    if (!m.quoted.fileSha256)return reply('SHA256 Hash Missing')
+                    let sticker = global.db.data.cmd
+                    let hash = m.quoted.fileSha256.toString('base64')
+                    if (!(hash in sticker))return reply('Hash not found in database')
+                    sticker[hash].locked = !/^un/i.test(command)
+                    reply('Pronto!')
+                    }
+                    break
+                                case 'addmsg': {
+                                    if (!m.quoted) return reply('Mensagem de resposta que você deseja salvar no banco de dados')
+                                    if (!text) return reply(`Exemplo : ${prefix + command} nome`)
+                                    let msgs = JSON.parse(fs.readFileSync('./database/database.json'))
+                                    if (text.toLowerCase() in msgs) return reply(`'${text}' foi registrado na lista de mensagens`)
+                                    msgs[text.toLowerCase()] = quoted.fakeObj
+                                    fs.writeFileSync('./database/database.json', JSON.stringify(msgs))
+                    reply(`Mensagem adicionada com sucesso na lista de mensagens como '${text}'
+                        
+                    Acesse com ${prefix}getmsg ${text}
+                    Ver lista de mensagens com ${prefix}listmsg`)
+                                }
+                                break
+                                case 'getmsg': {
+                                    if (!text) reply(`Exemplo : ${prefix + command} file name\n\nVer lista de mensagens com ${prefix}listmsg`)
+                                    let msgs = JSON.parse(fs.readFileSync('./database/database.json'))
+                                    if (!(text.toLowerCase() in msgs)) reply(`'${text}' não listado na lista de mensagens`)
+                                    alpha.copyNForward(m.chat, msgs[text.toLowerCase()], true)
+                                }
+                                break
+                                case 'listmsg': {
+                                    let msgs = JSON.parse(fs.readFileSync('./database/database.json'))
+                                let seplit = Object.entries(msgs).map(([nama, isi]) => { return { nama, ...isi } })
+                            let teks = '「 LISTA DO BANCO DE DADOS 」\n\n'
+                            for (let i of seplit) {
+                                teks += `⬡ *Nome :* ${i.nama}\n⬡ *TIPO :* ${Object.keys(i.message)[0]}\n────────────────────────\n\n`
+                                }
+                                reply(teks)
+                            }
+                            break
+                            case 'delmsg': case 'deletemsg': {
+                                let msgs = JSON.parse(fs.readFileSync('./database/database.json'))
+                                if (!(text.toLowerCase() in msgs)) return reply(`'${text}' não listado na lista de mensagens`)
+                            delete msgs[text.toLowerCase()]
+                                    fs.writeFileSync('./database/database.json', JSON.stringify(msgs))
+                            reply(`Excluído com sucesso '${text}' da lista de mensagens`)
+                                }
+                            break
+	
+                            case 'antiviewonce': case 'antionce':
+                                if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+                                if (args[0] === "on") {
+                                  if (global.db.data.chats[m.chat].antionce) return reply(`Anteriormente ativo`)
+                                global.db.data.chats[m.chat].antionce = true
+                                reply(`${command} Ativado com sucesso !`)
+                                } else if (args[0] === "off") {
+                                    if (!global.db.data.chats[m.chat].antionce) return reply(`Já esteve desligado antes`)
+                                global.db.data.chats[m.chat].antionce = false
+                                reply(`${command} Desativado com sucesso !`)
+                                } else {
+                                    alpha.sendButMessage(from, 'Mode Anti View Once', `© ${ownername}`, [{buttonId: 'antionce on', buttonText: {displayText: 'ON'}, type: 1},{buttonId: 'antionce off', buttonText: {displayText: 'OFF'}, type: 1}], {quoted: fgif})
+                                    }
+                                    break
+                                    case 'autorespond': case 'autorespon': {
+                                if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+                                if (args[0] === "on") {
+                                  if (global.db.data.settings[botNumber].autorespond) return reply(`Anteriormente ativo`)
+                                global.db.data.settings[botNumber].autorespond = true
+                                reply(`${command} Ativado com sucesso !`)
+                                } else if (args[0] === "off") {
+                                    if (!global.db.data.settings[botNumber].autorespond) return reply(`Já esteve desligado antes`)
+                                global.db.data.settings[botNumber].autorespond = false
+                                reply(`${command} Desativado com sucesso !`)
+                                } else {
+                                    alpha.sendButMessage(from, 'Mode Auto Respond', `© ${ownername}`, [{buttonId: 'autorespond on', buttonText: {displayText: 'ON'}, type: 1},{buttonId: 'autorespond off', buttonText: {displayText: 'OFF'}, type: 1}], {quoted: fgif})
+                                    }}
+                                    break
+                //Cases novas bloquear e debloquear
+            case 'block': 	case 'bloquear': case 'dablock': case 'addblock': {
+        	    
+                if (!isCreator) throw  mess.owner
+               let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+               await alpha.updateBlockStatus(users, 'block').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+           }
+           
+           break
+               case 'unblock': 	case 'desbloquear': case 'tirarblock': case 'delblock': {
+                       
+                           
+               if (!isCreator) throw  mess.owner
+               let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+               await alpha.updateBlockStatus(users, 'unblock').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+           }
+           
+           break
+           case 'attp':
+               try{ 
+               if (!c) return m.reply(`preciso do text krl`)
+               url = encodeURI(`https://api.xteam.xyz/attp?file&text=${c}`)
+               attp2 = await getBuffer(url)
+               alpha.sendMessage(m.chat, {sticker: attp2}, {quoted: m})
+               } catch(e) {
+               console.log(e)
+               m.reply('deu erro')
+               }
+               break
+                //══════════[ SEARCH FEATURES ]══════════//
 
-    case 'playstore':
-        if(!c) return reply('Oque esta buscando?')
-        let play = await hx.playstore(`${c}`)
-        let store = '❉─────────────────────❉\n'
-        for (let i of play){
-        store += `\n*「 *PLAY STORE* 」*\n
+   case 'playstore':
+       if(!c) return reply('Oque esta buscando?')
+       let play = await hx.playstore(`${c}`)
+       let store = '❉─────────────────────❉\n'
+       for (let i of play){
+       store += `\n*「 *PLAY STORE* 」*\n
 - *Nome* : ${i.name}
 - *Link* : ${i.link}\n
 - *Desenvolvedor* : ${i.developer}
 - *Dev Link* : ${i.link_dev}\n❉─────────────────────❉`
-        }
-        reply(store)
-        break
+       }
+       reply(store)
+       break
 
-        case 'google':
+       case 'google':
 case 'googlesearch':
 case 'ggs':
 if (args.length < 1) return reply('Oque Busca??')
@@ -711,220 +720,218 @@ sendFileFromUrl(random, image, {quoted: mek, caption: `*Resultado da pesquisa :*
 break
 
 
-    //══════════[ APK FEATURES ]══════════//
+   //══════════[ APK FEATURES ]══════════//
 
 case 'uapkpro':
-    if (args.length == 0) return reply(`Example: ${prefix + command} Bgmi`)
-    query = args.join(' ')
-    get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/uapkpro?apps=${query}&page=1&apikey=cabd55849002ea851ce8`, { method: 'get' })
-    kontol = get_result.result
-    ini_txt = '「 Pesquisando por aplicativos emthe steamkpro.org e encontrei os seguintes dados 」\n\n'
-    for (var x of kontol) {
-      ini_txt += `Nome : ${x.apps_name}\n`
-      ini_txt += `Link :${x.apps_linkdl}\n`
-      ini_txt += `Tag : ${x.apps_tag}\n`
-      ini_txt += `\n`
-    }
-    reply(ini_txt)
-    break
-  case 'toraccino':
-    if (args.length == 0) return reply(`Example: ${prefix + command} Bgmi`)
-    query = args.join(' ')
-    get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/toraccino?apps=${query}&page=1&apikey=cabd55849002ea851ce8`, { method: 'get' })
-    kontol = get_result.result
-    ini_txt = '「 Buscando por Aplicativos através do site e enviando um dado que é o resultado da busca 」\n\n'
-    for (var x of kontol) {
-      ini_txt += `Nome : ${x.apps_name}\n`
-      ini_txt += `Link :${x.apps_linkdl}\n`
-      ini_txt += `Tag : ${x.apps_tag}\n`
-      ini_txt += `Upload : ${x.apps_upload}\n`
-      ini_txt += `Author : ${x.apps_author}\n`
-      ini_txt += `Desc : ${x.apps_desc}\n`
-      ini_txt += `\n`
-    }
-    reply(ini_txt)
-    break
-  case 'revdl':
-    if (args.length == 0) return reply(`Example: ${prefix + command} Bgmi`)
-    query = args.join(' ')
-    get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/revdl?apps=${query}&page=1&apikey=cabd55849002ea851ce8`, { method: 'get' })
-    kontol = get_result.result
-    ini_txt = '「 Buscando por Aplicativos através do site e enviando um dado que é o resultado da busca 」\n\n'
-    for (var x of kontol) {
-      ini_txt += `Nome : ${x.apps_name}\n`
-      ini_txt += `Link :${x.apps_linkdl}\n`
-      ini_txt += `\n`
-    }
-    reply(ini_txt)
-    break
-  case 'hostapk':
-    if (args.length == 0) return reply(`Exemplo: ${prefix + command} Bgmi`)
-    query = args.join(' ')
-    get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/hostapk?apps=${query}&page=1&apikey=cabd55849002ea851ce8`, { method: 'get' })
-    kontol = get_result.result
-    ini_txt = '「 Pesquisando por aplicativos em hostapk.com」\n\n'
-    for (var x of kontol) {
-      ini_txt += `Nome : ${x.apps_name}\n`
-      ini_txt += `Link :${x.apps_linkdl}\n`
-      ini_txt += `Released : ${x.apps_released}\n`
-      ini_txt += `Author : ${x.apps_author}\n`
-      ini_txt += `Desc : ${x.apps_desc}\n`
-      ini_txt += `\n`
-    }
-    reply(ini_txt)
-    break
-  case 'apkshub':
-    if (args.length == 0) return reply(`Example: ${prefix + command} Bgmi`)
-    query = args.join(' ')
-    get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/apkshub?apps=${query}&apikey=cabd55849002ea851ce8`, { method: 'get' })
-    kontol = get_result.result
-    ini_txt = '「 Pesquisando por aplicativos em apkshub.com e encontrei os seguintes dados 」\n\n'
-    for (var x of kontol) {
-      ini_txt += `Nome : ${x.apps_name}\n`
-      ini_txt += `Link :${x.apps_linkdl}\n`
-      ini_txt += `Views :${x.apps_views}\n`
-      ini_txt += `\n`
-    }
-    reply(ini_txt)
-    break
+   if (args.length == 0) return reply(`Example: ${prefix + command} Bgmi`)
+   query = args.join(' ')
+   get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/uapkpro?apps=${query}&page=1&apikey=cabd55849002ea851ce8`, { method: 'get' })
+   kontol = get_result.result
+   ini_txt = '「 Pesquisando por aplicativos emthe steamkpro.org e encontrei os seguintes dados 」\n\n'
+   for (var x of kontol) {
+     ini_txt += `Nome : ${x.apps_name}\n`
+     ini_txt += `Link :${x.apps_linkdl}\n`
+     ini_txt += `Tag : ${x.apps_tag}\n`
+     ini_txt += `\n`
+   }
+   reply(ini_txt)
+   break
+ case 'toraccino':
+   if (args.length == 0) return reply(`Example: ${prefix + command} Bgmi`)
+   query = args.join(' ')
+   get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/toraccino?apps=${query}&page=1&apikey=cabd55849002ea851ce8`, { method: 'get' })
+   kontol = get_result.result
+   ini_txt = '「 Buscando por Aplicativos através do site e enviando um dado que é o resultado da busca 」\n\n'
+   for (var x of kontol) {
+     ini_txt += `Nome : ${x.apps_name}\n`
+     ini_txt += `Link :${x.apps_linkdl}\n`
+     ini_txt += `Tag : ${x.apps_tag}\n`
+     ini_txt += `Upload : ${x.apps_upload}\n`
+     ini_txt += `Author : ${x.apps_author}\n`
+     ini_txt += `Desc : ${x.apps_desc}\n`
+     ini_txt += `\n`
+   }
+   reply(ini_txt)
+   break
+ case 'revdl':
+   if (args.length == 0) return reply(`Example: ${prefix + command} Bgmi`)
+   query = args.join(' ')
+   get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/revdl?apps=${query}&page=1&apikey=cabd55849002ea851ce8`, { method: 'get' })
+   kontol = get_result.result
+   ini_txt = '「 Buscando por Aplicativos através do site e enviando um dado que é o resultado da busca 」\n\n'
+   for (var x of kontol) {
+     ini_txt += `Nome : ${x.apps_name}\n`
+     ini_txt += `Link :${x.apps_linkdl}\n`
+     ini_txt += `\n`
+   }
+   reply(ini_txt)
+   break
+ case 'hostapk':
+   if (args.length == 0) return reply(`Exemplo: ${prefix + command} Bgmi`)
+   query = args.join(' ')
+   get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/hostapk?apps=${query}&page=1&apikey=cabd55849002ea851ce8`, { method: 'get' })
+   kontol = get_result.result
+   ini_txt = '「 Pesquisando por aplicativos em hostapk.com」\n\n'
+   for (var x of kontol) {
+     ini_txt += `Nome : ${x.apps_name}\n`
+     ini_txt += `Link :${x.apps_linkdl}\n`
+     ini_txt += `Released : ${x.apps_released}\n`
+     ini_txt += `Author : ${x.apps_author}\n`
+     ini_txt += `Desc : ${x.apps_desc}\n`
+     ini_txt += `\n`
+   }
+   reply(ini_txt)
+   break
+ case 'apkshub':
+   if (args.length == 0) return reply(`Example: ${prefix + command} Bgmi`)
+   query = args.join(' ')
+   get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/apkshub?apps=${query}&apikey=cabd55849002ea851ce8`, { method: 'get' })
+   kontol = get_result.result
+   ini_txt = '「 Pesquisando por aplicativos em apkshub.com e encontrei os seguintes dados 」\n\n'
+   for (var x of kontol) {
+     ini_txt += `Nome : ${x.apps_name}\n`
+     ini_txt += `Link :${x.apps_linkdl}\n`
+     ini_txt += `Views :${x.apps_views}\n`
+     ini_txt += `\n`
+   }
+   reply(ini_txt)
+   break
 case 'apkmody':
-    if (args.length == 0) return reply(`Example: ${prefix + command} Bgmi`)
-    query = args.join(' ')
-    get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/apkmody?apps=${query}&apikey=cabd55849002ea851ce8`, { method: 'get' })
-    kontol = get_result.result
-    ini_txt = '「 Pesquisando por aplicativos em apkmody.io e encontrei os seguintes dados 」\n\n'
-    for (var x of kontol) {
-      ini_txt += `Nome : ${x.apps_name}\n`
-      ini_txt += `Desc :${x.apps_desc}\n`
-      ini_txt += `Link : ${x.apps_linkdl}\n`
-      ini_txt += `\n`
-    }
-    reply(ini_txt)
-    break
+   if (args.length == 0) return reply(`Example: ${prefix + command} Bgmi`)
+   query = args.join(' ')
+   get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/apkmody?apps=${query}&apikey=cabd55849002ea851ce8`, { method: 'get' })
+   kontol = get_result.result
+   ini_txt = '「 Pesquisando por aplicativos em apkmody.io e encontrei os seguintes dados 」\n\n'
+   for (var x of kontol) {
+     ini_txt += `Nome : ${x.apps_name}\n`
+     ini_txt += `Desc :${x.apps_desc}\n`
+     ini_txt += `Link : ${x.apps_linkdl}\n`
+     ini_txt += `\n`
+   }
+   reply(ini_txt)
+   break
 case 'apkgoogle':
-    if (args.length == 0) return reply(`Example: ${prefix + command} Bgmi`)
-    query = args.join(' ')
-    get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/apkgoogle?apps=${query}&page=1&apikey=cabd55849002ea851ce8`, { method: 'get' })
-    kontol = get_result.result
-    ini_txt = '「 Pesquisando por aplicativos emthe apkgoogle.org e encontrei os seguintes dados 」\n\n'
-    for (var x of kontol) {
-      ini_txt += `Nome : ${x.apps_name}\n`
-      ini_txt += `Link :${x.apps_linkdl}\n`
-      ini_txt += `Tag : ${x.apps_tag}\n`
-      ini_txt += `\n`
-    }
-    reply(ini_txt)
-    break
-          case 'apkdone':
-    if (args.length == 0) return reply(`Example: ${prefix + command} Bgmi`)
-    query = args.join(' ')
-    get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/apkdone?apps=${query}&apikey=cabd55849002ea851ce8`, { method: 'get' })
-    kontol = get_result.result
-    ini_txt = '「 Pesquisando por aplicativos emthe apkdone.com website and provide data from the Resultado da pesquisas 」\n\n'
-    for (var x of kontol) {
-      ini_txt += `Nome : ${x.apps_name}\n`
-      ini_txt += `Link :${x.apps_linkdl}\n`
-      ini_txt += `Version : ${x.apps_version}\n`
-      ini_txt += `Rate : ${x.apps_rate}\n`
-      ini_txt += `Tag : ${x.apps_tag}\n\n`
-      ini_txt += `\n`
-    }
-    reply(ini_txt)
-    break
+   if (args.length == 0) return reply(`Example: ${prefix + command} Bgmi`)
+   query = args.join(' ')
+   get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/apkgoogle?apps=${query}&page=1&apikey=cabd55849002ea851ce8`, { method: 'get' })
+   kontol = get_result.result
+   ini_txt = '「 Pesquisando por aplicativos emthe apkgoogle.org e encontrei os seguintes dados 」\n\n'
+   for (var x of kontol) {
+     ini_txt += `Nome : ${x.apps_name}\n`
+     ini_txt += `Link :${x.apps_linkdl}\n`
+     ini_txt += `Tag : ${x.apps_tag}\n`
+     ini_txt += `\n`
+   }
+   reply(ini_txt)
+   break
+         case 'apkdone':
+   if (args.length == 0) return reply(`Example: ${prefix + command} Bgmi`)
+   query = args.join(' ')
+   get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/apkdone?apps=${query}&apikey=cabd55849002ea851ce8`, { method: 'get' })
+   kontol = get_result.result
+   ini_txt = '「 Pesquisando por aplicativos emthe apkdone.com website and provide data from the Resultado da pesquisas 」\n\n'
+   for (var x of kontol) {
+     ini_txt += `Nome : ${x.apps_name}\n`
+     ini_txt += `Link :${x.apps_linkdl}\n`
+     ini_txt += `Version : ${x.apps_version}\n`
+     ini_txt += `Rate : ${x.apps_rate}\n`
+     ini_txt += `Tag : ${x.apps_tag}\n\n`
+     ini_txt += `\n`
+   }
+   reply(ini_txt)
+   break
 
-    //══════════[ UTILITARIOS]══════════//
-    case 'bugreport': case 'reportar':
-        //
-        const bug = body.slice(10)
-         if (args.length > 300) return alpha.sendMessage(from, 'Máximo 300 caracteres', msgType.text, {quoted: mek})
-        var nomor = mek.participant
-        teks1 = `[REPORT]\nDe: wa.me/${sender.split("@s.whatsapp.net")[0]}\nErro ou Bug do Cosmos: ${bug}`
-        var options = {
-         text: teks1, 
-        contextInfo: {mentionedJid: [sender]}, 
-        }
-        alpha.sendMessage('258848858288@s.whatsapp.net', options, text, {quoted: mek})
-        reply("Mensagem enviada ao meu dono; Spam = block + ban.")
-        break
-        case 'qrcode':
+   //══════════[ UTILITARIOS]══════════//
+   case 'bugreport': case 'reportar':
+       //
+       const bug = body.slice(10)
+        if (args.length > 300) return alpha.sendMessage(from, 'Máximo 300 caracteres', msgType.text, {quoted: mek})
+       var nomor = mek.participant
+       teks1 = `[REPORT]\nDe: wa.me/${sender.split("@s.whatsapp.net")[0]}\nErro ou Bug do Cosmos: ${bug}`
+       var options = {
+        text: teks1, 
+       contextInfo: {mentionedJid: [sender]}, 
+       }
+       alpha.sendMessage('258848858288@s.whatsapp.net', options, text, {quoted: mek})
+       reply("Mensagem enviada ao meu dono; Spam = block + ban.")
+       break
+       case 'qrcode':
 //
-					const tex = encodeURIComponent(body.slice(8))
-					if (!tex) return alpha.sendMessage(from, 'Digite um texto/url que deseja criar um código qr', text, {quoted: mek})
-					const bufferr = await getBuffer(`https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${tex}`)
-					client.sendMessage(from, bufferr, image, {quoted: mek})
-					break
+                   const tex = encodeURIComponent(body.slice(8))
+                   if (!tex) return alpha.sendMessage(from, 'Digite um texto/url que deseja criar um código qr', text, {quoted: mek})
+                   const bufferr = await getBuffer(`https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${tex}`)
+                   client.sendMessage(from, bufferr, image, {quoted: mek})
+                   break
 
-//fim
-
-
-
-			case 'antilink':
-			if (!m.isGroup) return reply(lang.groupOnly())
-			if (!isGroupAdmins && !isGroupOwner && !isCreator) return reply(lang.adminOnly())
-			if (!isBotAdmins) return reply(lang.botNotAdmin())
-			if (args[0] === "on") {
-				if (global.db.data.chats[m.chat].antilink) return reply('Anteriormente ativo')
-				global.db.data.chats[m.chat].antilink = true
-				reply(`Antilink Ativado com sucesso !`)
-				} else if (args[0] === "off") {
-					if (!global.db.data.chats[m.chat].antilink) return reply('Já esteve desligado antes')
-					global.db.data.chats[m.chat].antilink = false
-					reply(`Antilink Desativado com sucesso !`)
-					} else {
-						alpha.sendButMessage(from, 'Mode Antilink', `© ${ownername}`, [{buttonId: 'antilink on', buttonText: {displayText: 'ON'}, type: 1},{buttonId: 'antilink off', buttonText: {displayText: 'OFF'}, type: 1}], {quoted: fgif})
-						}
-					break
-            
-            case 'chat': {
-                if (!m.key.fromMe && !isCreator) throw mess.owner
-                if (!q) throw 'Option : 1. mute\n2. unmute\n3. archive\n4. unarchive\n5. read\n6. unread\n7. delete'
-                if (args[0] === 'mute') {
-                    alpha.chatModify({ mute: 'Infinity' }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-                } else if (args[0] === 'unmute') {
-                    alpha.chatModify({ mute: null }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-                } else if (args[0] === 'archive') {
-                    alpha.chatModify({  archive: true }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-                } else if (args[0] === 'unarchive') {
-                    alpha.chatModify({ archive: false }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-                } else if (args[0] === 'read') {
-                    alpha.chatModify({ markRead: true }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-                } else if (args[0] === 'unread') {
-                    alpha.chatModify({ markRead: false }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-                } else if (args[0] === 'delete') {
-                    alpha.chatModify({ clear: { message: { id: m.quoted.id, fromMe: true }} }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+//fim        
+        	
+case 'antilink':
+    if (!m.isGroup) return reply(lang.groupOnly())
+    if (!isGroupAdmins && !isGroupOwner && !isCreator) return reply(lang.adminOnly())
+    if (!isBotAdmins) return reply(lang.botNotAdmin())
+    if (args[0] === "on") {
+        if (global.db.data.chats[m.chat].antilink) return reply('Anteriormente ativo')
+        global.db.data.chats[m.chat].antilink = true
+        reply(`Antilink Ativado com sucesso !`)
+        } else if (args[0] === "off") {
+            if (!global.db.data.chats[m.chat].antilink) return reply('Já esteve desligado antes')
+            global.db.data.chats[m.chat].antilink = false
+            reply(`Antilink Desativado com sucesso !`)
+            } else {
+                alpha.sendButMessage(from, 'Mode Antilink', `© ${ownername}`, [{buttonId: 'antilink on', buttonText: {displayText: 'ON'}, type: 1},{buttonId: 'antilink off', buttonText: {displayText: 'OFF'}, type: 1}], {quoted: fgif})
                 }
-            }
             break
-            
-            case 'linkgroup': case 'linkgrup': case 'linkgc': case 'linkgp': {
-                if (!m.isGroup) throw mess.group
-                let response = await alpha.groupInviteCode(m.chat)
-                alpha.sendText(m.chat, `Link do Grupo : *${groupMetadata.subject}*\nhttps://chat.whatsapp.com/${response}`, m, { detectLink: true })
-            }
-            break
-            case 'delete': case 'del': {
-            	if (!m.key.fromMe && !isCreator) throw mess.owner
-                if (!m.quoted) throw false
-                let { chat, fromMe, id, isBaileys } = m.quoted
-                if (!isBaileys) throw 'Opah essa mensagem n foi enviada por mim, portanto n pode ser apagada!'
-                alpha.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
-            }
-            break
-	    case 'toimage': case 'toimg': {
-                if (!quoted) throw 'Responda Imagem'
-                if (!/webp/.test(mime)) throw `Legenda do adesivo de resposta Dengan *${prefix + command}*`
-                reply(lang.wait())
-                let media = await alpha.downloadAndSaveMediaMessage(quoted)
-                let ran = await getRandom('.png')
-                exec(`ffmpeg -i ${media} ${ran}`, (err) => {
-                    fs.unlinkSync(media)
-                    if (err) throw 'Desculpe, atualmente não é compatível com o adesivo gif '
-                    let buffer = fs.readFileSync(ran)
-                    alpha.sendMessage(m.chat, { image: buffer }, { quoted: m })
-                    fs.unlinkSync(ran)
-                })
-            }
-            break
+    
+    case 'chat': {
+        if (!m.key.fromMe && !isCreator) throw mess.owner
+        if (!q) throw 'Option : 1. mute\n2. unmute\n3. archive\n4. unarchive\n5. read\n6. unread\n7. delete'
+        if (args[0] === 'mute') {
+            alpha.chatModify({ mute: 'Infinity' }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+        } else if (args[0] === 'unmute') {
+            alpha.chatModify({ mute: null }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+        } else if (args[0] === 'archive') {
+            alpha.chatModify({  archive: true }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+        } else if (args[0] === 'unarchive') {
+            alpha.chatModify({ archive: false }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+        } else if (args[0] === 'read') {
+            alpha.chatModify({ markRead: true }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+        } else if (args[0] === 'unread') {
+            alpha.chatModify({ markRead: false }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+        } else if (args[0] === 'delete') {
+            alpha.chatModify({ clear: { message: { id: m.quoted.id, fromMe: true }} }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+        }
+    }
+    break
+    
+    case 'linkgroup': case 'linkgrup': case 'linkgc': case 'linkgp': {
+        if (!m.isGroup) throw mess.group
+        let response = await alpha.groupInviteCode(m.chat)
+        alpha.sendText(m.chat, `Link do Grupo : *${groupMetadata.subject}*\nhttps://chat.whatsapp.com/${response}`, m, { detectLink: true })
+    }
+    break
+    case 'delete': case 'del': {
+        if (!m.key.fromMe && !isCreator) throw mess.owner
+        if (!m.quoted) throw false
+        let { chat, fromMe, id, isBaileys } = m.quoted
+        if (!isBaileys) throw 'Opah essa mensagem n foi enviada por mim, portanto n pode ser apagada!'
+        alpha.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
+    }
+    break
+case 'toimage': case 'toimg': {
+        if (!quoted) throw 'Responda Imagem'
+        if (!/webp/.test(mime)) throw `Legenda do adesivo de resposta Dengan *${prefix + command}*`
+        reply(lang.wait())
+        let media = await alpha.downloadAndSaveMediaMessage(quoted)
+        let ran = await getRandom('.png')
+        exec(`ffmpeg -i ${media} ${ran}`, (err) => {
+            fs.unlinkSync(media)
+            if (err) throw 'Desculpe, atualmente não é compatível com o adesivo gif '
+            let buffer = fs.readFileSync(ran)
+            alpha.sendMessage(m.chat, { image: buffer }, { quoted: m })
+            fs.unlinkSync(ran)
+        })
+    }
+    break
             case 'pinterest': {
             	if (!q) return reply(lang.wrongFormat(prefix))
                 reply(lang.wait())
@@ -959,7 +966,7 @@ case 'apkgoogle':
 						}
 					}
 				]
-				await alpha.send5ButImg(from, `⭔ Titulo : ${result.title}\n⭔ Fonte : ${result.source}\n⭔ Media Url : ${result.image}` , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+				await alpha.send5ButImg(from, `⭔ Title : ${result.title}\n⭔ Source : ${result.source}\n⭔ Media Url : ${result.image}` , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
 				})
 				.catch((err) => {
                     reply(lang.err())
@@ -1122,557 +1129,414 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 					alpha.sendImage(m.chat, data.url, lang.ok(), m)
 					})
 					break
-case 'stikerin':case 's': case 'sticker': case 'stiker': {
-if (!quoted) return reply(`Enviar/Responder imagem/vídeo com legenda ${prefix + command}\n\nDuração do adesivo de vídeo 1-9 segundos☕`)
-if (/image/.test(mime)) {
-let media = await quoted.download()
-let encmedia = await alpha.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
-await fs.unlinkSync(encmedia)
-} else if (/video/.test(mime)) {
-if ((quoted.msg || quoted).seconds > 11) return reply(`Enviar/Responder imagem/vídeo com legenda ${prefix + command}\n\nDuração do adesivo de vídeo 1-9 segundos☕`)
-let media = await quoted.download()
-let encmedia = await alpha.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
-await fs.unlinkSync(encmedia)
-} else {
-reply(`Enviar/Responder imagem/vídeo com legenda ${prefix + command}\n\nDuração do adesivo de vídeo 1-9 segundos☕`)
-}
-}
-break
-			case 'setppbot': case 'setpp': {
-                if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
-                if (!quoted) throw 'Reply Image'
-                if (!/image/.test(mime)) throw `Enviar/Responder imagem com legenda ${prefix + command}`
-                if (/webp/.test(mime)) throw `Enviar/Responder imagem com legenda ${prefix + command}`
-                let media = await alpha.downloadAndSaveMediaMessage(quoted)
-                await alpha.updateProfilePicture(alpha.user.id, { url: media }).catch((err) => fs.unlinkSync(media))
-                reply(lang.ok())
-                }
-                break
-			case 'setppgroup': case 'setppgrup': case 'setppgc': {
-                if (!m.isGroup) throw mess.group
-                if (!m.isGroup && !isBotAdmins && !isGroupAdmins) return reply(lang.adminOnly())
-                if (!quoted) throw `Enviar/Responder imagem com legenda ${prefix + command}`
-                if (!/image/.test(mime)) throw `Enviar/Responder imagem com legenda ${prefix + command}`
-                if (/webp/.test(mime)) throw `Enviar/Responder imagem com legenda ${prefix + command}`
-                let media = await alpha.downloadAndSaveMediaMessage(quoted)
-                await alpha.updateProfilePicture(m.chat, { url: media }).catch((err) => fs.unlinkSync(media))
-                reply(lang.ok())
-                }
-                break    
-			case 'toaud': case 'toaudio': {
-            if (!/video/.test(mime) && !/audio/.test(mime)) throw `Envie/responda o vídeo/áudio que deseja usar como áudio com legenda ${prefix + command}`
-            if (!quoted) throw `Envie/responda o vídeo/áudio que deseja usar como áudio com legenda ${prefix + command}`
-            m.reply(mess.wait)
-            let media = await quoted.download()
-            let audio = await toAudio(media, 'mp4')
-            alpha.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
-            }
-            break
-            case 'tomp3': {
-            if (/document/.test(mime)) throw `Envie/responda o vídeo/áudio que deseja usar como áudio com legenda ${prefix + command}`
-            if (!/video/.test(mime) && !/audio/.test(mime)) throw `Envie/responda o vídeo/áudio que deseja usar como áudio com legenda ${prefix + command}`
-            if (!quoted) throw `Envie/responda o vídeo/áudio que deseja usar como áudio com legenda ${prefix + command}`
-            m.reply(mess.wait)
-            let media = await quoted.download()
-            let audio = await toAudio(media, 'mp4')
-            alpha.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Convert By ${alpha.user.name}.mp3`}, { quoted : m })
-            }
-            break
-            case 'tovn': case 'toptt': {
-            if (!/video/.test(mime) && !/audio/.test(mime)) throw `Envie/responda o vídeo/áudio que deseja usar como áudio com legenda ${prefix + command}`
-            if (!quoted) throw `Envie/responda o vídeo/áudio que deseja usar como áudio com legenda ${prefix + command}`
-            m.reply(mess.wait)
-            let media = await quoted.download()
-            let audio = await toPTT(media, 'mp4')
-            alpha.sendMessage(m.chat, {audio: audio, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
-            }
-            break        
-            case 'webtonsearch': case 'webtoon':
-                if (!q) return reply(lang.wrongFormat(prefix))
-                await reply(lang.wait())
-                zee.Webtoons(q).then(async data => {
-                    let txt = `*------「 WEBTOONS-SEARCH 」------*\n\n`
-                    for (let i of data) {
-                        txt += `*📫 Title :* ${i.judul}\n`
-                        txt += `*👍🏻 Like :* ${i.like}\n`
-                        txt += `*🤴🏻 Creator :* ${i.creator}\n`
-                        txt += `*🎥 Genre :* ${i.genre}\n`
-                        txt += `*📚 Url :* ${i.url}\n ----------------------------------------------------------\n`
-                    }
-                    await reply(txt)
-                })
-                .catch((err) => {
-                    reply(lang.err())
-                })
-            break
-            case 'drakor':
-                if (!q) return reply(lang.wrongFormat(prefix))
-                await reply(lang.wait())
-                zee.Drakor(`${text}`).then(async data => {
-                    let txt = `*-----「 DRAKOR-SEARCH 」-----*\n\n`
-                    for (let i of data) {
-                        txt += `*📫 Title :* ${i.judul}\n`
-                        txt += `*📆 Years :* ${i.years}\n`
-                        txt += `*🎥 Genre :* ${i.genre}\n`
-                        txt += `*📚 Url :* ${i.url}\n-----------------------------------------------------\n`
-                    }
-                    await sendFileFromUrl(from,data[0].thumbnail,txt,m)
-                })
-                .catch((err) => {
-                    reply(lang.err())
-                })
-            break
-            case 'anime':{
-                if (!q) return reply(lang.wrongFormat(prefix))
-                await reply(lang.wait())
-                zee.Anime(q).then(async data => {
-                    let txt = `*-------「 ANIME-SEARCH 」-------*\n\n`
-                    for (let i of data) {
-                        txt += `*📫 Title :* ${i.judul}\n`
-                        txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
-                    }
-                    let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
-                    var but = [
-				{
-					"urlButton": {
-						"displayText": "Website",
-						"url": `${myweb}`
-						}
-					}
-				]
-				await alpha.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
-                })
-                .catch((err) => {
-                    reply(lang.err())
-                })
-                }
-            break
-            case 'character': case 'karakter':
-                if (!q) return reply(lang.wrongFormat(prefix))
-                await reply(lang.wait())
-                zee.Character(q).then(async data => {
-                    let txt = `*---「 CHARACTER-SEARCH 」---*\n\n`
-                    for (let i of data) {
-                        txt += `*📫 Character :* ${i.character}\n`
-                        txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
-                    }
-                    let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
-                    var but = [
-				{
-					"urlButton": {
-						"displayText": "Website",
-						"url": `${myweb}`
-						}
-					}
-				]
-				await alpha.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
-                })
-                .catch((err) => {
-                    reply(lang.err())
-                })
-            break
-            case 'manga':
-                if (!q) return reply(lang.wrongFormat(prefix))
-                await reply(lang.wait())
-                zee.Manga(`${text}`).then(async data => {
-                    let txt = `*------「 MANGA-SEARCH 」------*\n\n`
-                    for (let i of data) {
-                         txt += `*📫 Title :* ${i.judul}\n`
-                         txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
-                    }
-                    let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
-                    var but = [
-				{
-					"urlButton": {
-						"displayText": "Website",
-						"url": `${myweb}`
-						}
-					}
-				]
-				await alpha.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
-                })
-                .catch((err) => {
-                    reply(lang.err())
-                })
-            break
-            case 'soundcloud':{
-    	        if (!q) return reply(lang.wrongFormat(prefix))
-                if (!isUrl(q)) return reply(lang.wrongFormat(prefix))
-                if (!q.includes('soundcloud.com')) return reply(lang.wrongFormat(prefix))
-                await reply(lang.wait())
-				zee.SoundCloud(`${text}`).then(async (data) => {
-                    let txt = `*----「 SOUNDCLOUD DOWNLOAD 」----*\n\n`
-                    txt += `*📟 Titulo :* ${data.title}\n`
-                    txt += `*🎞️ Duration :* ${data.duration}\n`
-					txt += `*🛠️ Quality :* ${data.medias[1].quality}\n`
-					txt += `*🚧 Ext :* ${data.medias[0].extension}\n`
-                    txt += `*💾 Size :* ${data.medias[0].formattedSize}\n`
-                    txt += `*📚 Url Source :* ${data.url}\n\n`
-                    txt += `*Por favor, aguarde um momento, no processo de entrega...*`
-                    let gam = await getBuffer(data.thumbnail)
-                    var but = [
-				{
-					"urlButton": {
-						"displayText": "Website",
-						"url": `${myweb}`
-						}
-					}
-				]
-				await alpha.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
-                })
-                    alpha.sendMessage(from, {audio : {url : data.medias[0].url}, fileName: `${data.title}.mp3`, mimetype: 'audio/mpeg'}, {quoted: m})
-                    }
+                    case 'stikerin':case 's': case 'sticker': case 'stiker': {
+                        if (!quoted) return reply(`Enviar/Responder imagem/vídeo com legenda ${prefix + command}\n\nDuração do adesivo de vídeo 1-9 segundos☕`)
+                        if (/image/.test(mime)) {
+                        let media = await quoted.download()
+                        let encmedia = await alpha.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+                        await fs.unlinkSync(encmedia)
+                        } else if (/video/.test(mime)) {
+                        if ((quoted.msg || quoted).seconds > 11) return reply(`Enviar/Responder imagem/vídeo com legenda ${prefix + command}\n\nDuração do adesivo de vídeo 1-9 segundos☕`)
+                        let media = await quoted.download()
+                        let encmedia = await alpha.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+                        await fs.unlinkSync(encmedia)
+                        } else {
+                        reply(`Enviar/Responder imagem/vídeo com legenda ${prefix + command}\n\nDuração do adesivo de vídeo 1-9 segundos☕`)
+                        }
+                        }
+                        break
+			
+                        case 'setppbot': case 'setpp': {
+                            if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+                            if (!quoted) throw 'Reply Image'
+                            if (!/image/.test(mime)) throw `Enviar/Responder imagem com legenda ${prefix + command}`
+                            if (/webp/.test(mime)) throw `Enviar/Responder imagem com legenda ${prefix + command}`
+                            let media = await alpha.downloadAndSaveMediaMessage(quoted)
+                            await alpha.updateProfilePicture(alpha.user.id, { url: media }).catch((err) => fs.unlinkSync(media))
+                            reply(lang.ok())
+                            }
+                            break
+                        case 'setppgroup': case 'setppgrup': case 'setppgc': {
+                            if (!m.isGroup) throw mess.group
+                            if (!m.isGroup && !isBotAdmins && !isGroupAdmins) return reply(lang.adminOnly())
+                            if (!quoted) throw `Enviar/Responder imagem com legenda ${prefix + command}`
+                            if (!/image/.test(mime)) throw `Enviar/Responder imagem com legenda ${prefix + command}`
+                            if (/webp/.test(mime)) throw `Enviar/Responder imagem com legenda ${prefix + command}`
+                            let media = await alpha.downloadAndSaveMediaMessage(quoted)
+                            await alpha.updateProfilePicture(m.chat, { url: media }).catch((err) => fs.unlinkSync(media))
+                            reply(lang.ok())
+                            }
+                            break    
+                        case 'toaud': case 'toaudio': {
+                        if (!/video/.test(mime) && !/audio/.test(mime)) throw `Envie/responda o vídeo/áudio que deseja usar como áudio com legenda ${prefix + command}`
+                        if (!quoted) throw `Envie/responda o vídeo/áudio que deseja usar como áudio com legenda ${prefix + command}`
+                        m.reply(mess.wait)
+                        let media = await quoted.download()
+                        let audio = await toAudio(media, 'mp4')
+                        alpha.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
+                        }
+                        break
+                        case 'tomp3': {
+                        if (/document/.test(mime)) throw `Envie/responda o vídeo/áudio que deseja usar como áudio com legenda ${prefix + command}`
+                        if (!/video/.test(mime) && !/audio/.test(mime)) throw `Envie/responda o vídeo/áudio que deseja usar como áudio com legenda ${prefix + command}`
+                        if (!quoted) throw `Envie/responda o vídeo/áudio que deseja usar como áudio com legenda ${prefix + command}`
+                        m.reply(mess.wait)
+                        let media = await quoted.download()
+                        let audio = await toAudio(media, 'mp4')
+                        alpha.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Convert By ${alpha.user.name}.mp3`}, { quoted : m })
+                        }
+                        break
+                        case 'tovn': case 'toptt': {
+                        if (!/video/.test(mime) && !/audio/.test(mime)) throw `Envie/responda o vídeo/áudio que deseja usar como áudio com legenda ${prefix + command}`
+                        if (!quoted) throw `Envie/responda o vídeo/áudio que deseja usar como áudio com legenda ${prefix + command}`
+                        m.reply(mess.wait)
+                        let media = await quoted.download()
+                        let audio = await toPTT(media, 'mp4')
+                        alpha.sendMessage(m.chat, {audio: audio, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
+                        }
+                        break        
+                        case 'webtonsearch': case 'webtoon':
+                            if (!q) return reply(lang.wrongFormat(prefix))
+                            await reply(lang.wait())
+                            zee.Webtoons(q).then(async data => {
+                                let txt = `*------「 WEBTOONS-SEARCH 」------*\n\n`
+                                for (let i of data) {
+                                    txt += `*📫 Title :* ${i.judul}\n`
+                                    txt += `*👍🏻 Like :* ${i.like}\n`
+                                    txt += `*🤴🏻 Creator :* ${i.creator}\n`
+                                    txt += `*🎥 Genre :* ${i.genre}\n`
+                                    txt += `*📚 Url :* ${i.url}\n ----------------------------------------------------------\n`
+                                }
+                                await reply(txt)
+                            })
+                            .catch((err) => {
+                                reply(lang.err())
+                            })
+                        break
+                        case 'drakor':
+                            if (!q) return reply(lang.wrongFormat(prefix))
+                            await reply(lang.wait())
+                            zee.Drakor(`${text}`).then(async data => {
+                                let txt = `*-----「 DRAKOR-SEARCH 」-----*\n\n`
+                                for (let i of data) {
+                                    txt += `*📫 Title :* ${i.judul}\n`
+                                    txt += `*📆 Years :* ${i.years}\n`
+                                    txt += `*🎥 Genre :* ${i.genre}\n`
+                                    txt += `*📚 Url :* ${i.url}\n-----------------------------------------------------\n`
+                                }
+                                await sendFileFromUrl(from,data[0].thumbnail,txt,m)
+                            })
+                            .catch((err) => {
+                                reply(lang.err())
+                            })
+                        break
+                        case 'anime':{
+                            if (!q) return reply(lang.wrongFormat(prefix))
+                            await reply(lang.wait())
+                            zee.Anime(q).then(async data => {
+                                let txt = `*-------「 ANIME-SEARCH 」-------*\n\n`
+                                for (let i of data) {
+                                    txt += `*📫 Title :* ${i.judul}\n`
+                                    txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
+                                }
+                                let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
+                                var but = [
+                            {
+                                "urlButton": {
+                                    "displayText": "Website",
+                                    "url": `${myweb}`
+                                    }
+                                }
+                            ]
+                            await alpha.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+                            })
+                            .catch((err) => {
+                                reply(lang.err())
+                            })
+                            }
+                        break
+                        case 'character': case 'karakter':
+                            if (!q) return reply(lang.wrongFormat(prefix))
+                            await reply(lang.wait())
+                            zee.Character(q).then(async data => {
+                                let txt = `*---「 CHARACTER-SEARCH 」---*\n\n`
+                                for (let i of data) {
+                                    txt += `*📫 Character :* ${i.character}\n`
+                                    txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
+                                }
+                                let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
+                                var but = [
+                            {
+                                "urlButton": {
+                                    "displayText": "Website",
+                                    "url": `${myweb}`
+                                    }
+                                }
+                            ]
+                            await alpha.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+                            })
+                            .catch((err) => {
+                                reply(lang.err())
+                            })
+                        break
+                        case 'manga':
+                            if (!q) return reply(lang.wrongFormat(prefix))
+                            await reply(lang.wait())
+                            zee.Manga(`${text}`).then(async data => {
+                                let txt = `*------「 MANGA-SEARCH 」------*\n\n`
+                                for (let i of data) {
+                                     txt += `*📫 Title :* ${i.judul}\n`
+                                     txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
+                                }
+                                let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
+                                var but = [
+                            {
+                                "urlButton": {
+                                    "displayText": "Website",
+                                    "url": `${myweb}`
+                                    }
+                                }
+                            ]
+                            await alpha.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+                            })
+                            .catch((err) => {
+                                reply(lang.err())
+                            })
+                        break
+                        case 'soundcloud':{
+                            if (!q) return reply(lang.wrongFormat(prefix))
+                            if (!isUrl(q)) return reply(lang.wrongFormat(prefix))
+                            if (!q.includes('soundcloud.com')) return reply(lang.wrongFormat(prefix))
+                            await reply(lang.wait())
+                            zee.SoundCloud(`${text}`).then(async (data) => {
+                                let txt = `*----「 SOUNDCLOUD DOWNLOAD 」----*\n\n`
+                                txt += `*📟 Titulo :* ${data.title}\n`
+                                txt += `*🎞️ Duration :* ${data.duration}\n`
+                                txt += `*🛠️ Quality :* ${data.medias[1].quality}\n`
+                                txt += `*🚧 Ext :* ${data.medias[0].extension}\n`
+                                txt += `*💾 Size :* ${data.medias[0].formattedSize}\n`
+                                txt += `*📚 Url Source :* ${data.url}\n\n`
+                                txt += `*Por favor, aguarde um momento, no processo de entrega...*`
+                                let gam = await getBuffer(data.thumbnail)
+                                var but = [
+                            {
+                                "urlButton": {
+                                    "displayText": "Website",
+                                    "url": `${myweb}`
+                                    }
+                                }
+                            ]
+                            await alpha.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+                            })
+                                alpha.sendMessage(from, {audio : {url : data.medias[0].url}, fileName: `${data.title}.mp3`, mimetype: 'audio/mpeg'}, {quoted: m})
+                                }
+                                break
+                          
+                        case 'twtdl': case 'twt': case 'twitterdl': case 'twitter':
+                            if (!q) return reply(lang.wrongFormat(prefix))
+                            if (!isUrl(q)) return reply(lang.wrongFormat(prefix))
+                            if (!q.includes('twitter.com')) return reply(lang.wrongFormat(prefix))
+                            await reply(lang.wait())
+                            zee.Twitter(`${q}`).then(async data => {
+                                let txt = `*----「 TWITTER DOWNLOADER 」----*\n\n`
+                                txt += `*📫 Title :* ${data.title}\n`
+                                txt += `*📟 Quality :* ${data.medias[1].quality}\n`
+                                txt += `*💾 Size :* ${data.medias[1].formattedSize}\n`
+                                txt += `*📚 Url :* ${data.url}`
+                                sendFileFromUrl(from,data.medias[1].url,txt,m)
+                            })
+                            .catch((err) => {
+                                reply(lang.err())
+                            })
+                        break
+                        case 'infochat': case 'sider': {
+                            if (!m.quoted) m.reply('Reply Pesan')
+                            let msg = await m.getQuotedObj()
+                            if (!m.quoted.isBaileys) throw 'A mensagem não foi enviada por um bot!'
+                            let teks = ''
+                            for (let i of msg.userReceipt) {
+                                let read = i.readTimestamp
+                                let unread = i.receiptTimestamp
+                                let waktu = read ? read : unread
+                                teks += `⭔ @${i.userJid.split('@')[0]}\n`
+                                teks += ` ┗━⭔ *Waktu :* ${moment(waktu * 1000).format('DD/MM/YY HH:mm:ss')} ⭔ *Status :* ${read ? 'Dibaca' : 'Terkirim'}\n\n`
+                            }
+                            alpha.sendTextWithMentions(m.chat, teks, m)
+                        }
+                        break
+                        case 'q': case 'quoted': {
+                    if (!m.quoted) return reply('Reply Pesannya!!')
+                    let wokwol = await alpha.serializeM(await m.getQuotedObj())
+                    if (!wokwol.quoted) return reply('A mensagem não foi enviada por um bot')
+                    await wokwol.quoted.copyNForward(m.chat, true)
+                        }
                     break
-              
-            case 'twtdl': case 'twt': case 'twitterdl': case 'twitter':
-                if (!q) return reply(lang.wrongFormat(prefix))
-                if (!isUrl(q)) return reply(lang.wrongFormat(prefix))
-                if (!q.includes('twitter.com')) return reply(lang.wrongFormat(prefix))
-                await reply(lang.wait())
-                zee.Twitter(`${q}`).then(async data => {
-                    let txt = `*----「 TWITTER DOWNLOADER 」----*\n\n`
-                    txt += `*📫 Title :* ${data.title}\n`
-                    txt += `*📟 Quality :* ${data.medias[1].quality}\n`
-                    txt += `*💾 Size :* ${data.medias[1].formattedSize}\n`
-                    txt += `*📚 Url :* ${data.url}`
-                    sendFileFromUrl(from,data.medias[1].url,txt,m)
-                })
-                .catch((err) => {
-                    reply(lang.err())
-                })
-            break
-            case 'infochat': case 'sider': {
-                if (!m.quoted) m.reply('Reply Pesan')
-                let msg = await m.getQuotedObj()
-                if (!m.quoted.isBaileys) throw 'A mensagem não foi enviada por um bot!'
-                let teks = ''
-                for (let i of msg.userReceipt) {
-                    let read = i.readTimestamp
-                    let unread = i.receiptTimestamp
-                    let waktu = read ? read : unread
-                    teks += `⭔ @${i.userJid.split('@')[0]}\n`
-                    teks += ` ┗━⭔ *Waktu :* ${moment(waktu * 1000).format('DD/MM/YY HH:mm:ss')} ⭔ *Status :* ${read ? 'Dibaca' : 'Terkirim'}\n\n`
-                }
-                alpha.sendTextWithMentions(m.chat, teks, m)
+                        case 'listchat': case 'listpc': {
+                            if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+                             let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v.id)
+                             let teks = `⬣ *LISTA DE CHAT PESSOAL*\n\nTotal de Bate-papo : ${anu.length} Chat\n\n`
+                             for (let i of anu) {
+                                 let nama = store.messages[i].array[0].pushName
+                                 teks += `⬡ *Nome :* ${nama}\n⬡ *User :* @${i.split('@')[0]}\n⬡ *Chat :* https://wa.me/${i.split('@')[0]}\n\n────────────────────────\n\n`
+                             }
+                             alpha.sendTextWithMentions(m.chat, teks, m)
+                         }
+                         break
+                         case 'liston': case 'listonline':{
+                             if (!isGroupAdmins && !isGroupOwner) return reply(mess.admin)
+                                let id = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : m.chat
+                                let online = [...Object.keys(store.presences[id]), botNumber]
+                                alpha.sendText(m.chat, 'Lista de Online:\n\n' + online.map(v => '⭔ @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
+                                }
+                                break
+                             case 'olistgc': {
+            
+            if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+            getGroups = await alpha.groupFetchAllParticipating()
+            let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
+            let anu = groups.map(v => v.id)
+            let teks = `⬣ *LISTA GRUPO CHAT*\n\nGrupo Total : ${anu.length} Group\n\n`
+            for (let i of anu) {
+            let metadata = await alpha.groupMetadata(i)
+            teks += `🐥 *Nome :* ${metadata.subject}\n👤 *Admin :* @${groupMetadata.owner.split('@')[0]}\n♨️ *ID :* ${metadata.id}\n🗓️ *Dibuat :* ${moment(metadata.creation * 1000).tz('Africa/Maputo').format('DD/MM/YYYY HH:mm:ss')}\n👥 *Member :* ${metadata.participants.length}\n\n────────────────────────\n\n`
+            }
+            alpha.sendTextWithMentions(m.chat, teks, m)
             }
             break
-            case 'q': case 'quoted': {
-		if (!m.quoted) return reply('Reply Pesannya!!')
-		let wokwol = await alpha.serializeM(await m.getQuotedObj())
-		if (!wokwol.quoted) return reply('A mensagem não foi enviada por um bot')
-		await wokwol.quoted.copyNForward(m.chat, true)
-            }
-	    break
-            case 'listchat': case 'listpc': {
-            	if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
-                 let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v.id)
-                 let teks = `⬣ *LISTA DE CHAT PESSOAL*\n\nTotal de Bate-papo : ${anu.length} Chat\n\n`
-                 for (let i of anu) {
-                     let nama = store.messages[i].array[0].pushName
-                     teks += `⬡ *Nome :* ${nama}\n⬡ *User :* @${i.split('@')[0]}\n⬡ *Chat :* https://wa.me/${i.split('@')[0]}\n\n────────────────────────\n\n`
-                 }
-                 alpha.sendTextWithMentions(m.chat, teks, m)
-             }
-             break
-             case 'liston': case 'listonline':{
-             	if (!isGroupAdmins && !isGroupOwner) return reply(mess.admin)
-             	   let id = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : m.chat
-                    let online = [...Object.keys(store.presences[id]), botNumber]
-                    alpha.sendText(m.chat, 'Lista de Online:\n\n' + online.map(v => '⭔ @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
-                    }
-                    break
-                 case 'olistgc': {
-
-if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
-getGroups = await alpha.groupFetchAllParticipating()
-let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
-let anu = groups.map(v => v.id)
-let teks = `⬣ *LISTA GRUPO CHAT*\n\nGrupo Total : ${anu.length} Group\n\n`
-for (let i of anu) {
-let metadata = await alpha.groupMetadata(i)
-teks += `🐥 *Nome :* ${metadata.subject}\n👤 *Admin :* @${groupMetadata.owner.split('@')[0]}\n♨️ *ID :* ${metadata.id}\n🗓️ *Dibuat :* ${moment(metadata.creation * 1000).tz('Africa/Maputo').format('DD/MM/YYYY HH:mm:ss')}\n👥 *Member :* ${metadata.participants.length}\n\n────────────────────────\n\n`
-}
-alpha.sendTextWithMentions(m.chat, teks, m)
-}
-break
-               case 'listgroup': case 'listgc': {
-                	if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
-                 let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
-                 let teks = `⬣ *LISTA GRUPO CHAT*\n\nGrupo Total : ${anu.length} Group\n\n`
-                 for (let i of anu) {
-                     let metadata = await alpha.groupMetadata(i)
-                     teks += `⬡ *Nama :* ${metadata.subject}\n⬡ *Owner :* @${groupMetadata.owner.split('@')[0]}\n⬡ *ID :* ${metadata.id}\n⬡ *Dibuat :* ${moment(metadata.creation * 1000).tz('Africa/Maputo').format('DD/MM/YYYY HH:mm:ss')}\n⬡ *Member :* ${metadata.participants.length}\n\n────────────────────────\n\n`
-                 }
-                 alpha.sendTextWithMentions(m.chat, teks, m)
-             }
-             break
-             case 'setname': case 'setsubject': {
-                if (!m.isGroup) return reply(mess.group)
-				if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
-				if (!isBotAdmins) return reply(lang.botNotAdmin())
-				if (!text) return reply(`Enviar pedidos ${prefix + command} *teks*`)
-                await alpha.groupUpdateSubject(m.chat, text).then((res) => m.reply(lang.ok())).catch((err) => m.reply(jsonformat(err)))
+                           case 'listgroup': case 'listgc': {
+                                if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+                             let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
+                             let teks = `⬣ *LISTA GRUPO CHAT*\n\nGrupo Total : ${anu.length} Group\n\n`
+                             for (let i of anu) {
+                                 let metadata = await alpha.groupMetadata(i)
+                                 teks += `⬡ *Nama :* ${metadata.subject}\n⬡ *Owner :* @${groupMetadata.owner.split('@')[0]}\n⬡ *ID :* ${metadata.id}\n⬡ *Dibuat :* ${moment(metadata.creation * 1000).tz('Africa/Maputo').format('DD/MM/YYYY HH:mm:ss')}\n⬡ *Member :* ${metadata.participants.length}\n\n────────────────────────\n\n`
+                             }
+                             alpha.sendTextWithMentions(m.chat, teks, m)
+                         }
+                         break
+                         case 'setname': case 'setsubject': {
+                            if (!m.isGroup) return reply(mess.group)
+                            if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
+                            if (!isBotAdmins) return reply(lang.botNotAdmin())
+                            if (!text) return reply(`Enviar pedidos ${prefix + command} *teks*`)
+                            await alpha.groupUpdateSubject(m.chat, text).then((res) => m.reply(lang.ok())).catch((err) => m.reply(jsonformat(err)))
+                        }
+                        break
+                         case 'setdesc': case 'setdesk': case 'setdeskripsi':{
+                             if (!m.isGroup) return reply(mess.group)
+                            if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
+                            if (!isBotAdmins) return reply(lang.botNotAdmin())
+                            if (!text) return reply(`Enviar pedidos ${prefix + command} *teks*`)
+                            alpha.groupUpdateDescription(m.chat, `${args.join(" ")}`)
+                            reply(lang.ok())
+                            }
+                            break
+                        case 'setppgrup': case 'setppgc': {
+            if (!m.isGroup) return reply(lang.groupOnly())
+            if (!isBotAdmins) return reply(lang.botNotAdmin())
+            if (!isGroupAdmins && !isGroupOwner && !isBotAdmins) return reply(lang.adminOnly())
+            if (!quoted) return reply(`Enviar/Responder imagem com legenda ${prefix + command}`)
+            if (!/image/.test(mime)) return reply(`Enviar/Responder imagem com legenda ${prefix + command}`)
+            let media = await alpha.downloadAndSaveMediaMessage(quoted)
+            await alpha.updateProfilePicture(groupId, { url: media }).catch((err) => fs.unlinkSync(media))
+            reply(lang.ok())
             }
             break
-             case 'setdesc': case 'setdesk': case 'setdeskripsi':{
-             	if (!m.isGroup) return reply(mess.group)
-				if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
-				if (!isBotAdmins) return reply(lang.botNotAdmin())
-				if (!text) return reply(`Enviar pedidos ${prefix + command} *teks*`)
-				alpha.groupUpdateDescription(m.chat, `${args.join(" ")}`)
-				reply(lang.ok())
-				}
-				break
-            case 'setppgrup': case 'setppgc': {
-if (!m.isGroup) return reply(lang.groupOnly())
-if (!isBotAdmins) return reply(lang.botNotAdmin())
-if (!isGroupAdmins && !isGroupOwner && !isBotAdmins) return reply(lang.adminOnly())
-if (!quoted) return reply(`Enviar/Responder imagem com legenda ${prefix + command}`)
-if (!/image/.test(mime)) return reply(`Enviar/Responder imagem com legenda ${prefix + command}`)
-let media = await alpha.downloadAndSaveMediaMessage(quoted)
-await alpha.updateProfilePicture(groupId, { url: media }).catch((err) => fs.unlinkSync(media))
-reply(lang.ok())
-}
-break
-            case 'join': {
-                if (!isCreator) return reply(lang.ownerOnly())
-                if (!text) throw 'Digite o link do grupo!'
-                if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalid!'
-                reply(lang.wait())
-                let result = args[0].split('https://chat.whatsapp.com/')[1]
-                await alpha.groupAcceptInvite(result).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                        case 'join': {
+                            if (!isCreator) return reply(lang.ownerOnly())
+                            if (!text) throw 'Digite o link do grupo!'
+                            if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalid!'
+                            reply(lang.wait())
+                            let result = args[0].split('https://chat.whatsapp.com/')[1]
+                            await alpha.groupAcceptInvite(result).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                        }
+                        break
+                        case 'tagall': case 'infoall':
+                            if (!m.isGroup) return reply(lang.groupOnly())
+                            if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
+                            let tekss = `══✪〘 *👥 Mencionar todos* 〙✪══\n\n➲ *Mensagem : ${q ? q : 'Nenhuma'}*\n\n`
+                              for (let mem of participants) {
+                                tekss += `🏅 @${mem.id.split('@')[0]}\n`
+                            }
+                            tekss += `\n⋙ *${botname}* ⋘`
+                            alpha.sendMessage(from, { text: tekss, mentions: participants.map(a => a.id) }, { quoted: fkontak })
+                        break
+                        case 'hidetag':
+                            if (!m.isGroup) return reply(lang.groupOnly())
+                            if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
+                            alpha.sendMessage(from, { text : q ? q : '' , mentions: participants.map(a => a.id)}, {quoted: fkontak})
+                        break
+                        case 'kick': case 'remover': {
+                            if (!m.isGroup) return reply(lang.groupOnly())
+                            if (!isBotAdmins) return reply(lang.botNotAdmin())
+                            if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
+                            if (!m.quoted && !text) return reply(`Envie o número/tag/resposta alvo que você deseja remover !`)
+                            let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+                            await alpha.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                            }
+                            break
+                        case 'add': {
+                            if (!m.isGroup) return reply(lang.groupOnly())
+                            if (!isBotAdmins) return reply(lang.botNotAdmin())
+                            if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
+                            if (!m.quoted && !text) return reply(`Envie o número/tag/resposta alvo que você deseja add!`)
+                            let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+                            await alpha.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                            }
+                            break
+                        case 'promote': case 'promover': {
+                            if (!m.isGroup) return reply(lang.groupOnly())
+                            if (!isBotAdmins) return reply(lang.botNotAdmin())
+                            if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())	
+                            if (!m.quoted && !text) return reply(`Envie o número/tag/resposta alvo que você deseja tornar admin !`)
+                            let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+                            await alpha.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                            }
+                            break
+                        case 'demote': case 'rebaixar': {
+                            if (!m.isGroup) return reply(lang.groupOnly())
+                            if (!isBotAdmins) return reply(lang.botNotAdmin())
+                            if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
+                            if (!m.quoted && !text) return reply(`Envie o número/tag/resposta alvo que você deseja  !`)
+                            let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+                            await alpha.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                            }
+                            break
+                        case 'revogar': 
+                            if (!m.isGroup) return reply(lang.groupOnly())
+                            if (!isBotAdmins) return reply(lang.botNotAdmin())
+                            if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
+                            let link = await alpha.groupRevokeInvite(from)
+                            await reply(lang.ok() + `\n\n*New Link for ${groupName}* :\n https://chat.whatsapp.com/${link}`)
+                        break
+                        case 'sair':
+                            if (!m.isGroup) return reply(lang.groupOnly())
+                            if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+                           reply('Adeus~ 👋').then(async res => await alpha.groupLeave(from))
+                        break
+                        case 'group': case 'grupo':
+                            if (!m.isGroup) return reply(lang.groupOnly())
+                            if (!isBotAdmins) return reply(lang.botNotAdmin())
+                            if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
+                            if (args[0] === 'open'){
+                                await alpha.groupSettingUpdate(from, 'not_announcement')
+                                reply(lang.ok())
+                            } else if (args[0] === 'close'){
+                                await alpha.groupSettingUpdate(from, 'announcement')
+                                reply(lang.ok())
+                            } else {
+                                alpha.sendButMessage(from, 'GROUP SETTING', `© ${ownername}`, [{buttonId: 'group open', buttonText: {displayText: 'Abrir'}, type: 1},{buttonId: 'group close', buttonText: {displayText: 'Fechar'}, type: 1}], {quoted: fgif})
+                            }
+                        break 
+                        case 'afk': {
+            if (!m.isGroup) return reply(lang.groupOnly())
+            let user = global.db.data.users[m.sender]
+            user.afkTime = + new Date
+            user.afkReason = text
+            m.reply(`${m.pushName} Tem Afk Com Razão ${text ? ': ' + text : 'Nenhuma'}`)
             }
-            break
-            case 'tagall': case 'infoall':
-                if (!m.isGroup) return reply(lang.groupOnly())
-                if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
-                let tekss = `══✪〘 *👥 Mencionar todos* 〙✪══\n\n➲ *Mensagem : ${q ? q : 'Nenhuma'}*\n\n`
-		      	for (let mem of participants) {
-		            tekss += `🏅 @${mem.id.split('@')[0]}\n`
-				}
-                tekss += `\n⋙ *${botname}* ⋘`
-                alpha.sendMessage(from, { text: tekss, mentions: participants.map(a => a.id) }, { quoted: fkontak })
-            break
-            case 'hidetag':
-                if (!m.isGroup) return reply(lang.groupOnly())
-                if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
-                alpha.sendMessage(from, { text : q ? q : '' , mentions: participants.map(a => a.id)}, {quoted: fkontak})
-            break
-            case 'kick': case 'remover': {
-				if (!m.isGroup) return reply(lang.groupOnly())
-                if (!isBotAdmins) return reply(lang.botNotAdmin())
-                if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
-                if (!m.quoted && !text) return reply(`Envie o número/tag/resposta alvo que você deseja remover !`)
-				let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-				await alpha.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-				}
-				break
-			case 'add': {
-				if (!m.isGroup) return reply(lang.groupOnly())
-                if (!isBotAdmins) return reply(lang.botNotAdmin())
-                if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
-                if (!m.quoted && !text) return reply(`Envie o número/tag/resposta alvo que você deseja add!`)
-				let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-				await alpha.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-				}
-				break
-			case 'promote': case 'promover': {
-				if (!m.isGroup) return reply(lang.groupOnly())
-                if (!isBotAdmins) return reply(lang.botNotAdmin())
-                if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())	
-                if (!m.quoted && !text) return reply(`Envie o número/tag/resposta alvo que você deseja tornar admin !`)
-				let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-				await alpha.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-				}
-				break
-			case 'demote': case 'rebaixar': {
-				if (!m.isGroup) return reply(lang.groupOnly())
-                if (!isBotAdmins) return reply(lang.botNotAdmin())
-                if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
-                if (!m.quoted && !text) return reply(`Envie o número/tag/resposta alvo que você deseja  !`)
-				let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-				await alpha.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-				}
-				break
-			case 'revogar': 
-                if (!m.isGroup) return reply(lang.groupOnly())
-                if (!isBotAdmins) return reply(lang.botNotAdmin())
-                if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
-                let link = await alpha.groupRevokeInvite(from)
-                await reply(lang.ok() + `\n\n*New Link for ${groupName}* :\n https://chat.whatsapp.com/${link}`)
-            break
-            case 'sair':
-                if (!m.isGroup) return reply(lang.groupOnly())
-                if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
-               reply('Adeus~ 👋').then(async res => await alpha.groupLeave(from))
-            break
-            case 'group': case 'grupo':
-                if (!m.isGroup) return reply(lang.groupOnly())
-                if (!isBotAdmins) return reply(lang.botNotAdmin())
-                if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
-                if (args[0] === 'open'){
-                    await alpha.groupSettingUpdate(from, 'not_announcement')
-		 		   reply(lang.ok())
-                } else if (args[0] === 'close'){
-                    await alpha.groupSettingUpdate(from, 'announcement')
-                    reply(lang.ok())
-                } else {
-                    alpha.sendButMessage(from, 'GROUP SETTING', `© ${ownername}`, [{buttonId: 'group open', buttonText: {displayText: 'Abrir'}, type: 1},{buttonId: 'group close', buttonText: {displayText: 'Fechar'}, type: 1}], {quoted: fgif})
-                }
-            break 
-			case 'afk': {
-if (!m.isGroup) return reply(lang.groupOnly())
-let user = global.db.data.users[m.sender]
-user.afkTime = + new Date
-user.afkReason = text
-m.reply(`${m.pushName} Tem Afk Com Razão ${text ? ': ' + text : 'Nenhuma'}`)
-}
-break  
-case 'family100': {
-if ('family100'+m.chat in _family100) {
-m.reply('Masih Ada Sesi Yang Belum Diselesaikan!')
-throw false
-}
-let anu = await fetchJson('https://fatiharridho.my.id/database/games/family100.json')
-let random = anu[Math.floor(Math.random() * anu.length)]
-let hasil = `*Jawablah Pertanyaan Berikut :*\n${random.soal}\n\nTerdapat *${random.jawaban.length}* Jawaban ${random.jawaban.find(v => v.includes(' ')) ? `(beberapa Jawaban Terdapat Spasi)` : ''}`.trim()
-_family100['family100'+m.chat] = {
-id: 'family100'+m.chat,
- pesan: await alpha.sendText(m.chat, hasil, m),
-...random,
-terjawab: Array.from(random.jawaban, () => false),
-hadiah: 6,
-}
-}
-break
-case 'tebakgambar': {
-if (tebakgambar.hasOwnProperty(m.sender.split('@')[0])) throw`Masih Ada Sesi Yang Belum Diselesaikan!`
-let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakgambar.json')
-let result = anu[Math.floor(Math.random() * anu.length)]
-alpha.sendMedia(m.chat, result.img, '', m, { caption: `Silahkan Jawab Soal Di Atas Ini\n\nDeskripsi : ${result.deskripsi}\nWaktu : 60s` }).then(() => {
-console.log("Jawaban: " + result.jawaban)
-tebakgambar[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
-})
-await sleep(60000)
-if (tebakgambar.hasOwnProperty(m.sender.split('@')[0])) {
-alpha.sendButtonText(m.chat, [{ buttonId: 'tebak gambar', buttonText: { displayText: 'Tebak Gambar' }, type: 1 }], "O tempo acabou\nResposta: " + result.jawaban , `© ${ownername}`, m)
-delete tebakgambar[m.sender.split('@')[0]]
-}
-} 
-case 'tebakkata': {
-if (tebakkata.hasOwnProperty(m.sender.split('@')[0])) return reply(`Masih Ada Sesi Yang Belum Diselesaikan!`)
-let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakkata.json')
-let result = anu[Math.floor(Math.random() * anu.length)]
-alpha.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : 60s`, m).then(() => {
-console.log("Jawaban: " + result.jawaban)
-tebakkata[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
-})
-await sleep(60000)
-if (tebakkata.hasOwnProperty(m.sender.split('@')[0])) {
-alpha.sendButtonText(m.chat, [{ buttonId: 'tebak kata', buttonText: { displayText: 'Tebak Kata' }, type: 1 }], "O tempo acabou\nResposta: " + result.jawaban , `© ${ownername}`, m)
-delete tebakkata[m.sender.split('@')[0]]
-}
-} 
-case 'tebakbendera': {
-if (tebakbendera.hasOwnProperty(m.sender.split('@')[0])) return reply(`Masih Ada Sesi Yang Belum Diselesaikan!`)
-let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakbendera2.json')
-let result = anu[Math.floor(Math.random() * anu.length)]
-alpha.sendMedia(m.chat, result.img, '', m, { caption: `Silahkan Jawab Pertanyaan Diatas\n\nWaktu : 60s` }).then(() => {
-console.log("Jawaban: " + result.name)
-tebakbendera[m.sender.split('@')[0]] = result.name.toLowerCase()
-})
-await sleep(60000)
-if (tebakbendera.hasOwnProperty(m.sender.split('@')[0])) {
-alpha.sendButtonText(m.chat, [{ buttonId: 'tebak bendera', buttonText: { displayText: 'Tebak Bendera' }, type: 1 }], "O tempo acabou\nResposta: " + result.name , `© ${ownername}`, m)
-delete tebakbendera[m.sender.split('@')[0]]
-}
-} 
-case 'tebakkalimat': {
-if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0])) return reply(`Masih Ada Sesi Yang Belum Diselesaikan!`)
-let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakkalimat.json')
-let result = anu[Math.floor(Math.random() * anu.length)]
-alpha.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : 60s`, m).then(() => {
-console.log("Jawaban: " + result.jawaban)
-tebakkalimat[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
-})
-await sleep(60000)
-if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0])) {
-alpha.sendButtonText(m.chat, [{ buttonId: 'tebak kalimat', buttonText: { displayText: 'Tebak Kalimat' }, type: 1 }], "O tempo acabou\nResposta: " + result.jawaban , `© ${ownername}`, m)
-delete tebakkalimat[m.sender.split('@')[0]]
-}
-} 
-case 'tebaksiapa': {
-if (siapaaku.hasOwnProperty(m.sender.split('@')[0])) return reply(`Masih Ada Sesi Yang Belum Diselesaikan!`)
-let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/siapakahaku.json')
-let result = anu[Math.floor(Math.random() * anu.length)]
-alpha.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : 60s`, m).then(() => {
-console.log("Jawaban: " + result.jawaban)
-siapaaku[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
-})
-await sleep(60000)
-if (siapaaku.hasOwnProperty(m.sender.split('@')[0])) {
-alpha.sendButtonText(m.chat, [{ buttonId: 'tebak siapa', buttonText: { displayText: 'Tebak Siapa' }, type: 1 }], "O tempo acabou\nResposta: " + result.jawaban , `© ${ownername}`, m)
-delete siapaaku[m.sender.split('@')[0]]
-}
-} 
-case 'tebakkabupaten':{
-if (tebakkabupaten.hasOwnProperty(m.sender.split('@')[0])) return reply(`Masih Ada Sesi Yang Belum Diselesaikan!`)
-let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakkabupaten.json')
-let result = anu[Math.floor(Math.random() * anu.length)]
-alpha.sendImage(m.chat, result.url, `Gambar Diatas Adalah Gambar dari Kabupaten?\nHora : 60s`, m).then(() => {
-console.log("Jawaban: " + result.title)
-tebakkabupaten[m.sender.split('@')[0]] = result.title.toLowerCase()
-})
-await sleep(60000)
-if (tebakkabupaten.hasOwnProperty(m.sender.split('@')[0])) {
-alpha.sendButtonText(m.chat, [{ buttonId: 'tebak kabupaten', buttonText: { displayText: 'Tebak Kabupaten' }, type: 1 }], "O tempo acabou\nResposta: " + result.title , `© ${ownername}`, m)
-delete tebakkabupaten[m.sender.split('@')[0]]
-}
-}
- case 'tebakkimia':{
-if (tebakkimia.hasOwnProperty(m.sender.split('@')[0])) return reply(`Masih Ada Sesi Yang Belum Diselesaikan!`)
-let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakkimia.json')
-let result = anu[Math.floor(Math.random() * anu.length)]
-alpha.sendText(m.chat, `Apa Arti Dari Simbol : *${result.lambang}*?\nHora : 60s`, m).then(() => {
-console.log("Jawaban: " + result.unsur)
-tebakkimia[m.sender.split('@')[0]] = result.unsur.toLowerCase()
-})
-await sleep(60000)
-if (tebakkimia.hasOwnProperty(m.sender.split('@')[0])) {
-alpha.sendButtonText(m.chat, [{ buttonId: 'adivinhar química', buttonText: { displayText: 'adivinhar química' }, type: 1 }], "O tempo acabou\nResposta: " + result.unsur , `© ${ownername}`, m)
-delete tebakkimia[m.sender.split('@')[0]]
-}
-} 
-case 'tebaklirik': {
-if (tebaklirik.hasOwnProperty(m.sender.split('@')[0])) return reply(`Masih Ada Sesi Yang Belum Diselesaikan!`)
-let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebaklirik.json')
-let result = anu[Math.floor(Math.random() * anu.length)]
-alpha.sendText(m.chat, `Ini Adalah Lirik Dari Lagu? : *${result.soal}*?\nHora : 60s`, m).then(() => {
-alpha.sendButtonText(m.chat, [{ buttonId: 'tebak lirik', buttonText: { displayText: 'Tebak Lirik' }, type: 1 }], "O tempo acabou\nResposta: " + result.jawaban , `© ${ownername}`, m)
-tebaklirik[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
-})
-await sleep(60000)
-if (tebaklirik.hasOwnProperty(m.sender.split('@')[0])) {
-m.reply("O tempo acabou\nResposta: " + result.jawaban)
-delete tebaklirik[m.sender.split('@')[0]]
-}
-}
-case 'tebaktebakan': {
-if (tebaktebakan.hasOwnProperty(m.sender.split('@')[0])) return reply(`Masih Ada Sesi Yang Belum Diselesaikan!`)
-let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebaktebakan.json')
-let result = anu[Math.floor(Math.random() * anu.length)]
-alpha.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : 60s`, m).then(() => {
-console.log("Jawaban: " + result.jawaban)
-tebaktebakan[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
-})
-await sleep(60000)
-if (tebaktebakan.hasOwnProperty(m.sender.split('@')[0])) {
-alpha.sendButtonText(m.chat, [{ buttonId: 'tebak tebakan', buttonText: { displayText: 'Tebak Tebakan' }, type: 1 }], "O tempo acabou\nResposta: " + result.jawaban , `© ${ownername}`, m)
-delete tebaktebakan[m.sender.split('@')[0]]
-}
-}
-break
-case 'caklontong': {
+            break  
+           case 'caklontong': {
 if (caklontong.hasOwnProperty(m.sender.split('@')[0])) return reply(`Masih Ada Sesi Yang Belum Diselesaikan!`)
 let anu = await fetchJson('https://fatiharridho.my.id/database/games/caklontong.json')
 let result = anu[Math.floor(Math.random() * anu.length)]
@@ -1684,257 +1548,228 @@ caklontong[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
 })
 await sleep(60000)
 if (caklontong.hasOwnProperty(m.sender.split('@')[0])) {
-alpha.sendButtonText(m.chat, [{ buttonId: 'caklontong', buttonText: { displayText: 'Cak Lontong' }, type: 1 }], `O tempo acabou\nJawaban : ${result.jawaban}\nDeskripsi : ${result.deskripsi}` , `© ${ownername}`, m)
+alpha.sendButtonText(m.chat, [{ buttonId: 'caklontong', buttonText: { displayText: 'Cak Lontong' }, type: 1 }], `Waktu Habis\nJawaban : ${result.jawaban}\nDeskripsi : ${result.deskripsi}` , `© ${ownername}`, m)
 delete caklontong[m.sender.split('@')[0]]
 }
 }
 break
-case 'susunkata': {
-if (susunkata.hasOwnProperty(m.sender.split('@')[0])) return reply(`Masih Ada Sesi Yang Belum Diselesaikan!`)
-let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/susunkata.json')
-let result = anu[Math.floor(Math.random() * anu.length)]
-alpha.sendText(m.chat, `*Jawablah Pertanyaan Berikut :*\nSoal : ${result.soal}\nTipe : ${result.tipe}\nWaktu : 60s`, m).then(() => {
-console.log("Jawaban: " + result.jawaban)
-susunkata[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
-})
-await sleep(60000)
-if (susunkata.hasOwnProperty(m.sender.split('@')[0])) {
-alpha.sendButtonText(m.chat, [{ buttonId: 'susunkata', buttonText: { displayText: 'Susun Kata' }, type: 1 }], `O tempo acabou\nJawaban : ${result.jawaban}` , `© ${ownername}`, m)
-delete susunkata[m.sender.split('@')[0]]
-}
+
+case 'setmenu':{
+    if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+const listhades = ['templateLocation', 'templateTenor','list', 'katalog', 'katalog2']
+alpha.sendList(from, 'Você quer um menu fixo??', `© ${ownername}`, salam + ' ' +  pushname, 'CLIQUE AQUI', [
+                {
+                    "title": "Set Menu-1",
+                    "rows": [
+                        {
+                            "title": "Template Button Location",
+                            "rowId": "setmenu templateLocation"
+                        }
+                    ]
+                },
+                {
+                    "title": "Set Menu-2",
+                    "rows": [
+                        {
+                            "title": "Template Button Tenor",
+                            "rowId": "setmenu templateTenor"
+                        }
+                    ]
+                },{
+                    "title": "Set Menu-3",
+                    "rows": [
+                        {
+                            "title": "Menu Katalog",
+                            "rowId": "setmenu katalog"
+                        }
+                    ]
+                },{
+                    "title": "Set Menu-4",
+                    "rows": [
+                        {
+                            "title": "Menu Katalog Diskon",
+                            "rowId": "setmenu katalog2"
+                        }
+                    ]
+                },{
+                    "title": "Set Menu-5",
+                    "rows": [
+                        {
+                            "title": "Menu List Message",
+                            "rowId": "setmenu list"
+                        }
+                    ]
+                }], {quoted:fgif})
+    if (!listhades.includes(text)) return alpha.sendList(from, 'Você quer um menu fixo??', `© ${ownername}`, salam + ' ' + pushname, 'CLIQUE AQUI', [
+                {
+                    "title": "Set Menu-1",
+                    "rows": [
+                        {
+                            "title": "Template Button Location",
+                            "rowId": "setmenu templateLocation"
+                        }
+                    ]
+                },
+                {
+                    "title": "Set Menu-2",
+                    "rows": [
+                        {
+                            "title": "Template Button Tenor",
+                            "rowId": "setmenu templateTenor"
+                        }
+                    ]
+                },{
+                    "title": "Set Menu-3",
+                    "rows": [
+                        {
+                            "title": "Menu Katalog",
+                            "rowId": "setmenu katalog"
+                        }
+                    ]
+                },{
+                    "title": "Set Menu-4",
+                    "rows": [
+                        {
+                            "title": "Menu Katalog Diskon",
+                            "rowId": "setmenu katalog2"
+                        }
+                    ]
+                },{
+                    "title": "Set Menu-5",
+                    "rows": [
+                        {
+                            "title": "Menu List Message",
+                            "rowId": "setmenu list"
+                        }
+                    ]
+                }], {quoted:fgif})
+    typemenu = text
+        reply(lang.ok())
 }
 break
-case 'tekateki': {
-if (tekateki.hasOwnProperty(m.sender.split('@')[0])) return reply(`Masih Ada Sesi Yang Belum Diselesaikan!`)
-let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tekateki.json')
-let result = anu[Math.floor(Math.random() * anu.length)]
-alpha.sendText(m.chat, `*Jawablah Pertanyaan Berikut :*\n${result.soal}\nWaktu : 60s`, m).then(() => {
-console.log("Jawaban: " + result.jawaban)
-tekateki[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
-})
-await sleep(60000)
-if (tekateki.hasOwnProperty(m.sender.split('@')[0])) {
-	alpha.sendButtonText(m.chat, [{ buttonId: 'tekateki', buttonText: { displayText: 'Teka Teki' }, type: 1 }], `O tempo acabou\nJawaban : ${result.jawaban}` , `© ${ownername}`, m)
-delete tekateki[m.sender.split('@')[0]]
-}
-}
-break
-            case 'setmenu':{
-            	if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
-            const listhades = ['templateLocation', 'templateTenor','list', 'katalog', 'katalog2']
-			alpha.sendList(from, 'Você quer um menu fixo??', `© ${ownername}`, salam + ' ' +  pushname, 'CLIQUE AQUI', [
-							{
-								"title": "Set Menu-1",
-								"rows": [
-									{
-										"title": "Template Button Location",
-										"rowId": "setmenu templateLocation"
-									}
-								]
-							},
-							{
-								"title": "Set Menu-2",
-								"rows": [
-									{
-										"title": "Template Button Tenor",
-										"rowId": "setmenu templateTenor"
-									}
-								]
-							},{
-								"title": "Set Menu-3",
-								"rows": [
-									{
-										"title": "Menu Katalog",
-										"rowId": "setmenu katalog"
-									}
-								]
-							},{
-								"title": "Set Menu-4",
-								"rows": [
-									{
-										"title": "Menu Katalog Diskon",
-										"rowId": "setmenu katalog2"
-									}
-								]
-							},{
-								"title": "Set Menu-5",
-								"rows": [
-									{
-										"title": "Menu List Message",
-										"rowId": "setmenu list"
-									}
-								]
-							}], {quoted:fgif})
-                if (!listhades.includes(text)) return alpha.sendList(from, 'Você quer um menu fixo??', `© ${ownername}`, salam + ' ' + pushname, 'CLIQUE AQUI', [
-							{
-								"title": "Set Menu-1",
-								"rows": [
-									{
-										"title": "Template Button Location",
-										"rowId": "setmenu templateLocation"
-									}
-								]
-							},
-							{
-								"title": "Set Menu-2",
-								"rows": [
-									{
-										"title": "Template Button Tenor",
-										"rowId": "setmenu templateTenor"
-									}
-								]
-							},{
-								"title": "Set Menu-3",
-								"rows": [
-									{
-										"title": "Menu Katalog",
-										"rowId": "setmenu katalog"
-									}
-								]
-							},{
-								"title": "Set Menu-4",
-								"rows": [
-									{
-										"title": "Menu Katalog Diskon",
-										"rowId": "setmenu katalog2"
-									}
-								]
-							},{
-								"title": "Set Menu-5",
-								"rows": [
-									{
-										"title": "Menu List Message",
-										"rowId": "setmenu list"
-									}
-								]
-							}], {quoted:fgif})
-                typemenu = text
-		 		   reply(lang.ok())
-		}
-            break
-				case 'menu':{
-					if(typemenu == 'templateLocation'){
-						await alpha.send5ButLoc(from, lang.menunya(salam, pushname, botname) , `© ${ownername}`,pp_bot, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "List Command","id": 'command'}}] )
-							}
-						if(typemenu == 'templateTenor'){
-							alpha.send5ButGif(from, lang.menunya(salam, pushname, botname) , `© ${ownername}` ,pp_bot, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "List Command","id": 'command'}}] , {quoted: m})
-						 }
-						if(typemenu == 'katalog'){
-							alpha.sendKatalog(m.chat, "ALL MENU BOT", lang.listMenu(time, salam, pushname, prefix), pp_bot, {quoted:m})
-							}
-						if(typemenu == 'katalog2'){
-							alpha.sendKatalog2(m.chat, "ALL MENU BOT", lang.listMenu(time, salam, pushname, prefix), pp_bot, {quoted:m})
-							}
-						if(typemenu == 'list'){
-							alpha.sendListMenu(m.chat, `╭─⬣「 _*INFO USER*_ 」⬣\n│  *Name* : ${pushname}\n│  *Number* : ${sender.split("@")[0]}\n│  *Status* : ${isCreator? ` Owner️ ${botname}` :`User ${botname}`}\n╰─⬣\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣\n\n╭─⬣「 _*INDONESIAN TIME*_ 」⬣\n│ *Wib* : ${time}\n│ *Wita* : ${wita}\n│ *Wit* : ${wit}  \n╰─⬣`, `© ${ownername}`, `Oi ${salam} ${pushname} ☺️`, `CLICK HERE`, {quoted:fgif})
-						}
-					}
-					break    
-	case 'allmenu':{
-			await alpha.send5ButLoc(from, `Hai kak ${pushname} 👋, saya *${botname}* ` + '\n\n' + lang.listMenu(time, salam, pushname, prefix) , `© ${ownername}`,pp_bot, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Rules","id": 'rules'}}] )
-		}
-	break   
-	case 'infocmd': case'infomenu':{
-		var ownercmd = await getBuffer(picak+'Info Menu')
-		await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.info(prefix) , `© ${ownername}`,ownercmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
-      }
-  break 
-	case 'ownercmd': case'ownermenu':{
-		var ownercmd = await getBuffer(picak+'Owner Menu')
-		await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Admin* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.ownermenu(prefix) , `© ${ownername}`,ownercmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
-      }
-  break 
-  case 'databasecmd': case'databasemenu':{
-		var ownercmd = await getBuffer(picak+'Database Menu')
-		await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.database(prefix) , `© ${ownername}`,ownercmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
-      }
-  break 
-  case 'groupcmd': case 'groupmenu':
- var groupcmd = await getBuffer(picak+'Group Menu')
- await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.group(prefix) , `© ${ownername}`,groupcmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
-        break       
-    case 'animecmd': case 'animemenu':
- var animecmd = await getBuffer(picak+'Anime Menu')
- await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.anime(prefix) , `© ${ownername}`,animecmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
-        break 
-            case 'tagcmd': case 'tagmenu':
- var groupcmd = await getBuffer(picak+'Tag Menu')
- await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.tag(prefix) , `© ${ownername}`,groupcmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
-        break 
-        case 'stalkcmd': case 'stalkmenu':
- var groupcmd = await getBuffer(picak+'Stalking Menu')
- await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.stalk(prefix) , `© ${ownername}`,groupcmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
-        break 
-        
-        case 'searchcmd': case 'searchmenu':{
- var searchcmd = await getBuffer(picak+'Search Menu')
- await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.search(prefix) , `© ${ownername}`,searchcmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
-      }
-  break 
-        case 'convertercmd': case 'convertmenu':
- var convertercmd = await getBuffer(picak+'Convert Menu')
- await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.converter(prefix) , `© ${ownername}`,convertercmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
-        break 
-        case 'stickercmd': case 'stickermenu':
- var stickercmd = await getBuffer(picak+'Image Effect Menu')
- await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.effect(prefix) , `© ${ownername}`,stickercmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
-        break 
-        case 'stickercmd2': case 'stickermenu2':
- var stickercmd = await getBuffer(picak+'Sticker Effect Menu')
- await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.effect2(prefix) , `© ${ownername}`,stickercmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
-        break 
-        case 'downloadercmd': case 'downloadmenu':
- var downloadercmd = await getBuffer(picak+'Download Menu')
- await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.download(prefix) , `© ${ownername}`,downloadercmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
-        break 
-        case 'ranimecmd': case 'animemenu':
- var ranimecmd = await getBuffer(picak+'Random Anime')
- await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.ranime(prefix) , `© ${ownername}`,ranimecmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
-        break 
-        case 'nsfwcmd': case 'nsfwcommand':{
- var thanksto = await getBuffer(picak+'Nsfw Menu')
- await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.nsfw(prefix) , `© ${ownername}`,thanksto, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+    case 'menu':{
+        if(typemenu == 'templateLocation'){
+            await alpha.send5ButLoc(from, lang.menunya(salam, pushname, botname) , `© ${ownername}`,pp_bot, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "List Command","id": 'command'}}] )
+                }
+            if(typemenu == 'templateTenor'){
+                alpha.send5ButGif(from, lang.menunya(salam, pushname, botname) , `© ${ownername}` ,pp_bot, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "List Command","id": 'command'}}] , {quoted: m})
+             }
+            if(typemenu == 'katalog'){
+                alpha.sendKatalog(m.chat, "ALL MENU BOT", lang.listMenu(time, salam, pushname, prefix), pp_bot, {quoted:m})
+                }
+            if(typemenu == 'katalog2'){
+                alpha.sendKatalog2(m.chat, "ALL MENU BOT", lang.listMenu(time, salam, pushname, prefix), pp_bot, {quoted:m})
+                }
+            if(typemenu == 'list'){
+                alpha.sendListMenu(m.chat, `╭─⬣「 _*INFO USER*_ 」⬣\n│  *Name* : ${pushname}\n│  *Number* : ${sender.split("@")[0]}\n│  *Status* : ${isCreator? ` Owner️ ${botname}` :`User ${botname}`}\n╰─⬣\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣\n\n╭─⬣「 _*INDONESIAN TIME*_ 」⬣\n│ *Wib* : ${time}\n│ *Wita* : ${wita}\n│ *Wit* : ${wit}  \n╰─⬣`, `© ${ownername}`, `Oi ${salam} ${pushname} ☺️`, `CLICK HERE`, {quoted:fgif})
+            }
         }
+        break    
+case 'allmenu':{
+await alpha.send5ButLoc(from, `Hai kak ${pushname} 👋, saya *${botname}* ` + '\n\n' + lang.listMenu(time, salam, pushname, prefix) , `© ${ownername}`,pp_bot, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Rules","id": 'rules'}}] )
+}
+break   
+case 'infocmd': case'infomenu':{
+var ownercmd = await getBuffer(picak+'Info Menu')
+await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.info(prefix) , `© ${ownername}`,ownercmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+}
+break 
+case 'ownercmd': case'ownermenu':{
+var ownercmd = await getBuffer(picak+'Owner Menu')
+await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Admin* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.ownermenu(prefix) , `© ${ownername}`,ownercmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+}
+break 
+case 'databasecmd': case'databasemenu':{
+var ownercmd = await getBuffer(picak+'Database Menu')
+await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.database(prefix) , `© ${ownername}`,ownercmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+}
+break 
+case 'groupcmd': case 'groupmenu':
+var groupcmd = await getBuffer(picak+'Group Menu')
+await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.group(prefix) , `© ${ownername}`,groupcmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+break       
+case 'animecmd': case 'animemenu':
+var animecmd = await getBuffer(picak+'Anime Menu')
+await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.anime(prefix) , `© ${ownername}`,animecmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+break 
+case 'tagcmd': case 'tagmenu':
+var groupcmd = await getBuffer(picak+'Tag Menu')
+await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.tag(prefix) , `© ${ownername}`,groupcmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+break 
+case 'stalkcmd': case 'stalkmenu':
+var groupcmd = await getBuffer(picak+'Stalking Menu')
+await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.stalk(prefix) , `© ${ownername}`,groupcmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+break 
+
+case 'searchcmd': case 'searchmenu':{
+var searchcmd = await getBuffer(picak+'Search Menu')
+await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.search(prefix) , `© ${ownername}`,searchcmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+}
+break 
+case 'convertercmd': case 'convertmenu':
+var convertercmd = await getBuffer(picak+'Convert Menu')
+await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.converter(prefix) , `© ${ownername}`,convertercmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+break 
+case 'stickercmd': case 'stickermenu':
+var stickercmd = await getBuffer(picak+'Image Effect Menu')
+await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.effect(prefix) , `© ${ownername}`,stickercmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+break 
+case 'stickercmd2': case 'stickermenu2':
+var stickercmd = await getBuffer(picak+'Sticker Effect Menu')
+await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.effect2(prefix) , `© ${ownername}`,stickercmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+break 
+case 'downloadercmd': case 'downloadmenu':
+var downloadercmd = await getBuffer(picak+'Download Menu')
+await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.download(prefix) , `© ${ownername}`,downloadercmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+break 
+case 'ranimecmd': case 'animemenu':
+var ranimecmd = await getBuffer(picak+'Random Anime')
+await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.ranime(prefix) , `© ${ownername}`,ranimecmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+break 
+case 'nsfwcmd': case 'nsfwcommand':{
+var thanksto = await getBuffer(picak+'Nsfw Menu')
+await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.nsfw(prefix) , `© ${ownername}`,thanksto, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+}
 break 
 case 'textprocmd': case 'textpromenu':
- var textprocmd = await getBuffer(picak+'Textpro Menu')
- await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.textpro(prefix) , `© ${ownername}`,textprocmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
-        break 
-        case 'othercmd': case 'othermenu':
- var othercmd = await getBuffer(picak+'Others Menu')
- await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.other(prefix) , `© ${ownername}`,othercmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
-        break 
-        case 'gamecmd': case 'gamemenu':
- var othercmd = await getBuffer(picak+'Games Menu')
- await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.game(prefix) , `© ${ownername}`,othercmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
-        break 
-        case 'asupancmd': case 'asupanmenu':
- var othercmd = await getBuffer(picak+'Asupan Menu')
- await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.asupan(prefix) , `© ${ownername}`,othercmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
-        break 
-        case 'cecancmd': case 'cecanmenu':
- var othercmd = await getBuffer(picak+'Cecan Menu')
- await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.cecan(prefix) , `© ${ownername}`,othercmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
-        break 
-        case 'primbonmenu': case 'primboncmd':{
- var thanksto = await getBuffer(picak+'Primbon Menu')
- await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.primbonmenu(prefix) , `© ${ownername}`,thanksto, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
-        }
+var textprocmd = await getBuffer(picak+'Textpro Menu')
+await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.textpro(prefix) , `© ${ownername}`,textprocmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
 break 
-        case 'telestc': case 'telecmd':{
- var thanksto = await getBuffer(picak+'Telegram Sticker')
- await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.stcmenu(prefix) , `© ${ownername}`,thanksto, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
-        }
+case 'othercmd': case 'othermenu':
+var othercmd = await getBuffer(picak+'Others Menu')
+await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.other(prefix) , `© ${ownername}`,othercmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+break 
+case 'gamecmd': case 'gamemenu':
+var othercmd = await getBuffer(picak+'Games Menu')
+await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.game(prefix) , `© ${ownername}`,othercmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+break 
+case 'asupancmd': case 'asupanmenu':
+var othercmd = await getBuffer(picak+'Asupan Menu')
+await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.asupan(prefix) , `© ${ownername}`,othercmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+break 
+case 'cecancmd': case 'cecanmenu':
+var othercmd = await getBuffer(picak+'Cecan Menu')
+await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.cecan(prefix) , `© ${ownername}`,othercmd, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+break 
+case 'primbonmenu': case 'primboncmd':{
+var thanksto = await getBuffer(picak+'Primbon Menu')
+await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.primbonmenu(prefix) , `© ${ownername}`,thanksto, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+}
+break 
+case 'telestc': case 'telecmd':{
+var thanksto = await getBuffer(picak+'Telegram Sticker')
+await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.stcmenu(prefix) , `© ${ownername}`,thanksto, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+}
 break 
 case 'ephotomenu': case 'ephotocmd':{
- var thanksto = await getBuffer(picak+'Ephoto Menu')
- await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.ephotomenu(prefix) , `© ${ownername}`,thanksto, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
-        }
+var thanksto = await getBuffer(picak+'Ephoto Menu')
+await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.ephotomenu(prefix) , `© ${ownername}`,thanksto, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+}
 break 
 case 'thanksto': case 'tqto':{
- var thanksto = await getBuffer(picak+'Contributors')
- await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.tqto() , `© ${ownername}`,thanksto, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
-        }
+var thanksto = await getBuffer(picak+'Contributors')
+await alpha.send5ButLoc(from, `Oi ${salam} ${pushname} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Cosmos-Md@9.0.0\n╰─⬣` + '\n\n' +  lang.tqto() , `© ${ownername}`,thanksto, [{"urlButton": {"displayText": "Instagram","url": `${youtube}`}},{"urlButton": {"displayText": "Website","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Apoiar","id": 'donate'}},{"quickReplyButton": {"displayText": "Admin","id": 'owner'}},{"quickReplyButton": {"displayText": "Back To List","id": 'command'}}] )
+}
 break 
 case 'take':case 'wm':{
 if (!quoted) return reply(`Enviar/Responder imagem/vídeo com legenda ${prefix + command}\n\nDuração do adesivo de vídeo 1-9 segundos☕`)
@@ -2039,7 +1874,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.tanggal_jadian_pernikahan(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Data Pernikahan :* ${anu.message.tanggal}\n⭔ *karakteristik :* ${anu.message.karakteristik}`, m)
+                alpha.sendText(m.chat, `⭔ *Tanggal Pernikahan :* ${anu.message.tanggal}\n⭔ *karakteristik :* ${anu.message.karakteristik}`, m)
             }
             break
             case 'sifatusaha': {
@@ -2119,7 +1954,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_hari_naas(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Hari Lahir :* ${anu.message.hari_lahir}\n⭔ *Data Lahir :* ${anu.message.tgl_lahir}\n⭔ *Hari Naas :* ${anu.message.hari_naas}\n⭔ *Info :* ${anu.message.catatan}\n⭔ *Catatan :* ${anu.message.info}`, m)
+                alpha.sendText(m.chat, `⭔ *Hari Lahir :* ${anu.message.hari_lahir}\n⭔ *Tanggal Lahir :* ${anu.message.tgl_lahir}\n⭔ *Hari Naas :* ${anu.message.hari_naas}\n⭔ *Info :* ${anu.message.catatan}\n⭔ *Catatan :* ${anu.message.info}`, m)
             }
             break
             case 'nagahari': case 'harinaga': {
@@ -2127,7 +1962,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.rahasia_naga_hari(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Hari Lahir :* ${anu.message.hari_lahir}\n⭔ *Data Lahir :* ${anu.message.tgl_lahir}\n⭔ *Arah Naga Hari :* ${anu.message.arah_naga_hari}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
+                alpha.sendText(m.chat, `⭔ *Hari Lahir :* ${anu.message.hari_lahir}\n⭔ *Tanggal Lahir :* ${anu.message.tgl_lahir}\n⭔ *Arah Naga Hari :* ${anu.message.arah_naga_hari}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'arahrejeki': case 'arahrezeki': {
@@ -2135,11 +1970,11 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_arah_rejeki(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Hari Lahir :* ${anu.message.hari_lahir}\n⭔ *Data Lahir :* ${anu.message.tgl_lahir}\n⭔ *Arah Rezeki :* ${anu.message.arah_rejeki}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
+                alpha.sendText(m.chat, `⭔ *Hari Lahir :* ${anu.message.hari_lahir}\n⭔ *tanggal Lahir :* ${anu.message.tgl_lahir}\n⭔ *Arah Rezeki :* ${anu.message.arah_rejeki}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'peruntungan': {
-                if (!text) throw `Example : ${prefix + command} Zeeone, 12, 1, 2004, 2022\n\nNote : ${prefix + command} Nama, Data lahir, bulan lahir, tahun lahir, untuk tahun`
+                if (!text) throw `Example : ${prefix + command} Zeeone, 12, 1, 2004, 2022\n\nNote : ${prefix + command} Nama, tanggal lahir, bulan lahir, tahun lahir, untuk tahun`
                 let [nama, tgl, bln, thn, untuk] = text.split`,`
                 let anu = await primbon.ramalan_peruntungan(nama, tgl, bln, thn, untuk)
                 if (anu.status == false) return m.reply(anu.message)
@@ -2151,7 +1986,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.weton_jawa(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Data :* ${anu.message.tanggal}\n⭔ *Jumlah Neptu :* ${anu.message.jumlah_neptu}\n⭔ *Watak Hari :* ${anu.message.watak_hari}\n⭔ *Naga Hari :* ${anu.message.naga_hari}\n⭔ *Jam Baik :* ${anu.message.jam_baik}\n⭔ *Watak Kelahiran :* ${anu.message.watak_kelahiran}`, m)
+                alpha.sendText(m.chat, `⭔ *Tanggal :* ${anu.message.tanggal}\n⭔ *Jumlah Neptu :* ${anu.message.jumlah_neptu}\n⭔ *Watak Hari :* ${anu.message.watak_hari}\n⭔ *Naga Hari :* ${anu.message.naga_hari}\n⭔ *Jam Baik :* ${anu.message.jam_baik}\n⭔ *Watak Kelahiran :* ${anu.message.watak_kelahiran}`, m)
             }
             break
             case 'sifat': case 'karakter': {
@@ -2175,7 +2010,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_memancing_ikan(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Data :* ${anu.message.tgl_memancing}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
+                alpha.sendText(m.chat, `⭔ *Tanggal :* ${anu.message.tgl_memancing}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'masasubur': {
