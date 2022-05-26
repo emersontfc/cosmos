@@ -3,19 +3,19 @@ const chalk = require('chalk')
 
 // Website Api
 global.APIs = {
-	alfa: 'https://api-alphabot.herokuapp.com',
+	alfa: 'https://api.zeeoneofc.xyz', //apabila link api eror, segera laporkan le owner
 }
 
 // Free apikey
 global.APIKeys = {
-	'https://api-alphabot.herokuapp.com': 'Alphabot',
+	'https://api.zeeoneofc.xyz': 'your apikey',  // login https://api.zeeoneofc.xyz to get apikey || https://api-alphabot.herokuapp.com
 }
 
 // setting 
-global.autoread = false // Ler automaticamente Mensagens
-global.autorecording = true //status auto merekam ( auto record )
-global.autoketik = false //status auto mengetik (auto typing)
-global.available = false //status online (online)
+global.autoread = false // auto read pesan / message
+//global.autorecording = true //status auto merekam ( auto record )
+//global.autoketik = false //status auto mengetik (auto typing)
+//global.available = false //status online (online)
 
 // Other
 global.botname = "Cosmos-Mdོ" //namabot kalian

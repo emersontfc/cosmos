@@ -1,12 +1,9 @@
-pkg update
-pkg install nodejs
-pkg install libwebp
-pkg install ffmpeg
-pkg install wget
-pkg install tesseract
-wget -O ~/../usr/share/tessdata/ind.traineddata "https://github.com/tesseract-ocr/tessdata/blob/master/ind.traineddata?raw=true"
-npm install
-cd node_modules/@adiwajshing/baileys-md
-npm i typescript -g
-tsc
-cd ../../../
+#!/usr/bin/bash
+
+apt-get install imagemagick git nodejs ffmpeg libwebp mc nano
+git clone https://github.com/ZeeoneOfficial/node_modules
+rm -rf session.json 
+rm -rf store.json
+npm start
+
+echo "All dependencies have been installed, please run the command \"npm start\" to immediately start the script"
